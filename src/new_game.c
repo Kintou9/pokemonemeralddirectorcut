@@ -184,6 +184,7 @@ void NewGameInitData(void)
     PlayTimeCounter_Reset();
     ClearPokedexFlags();
     InitEventData();
+    FlagSet(I_EXP_SHARE_FLAG); // Enable party-wide Exp. Share from the start.
     ClearTVShowData();
     ResetGabbyAndTy();
     ClearSecretBases();

@@ -533,7 +533,7 @@ Gender: Male
 Music: Aqua
 Items: Super Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 
 Mightyena
 Level: 35
@@ -582,7 +582,7 @@ Pic: Aqua Admin F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 
 Mightyena
 Level: 32
@@ -618,7 +618,7 @@ Pic: Aqua Admin F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 
 Mightyena
 Level: 38
@@ -655,7 +655,7 @@ Gender: Male
 Music: Aqua
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 
 Wailord
 Level: 41
@@ -4684,7 +4684,7 @@ Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Force Setup First Turn
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 Mugshot: Purple
 
 Cacturne
@@ -4736,7 +4736,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 Mugshot: Green
 
 Dusclops
@@ -4787,7 +4787,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 Mugshot: Pink
 
 Glalie
@@ -4838,7 +4838,7 @@ Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 Mugshot: Blue
 
 Shelgon
@@ -4926,7 +4926,7 @@ Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer
 
 Machop
 Level: 17
@@ -4963,7 +4963,7 @@ Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer
 
 Voltorb
 Level: 21
@@ -5009,7 +5009,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer
 
 Ninetales
 Level: 27
@@ -5046,7 +5046,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 
 Vigoroth
 Level: 29
@@ -5092,7 +5092,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 
 Pelipper
 Level: 31
@@ -5147,7 +5147,7 @@ Gender: Male
 Music: Female
 Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 
 Claydol
 Level: 41
@@ -5193,7 +5193,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 
 Gorebyss
 Level: 43
@@ -6364,7 +6364,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 Mugshot: Yellow
 
 Gorebyss
@@ -9485,7 +9485,7 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 Multi Party: Half
 
 Claydol
@@ -11406,7 +11406,7 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 
 Numel
 Level: 20
@@ -11504,7 +11504,7 @@ Gender: Male
 Music: Magma
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 
 Crobat
 Level: 38
@@ -11550,7 +11550,7 @@ Gender: Male
 Music: Magma
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 
 Mightyena
 Level: 25
@@ -14237,7 +14237,7 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 
 Numel
 Level: 29
@@ -14300,7 +14300,7 @@ Pic: Magma Leader Maxie
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 Multi Party: Half
 
 Crobat
@@ -16644,7 +16644,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Smart Mon Choices
 
 Skarmory
 Level: 77

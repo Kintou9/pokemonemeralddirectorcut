@@ -533,15 +533,34 @@ Gender: Male
 Music: Aqua
 Items: Super Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint
 
 Mightyena
-Level: 34
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Level: 35
+Ability: Intimidate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Crunch
+- Swagger
+- Scary Face
+- Take Down
 
 Golbat
-Level: 34
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Level: 35
+Ability: Inner Focus
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wing Attack
+- Confuse Ray
+- Bite
+- Toxic
+
+Crawdaunt @ Sitrus Berry
+Level: 36
+Ability: Hyper Cutter
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Crabhammer
+- Brick Break
+- Taunt
+- Protect
 
 === TRAINER_ZANDER ===
 Name: ZANDER
@@ -563,15 +582,34 @@ Pic: Aqua Admin F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Basic Trainer
-
-Carvanha
-Level: 28
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+AI: Check Bad Move / Try To Faint
 
 Mightyena
-Level: 28
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Level: 32
+Ability: Intimidate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Bite
+- Swagger
+- Sand Attack
+- Take Down
+
+Seviper
+Level: 31
+Ability: Shed Skin
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Poison Tail
+- Glare
+- Bite
+- Screech
+
+Gorebyss @ Sitrus Berry
+Level: 33
+Ability: Swift Swim
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Surf
+- Psychic
+- Rain Dance
+- Agility
 
 === TRAINER_SHELLY_SEAFLOOR_CAVERN ===
 Name: SHELLY
@@ -580,15 +618,34 @@ Pic: Aqua Admin F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Basic Trainer
-
-Sharpedo
-Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+AI: Check Bad Move / Try To Faint
 
 Mightyena
-Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 38
+Ability: Intimidate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Crunch
+- Swagger
+- Scary Face
+- Take Down
+
+Seviper
+Level: 38
+Ability: Shed Skin
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Poison Tail
+- Glare
+- Crunch
+- Sludge Bomb
+
+Gorebyss @ Sitrus Berry
+Level: 39
+Ability: Swift Swim
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Surf
+- Psychic
+- Ice Beam
+- Rain Dance
 
 === TRAINER_ARCHIE ===
 Name: ARCHIE
@@ -598,19 +655,52 @@ Gender: Male
 Music: Aqua
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint
 
-Mightyena
+Wailord
 Level: 41
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Ability: Water Veil
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Rain Dance
+- Surf
+- Body Slam
+- Rest
+
+Electrode
+Level: 41
+Ability: Soundproof
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Thunder
+- Thunder Wave
+- Light Screen
+- Swift
 
 Crobat
-Level: 41
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 42
+Ability: Inner Focus
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wing Attack
+- Toxic
+- Confuse Ray
+- Shadow Ball
 
-Sharpedo
+Crawdaunt
+Level: 42
+Ability: Hyper Cutter
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Crabhammer
+- Brick Break
+- Taunt
+- Crunch
+
+Sharpedo @ Sitrus Berry
 Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Ability: Rough Skin
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Surf
+- Crunch
+- Ice Beam
+- Slash
 
 === TRAINER_LEAH ===
 Name: LEAH
@@ -4800,28 +4890,31 @@ Items: Potion / Potion
 Double Battle: No
 AI: Basic Trainer
 
-Geodude
-Level: 12
+Geodude @ Oran Berry
+Level: 13
+Ability: Rock Head
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tackle
+- Mud Slap
 - Defense Curl
 - Rock Throw
 - Rock Tomb
 
-Geodude
-Level: 12
+Lileep @ Oran Berry
+Level: 14
+Ability: Suction Cups
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tackle
-- Defense Curl
-- Rock Throw
-- Rock Tomb
+- Bullet Seed
+- Acid
+- Ingrain
+- Sandstorm
 
 Nosepass @ Oran Berry
 Level: 15
+Ability: Sturdy
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Block
-- Harden
-- Tackle
+- Thunder Wave
+- Rock Smash
 - Rock Tomb
 
 === TRAINER_BRAWLY_1 ===
@@ -4832,30 +4925,33 @@ Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint
 
 Machop
-Level: 16
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 17
+Ability: Guts
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Karate Chop
 - Low Kick
-- Seismic Toss
+- Rock Tomb
 - Bulk Up
 
 Meditite
-Level: 16
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Focus Punch
-- Light Screen
+Level: 18
+Ability: Pure Power
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Confusion
+- Brick Break
 - Reflect
-- Bulk Up
+- Light Screen
 
 Makuhita @ Sitrus Berry
 Level: 19
+Ability: Thick Fat
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Arm Thrust
 - Vital Throw
-- Reversal
+- Rock Tomb
 - Bulk Up
 
 === TRAINER_WATTSON_1 ===
@@ -4866,39 +4962,43 @@ Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint
 
 Voltorb
-Level: 20
+Level: 21
+Ability: Soundproof
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Rollout
 - Spark
-- Self Destruct
+- Screech
+- Rollout
 - Shock Wave
 
-Electrike
-Level: 20
+Minun
+Level: 21
+Ability: Minus
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Shock Wave
-- Leer
+- Thunder Wave
+- Encore
 - Quick Attack
-- Howl
+- Shock Wave
 
 Magneton
 Level: 22
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- Supersonic
-- Shock Wave
+Ability: Magnet Pull
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Thunder Wave
 - Sonic Boom
+- Supersonic
+- Shock Wave
 
 Manectric @ Sitrus Berry
 Level: 24
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Quick Attack
+Ability: Static
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Thunder Wave
+- Quick Attack
 - Shock Wave
-- Howl
+- Bite
 
 === TRAINER_FLANNERY_1 ===
 Name: FLANNERY
@@ -4908,38 +5008,33 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint
 
-Numel
-Level: 24
+Ninetales
+Level: 27
+Ability: Flash Fire
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Overheat
-- Take Down
-- Magnitude
-- Sunny Day
-
-Slugma
-Level: 24
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Overheat
-- Smog
-- Light Screen
-- Sunny Day
+- Will O Wisp
+- Confuse Ray
+- Flamethrower
+- Quick Attack
 
 Camerupt
-Level: 26
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Level: 28
+Ability: Magma Armor
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Magnitude
+- Rock Slide
 - Overheat
-- Tackle
 - Sunny Day
-- Attract
 
 Torkoal @ White Herb
 Level: 29
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: White Smoke
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Overheat
-- Sunny Day
 - Body Slam
+- Sunny Day
 - Attract
 
 === TRAINER_NORMAN_1 ===
@@ -4950,39 +5045,43 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer
-
-Spinda
-Level: 27
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Teeter Dance
-- Psybeam
-- Facade
-- Encore
+AI: Check Bad Move / Try To Faint
 
 Vigoroth
-Level: 27
+Level: 29
+Ability: Vital Spirit
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Slash
 - Facade
 - Encore
-- Feint Attack
+- Brick Break
 
-Linoone
+Wigglytuff
 Level: 29
+Ability: Cute Charm
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Slash
-- Belly Drum
+- Body Slam
+- Sing
+- Ice Beam
+- Double Edge
+
+Swellow
+Level: 30
+Ability: Guts
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Aerial Ace
 - Facade
-- Headbutt
+- Quick Attack
+- Double Team
 
 Slaking @ Sitrus Berry
 Level: 31
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Counter
-- Yawn
+Ability: Truant
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Facade
-- Feint Attack
+- Yawn
+- Shadow Ball
+- Counter
 
 === TRAINER_WINONA_1 ===
 Name: WINONA
@@ -4992,47 +5091,52 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Risky
-
-Swablu
-Level: 29
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Perish Song
-- Mirror Move
-- Safeguard
-- Aerial Ace
-
-Tropius
-Level: 29
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Sunny Day
-- Aerial Ace
-- Solar Beam
-- Synthesis
+AI: Check Bad Move / Try To Faint
 
 Pelipper
-Level: 30
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Water Gun
-- Supersonic
+Level: 31
+Ability: Keen Eye
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Surf
 - Protect
+- Supersonic
 - Aerial Ace
 
 Skarmory
-Level: 31
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- Sand Attack
-- Fury Attack
+Level: 32
+Ability: Keen Eye
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Spikes
 - Steel Wing
 - Aerial Ace
+- Sand Attack
 
-Altaria @ Oran Berry
-Level: 33
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Dragon Breath
-- Dragon Dance
+Tropius
+Level: 32
+Ability: Chlorophyll
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Solar Beam
+- Sunny Day
 - Aerial Ace
+- Synthesis
+
+Ninjask
+Level: 33
+Ability: Speed Boost
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Swords Dance
+- Aerial Ace
+- Double Team
+- Baton Pass
+
+Altaria @ Sitrus Berry
+Level: 34
+Ability: Natural Cure
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Dragon Dance
+- Earthquake
+- Aerial Ace
+- Dragon Breath
 
 === TRAINER_TATE_AND_LIZA_1 ===
 Name: TATE&LIZA
@@ -5042,39 +5146,43 @@ Gender: Male
 Music: Female
 Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint
 
 Claydol
 Level: 41
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Levitate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Earthquake
-- Ancient Power
 - Psychic
 - Light Screen
+- Ancient Power
 
 Xatu
 Level: 41
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Synchronize
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Psychic
 - Sunny Day
+- Reflect
 - Confuse Ray
-- Calm Mind
 
 Lunatone @ Sitrus Berry
 Level: 42
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Light Screen
+Ability: Levitate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Psychic
 - Hypnosis
+- Ice Beam
 - Calm Mind
 
 Solrock @ Sitrus Berry
 Level: 42
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Sunny Day
-- Solar Beam
+Ability: Levitate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Psychic
+- Solar Beam
 - Flamethrower
+- Sunny Day
 
 === TRAINER_JUAN_1 ===
 Name: JUAN
@@ -5084,46 +5192,51 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint
 
-Luvdisc
-Level: 41
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Water Pulse
-- Attract
-- Sweet Kiss
-- Flail
-
-Whiscash
-Level: 41
+Gorebyss
+Level: 43
+Ability: Swift Swim
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Rain Dance
-- Water Pulse
-- Amnesia
-- Earthquake
+- Surf
+- Psychic
+- Ice Beam
 
-Sealeo
-Level: 43
+Lanturn
+Level: 44
+Ability: Volt Absorb
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Encore
-- Body Slam
-- Aurora Beam
-- Water Pulse
+- Thunder
+- Surf
+- Thunder Wave
+- Confuse Ray
+
+Masquerain
+Level: 44
+Ability: Intimidate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Rain Dance
+- Giga Drain
+- Ice Beam
+- Stun Spore
 
 Crawdaunt
-Level: 43
+Level: 44
+Ability: Hyper Cutter
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Water Pulse
 - Crabhammer
+- Brick Break
 - Taunt
-- Leer
+- Crunch
 
 Kingdra @ Chesto Berry
 Level: 46
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Water Pulse
-- Double Team
+Ability: Swift Swim
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Surf
 - Ice Beam
+- Double Team
 - Rest
 
 === TRAINER_JERRY_1 ===
@@ -9371,20 +9484,35 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint
 Multi Party: Half
 
-Camerupt
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Claydol
+Level: 39
+Ability: Levitate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Psychic
+- Earthquake
+- Light Screen
+- Ancient Power
 
 Mightyena
-Level: 38
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 40
+Ability: Intimidate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Crunch
+- Taunt
+- Swagger
+- Take Down
 
 Golbat
-Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 41
+Ability: Inner Focus
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wing Attack
+- Toxic
+- Confuse Ray
+- Bite
 
 === TRAINER_EDWIN_2 ===
 Name: EDWIN
@@ -10933,23 +11061,43 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint
 
 Numel
-Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Level: 20
+Ability: Oblivious
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Magnitude
+- Ember
+- Rock Slide
+- Focus Energy
 
 Poochyena
 Level: 20
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Run Away
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Bite
+- Sand Attack
+- Howl
+- Take Down
 
 Numel
 Level: 22
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Oblivious
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Magnitude
+- Ember
+- Rock Tomb
+- Amnesia
 
-Zubat
-Level: 22
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Golbat
+Level: 23
+Ability: Inner Focus
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wing Attack
+- Bite
+- Confuse Ray
+- Supersonic
 
 === TRAINER_JONATHAN ===
 Name: JONATHAN
@@ -11011,19 +11159,43 @@ Gender: Male
 Music: Magma
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer
-
-Mightyena
-Level: 37
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+AI: Check Bad Move / Try To Faint
 
 Crobat
 Level: 38
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Ability: Inner Focus
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wing Attack
+- Confuse Ray
+- Toxic
+- Bite
 
-Camerupt
+Solrock
+Level: 38
+Ability: Levitate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Sunny Day
+- Psychic
+- Rock Slide
+- Solar Beam
+
+Torkoal
 Level: 39
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Ability: White Smoke
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Body Slam
+- Overheat
+- Protect
+- Sunny Day
+
+Camerupt @ Sitrus Berry
+Level: 40
+Ability: Magma Armor
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Earthquake
+- Overheat
+- Rock Slide
+- Amnesia
 
 === TRAINER_MAXIE_MT_CHIMNEY ===
 Name: MAXIE
@@ -11033,19 +11205,34 @@ Gender: Male
 Music: Magma
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint
 
 Mightyena
-Level: 24
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Zubat
-Level: 24
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Camerupt
 Level: 25
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Ability: Intimidate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Bite
+- Swagger
+- Sand Attack
+- Take Down
+
+Golbat
+Level: 25
+Ability: Inner Focus
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wing Attack
+- Confuse Ray
+- Bite
+- Supersonic
+
+Camerupt @ Sitrus Berry
+Level: 27
+Ability: Magma Armor
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Magnitude
+- Ember
+- Rock Tomb
+- Amnesia
 
 === TRAINER_TIANA ===
 Name: TIANA
@@ -13493,23 +13680,43 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint
 
 Numel
-Level: 26
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+Level: 29
+Ability: Oblivious
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Magnitude
+- Flamethrower
+- Rock Tomb
+- Amnesia
 
 Mightyena
-Level: 28
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
-
-Zubat
 Level: 30
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+Ability: Intimidate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Bite
+- Swagger
+- Sand Attack
+- Take Down
 
-Camerupt
-Level: 33
-IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+Golbat
+Level: 31
+Ability: Inner Focus
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wing Attack
+- Confuse Ray
+- Bite
+- Toxic
+
+Camerupt @ Sitrus Berry
+Level: 34
+Ability: Magma Armor
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Magnitude
+- Flamethrower
+- Rock Slide
+- Amnesia
 
 === TRAINER_DARCY ===
 Name: DARCY
@@ -13536,20 +13743,35 @@ Pic: Magma Leader Maxie
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint
 Multi Party: Half
-
-Mightyena
-Level: 42
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Crobat
 Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Ability: Inner Focus
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wing Attack
+- Toxic
+- Confuse Ray
+- Shadow Ball
 
-Camerupt
+Torkoal
 Level: 44
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Ability: White Smoke
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Sunny Day
+- Overheat
+- Body Slam
+- Protect
+
+Camerupt @ Sitrus Berry
+Level: 45
+Ability: Magma Armor
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Earthquake
+- Overheat
+- Rock Slide
+- Amnesia
 
 === TRAINER_PETE ===
 Name: PETE

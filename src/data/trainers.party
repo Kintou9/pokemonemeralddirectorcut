@@ -4687,45 +4687,46 @@ Double Battle: No
 AI: Basic Trainer / Force Setup First Turn
 Mugshot: Purple
 
+Cacturne
+Level: 50
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Leech Seed
+- Needle Arm
+- Feint Attack
+- Spikes
+
 Mightyena
-Level: 46
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Roar
-- Double Edge
-- Sand Attack
+Level: 50
+Ability: Intimidate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Crunch
+- Swagger
+- Roar
+- Shadow Ball
 
 Shiftry
-Level: 48
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Torment
-- Double Team
-- Swagger
+Level: 50
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Fake Out
+- Giga Drain
 - Extrasensory
+- Double Team
 
-Cacturne
-Level: 46
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Leech Seed
-- Feint Attack
-- Needle Arm
-- Cotton Spore
-
-Crawdaunt
-Level: 48
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Sharpedo
+Level: 51
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Crunch
 - Surf
-- Swords Dance
-- Strength
-- Facade
+- Ice Beam
+- Slash
 
 Absol @ Sitrus Berry
-Level: 49
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Aerial Ace
-- Rock Slide
+Level: 52
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Swords Dance
-- Slash
+- Shadow Ball
+- Rock Slide
+- Aerial Ace
 
 === TRAINER_PHOEBE ===
 Name: PHOEBE
@@ -4739,44 +4740,44 @@ AI: Basic Trainer
 Mugshot: Green
 
 Dusclops
-Level: 48
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Punch
+Level: 51
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Will O Wisp
 - Confuse Ray
-- Curse
+- Shadow Ball
 - Protect
 
 Banette
-Level: 49
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Level: 52
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Shadow Ball
-- Grudge
+- Thunderbolt
 - Will O Wisp
-- Feint Attack
+- Destiny Bond
 
 Sableye
-Level: 50
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Double Team
+Level: 51
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Fake Out
 - Night Shade
-- Feint Attack
+- Toxic
+- Recover
 
 Banette
-Level: 49
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Level: 52
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Shadow Ball
 - Psychic
 - Thunderbolt
-- Facade
+- Destiny Bond
 
-Dusclops @ Sitrus Berry
-Level: 51
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Dusclops @ Leftovers
+Level: 53
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Shadow Ball
 - Ice Beam
-- Rock Slide
-- Earthquake
+- Rest
+- Curse
 
 === TRAINER_GLACIA ===
 Name: GLACIA
@@ -4789,45 +4790,45 @@ Double Battle: No
 AI: Basic Trainer
 Mugshot: Pink
 
-Sealeo
-Level: 50
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Encore
-- Body Slam
-- Hail
-- Ice Ball
-
 Glalie
-Level: 50
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Light Screen
-- Crunch
-- Icy Wind
+Level: 52
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Hail
 - Ice Beam
+- Crunch
+- Light Screen
 
-Sealeo
+Starmie
 Level: 52
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Attract
-- Double Edge
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Surf
+- Ice Beam
+- Thunderbolt
+- Recover
+
+Castform
+Level: 52
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Hail
-- Blizzard
+- Weather Ball
+- Thunderbolt
+- Flamethrower
 
 Glalie
-Level: 52
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Level: 53
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Blizzard
 - Shadow Ball
 - Explosion
-- Hail
-- Ice Beam
+- Protect
 
 Walrein @ Sitrus Berry
-Level: 53
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Surf
-- Body Slam
 - Ice Beam
-- Sheer Cold
+- Body Slam
+- Rest
 
 === TRAINER_DRAKE ===
 Name: DRAKE
@@ -4841,44 +4842,44 @@ AI: Basic Trainer
 Mugshot: Blue
 
 Shelgon
-Level: 52
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Rock Tomb
+Level: 53
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Dragon Claw
+- Rock Tomb
 - Protect
 - Double Edge
 
-Altaria
-Level: 54
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Edge
-- Dragon Breath
-- Dragon Dance
-- Aerial Ace
-
 Kingdra
 Level: 53
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Smokescreen
-- Dragon Dance
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Surf
-- Body Slam
+- Ice Beam
+- Dragon Breath
+- Rain Dance
+
+Altaria
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Dragon Dance
+- Aerial Ace
+- Earthquake
+- Dragon Breath
 
 Flygon
-Level: 53
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Flamethrower
-- Crunch
-- Dragon Breath
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Earthquake
+- Flamethrower
+- Dragon Claw
+- Crunch
 
 Salamence @ Sitrus Berry
 Level: 55
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Dragon Dance
+- Earthquake
 - Flamethrower
-- Dragon Claw
-- Rock Slide
-- Crunch
+- Aerial Ace
 
 === TRAINER_ROXANNE_1 ===
 Name: ROXANNE
@@ -6366,53 +6367,53 @@ Double Battle: No
 AI: Basic Trainer
 Mugshot: Yellow
 
-Wailord
+Gorebyss
 Level: 57
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Rain Dance
-- Water Spout
-- Double Edge
-- Blizzard
+- Hydro Pump
+- Psychic
+- Ice Beam
 
 Tentacruel
-Level: 55
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Toxic
+Level: 56
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Rain Dance
 - Hydro Pump
 - Sludge Bomb
 - Ice Beam
 
 Ludicolo
 Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Giga Drain
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Surf
+- Giga Drain
 - Leech Seed
-- Double Team
+- Ice Beam
 
 Whiscash
 Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Earthquake
 - Surf
+- Rock Slide
 - Amnesia
-- Hyper Beam
 
 Gyarados
 Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Dragon Dance
 - Earthquake
-- Hyper Beam
-- Surf
+- Return
+- Hydro Pump
 
-Milotic @ Sitrus Berry
+Milotic @ Leftovers
 Level: 58
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Recover
 - Surf
 - Ice Beam
-- Toxic
+- Mirror Coat
 
 === TRAINER_ANDREW ===
 Name: ANDREW
@@ -9592,45 +9593,53 @@ Items: Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Altaria
-Level: 44
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Aerial Ace
-- Safeguard
-- Dragon Breath
-- Dragon Dance
+Zangoose
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Slash
+- Swords Dance
+- Quick Attack
+- Shadow Ball
 
-Delcatty
-Level: 43
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Sing
-- Assist
-- Charm
-- Feint Attack
-
-Roselia
-Level: 44
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Magical Leaf
-- Leech Seed
-- Giga Drain
-- Toxic
+Huntail
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Surf
+- Ice Beam
+- Crunch
+- Rain Dance
 
 Magneton
-Level: 41
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
+Level: 45
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Thunderbolt
+- Thunder Wave
 - Tri Attack
 - Screech
 
-Gardevoir
-Level: 45
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Team
+Breloom
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Sky Uppercut
+- Mach Punch
+- Giga Drain
+- Leech Seed
+
+Altaria
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Dragon Dance
+- Aerial Ace
+- Earthquake
+- Dragon Breath
+
+Gardevoir @ Sitrus Berry
+Level: 47
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Calm Mind
 - Psychic
-- Future Sight
+- Thunderbolt
+- Hypnosis
 
 === TRAINER_BRENDAN_ROUTE_103_MUDKIP ===
 Name: BRENDAN
@@ -9654,17 +9663,37 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Slugma
+Sableye
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Night Shade
+- Fake Out
+- Astonish
+- Detect
 
-Wingull
-Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Lombre
+Level: 19
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Absorb
+- Nature Power
+- Fake Out
+- Growl
+
+Numel
+Level: 19
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Ember
+- Magnitude
+- Focus Energy
+- Tackle
 
 Grovyle
 Level: 20
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Absorb
+- Quick Attack
+- Pursuit
+- Fury Cutter
 
 === TRAINER_BRENDAN_ROUTE_119_MUDKIP ===
 Name: BRENDAN
@@ -9675,17 +9704,53 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Slugma
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Kecleon
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Slash
+- Psybeam
+- Feint Attack
+- Bind
+
+Seviper
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Poison Tail
+- Bite
+- Glare
+- Screech
+
+Trapinch
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Dig
+- Rock Slide
+- Bite
+- Sand Attack
 
 Pelipper
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 32
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wing Attack
+- Water Gun
+- Protect
+- Supersonic
+
+Ludicolo
+Level: 32
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Giga Drain
+- Fake Out
+- Nature Power
+- Water Gun
 
 Grovyle
-Level: 31
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 33
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Leaf Blade
+- Quick Attack
+- Pursuit
+- Fury Cutter
 
 === TRAINER_BRENDAN_ROUTE_103_TREECKO ===
 Name: BRENDAN
@@ -9709,17 +9774,37 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Wingull
+Sableye
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Night Shade
+- Fake Out
+- Astonish
+- Detect
 
 Lombre
-Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Level: 19
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Absorb
+- Nature Power
+- Fake Out
+- Growl
+
+Numel
+Level: 19
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Ember
+- Magnitude
+- Focus Energy
+- Tackle
 
 Combusken
 Level: 20
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Double Kick
+- Ember
+- Peck
+- Focus Energy
 
 === TRAINER_BRENDAN_ROUTE_119_TREECKO ===
 Name: BRENDAN
@@ -9730,17 +9815,53 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Pelipper
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Kecleon
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Slash
+- Psybeam
+- Feint Attack
+- Bind
 
-Lombre
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Seviper
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Poison Tail
+- Bite
+- Glare
+- Screech
+
+Trapinch
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Dig
+- Rock Slide
+- Bite
+- Sand Attack
+
+Pelipper
+Level: 32
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wing Attack
+- Water Gun
+- Protect
+- Supersonic
+
+Ludicolo
+Level: 32
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Giga Drain
+- Fake Out
+- Nature Power
+- Water Gun
 
 Combusken
-Level: 31
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 33
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Double Kick
+- Ember
+- Bulk Up
+- Peck
 
 === TRAINER_BRENDAN_ROUTE_103_TORCHIC ===
 Name: BRENDAN
@@ -9764,17 +9885,37 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Lombre
+Sableye
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Night Shade
+- Fake Out
+- Astonish
+- Detect
 
-Slugma
-Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Lombre
+Level: 19
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Absorb
+- Nature Power
+- Fake Out
+- Growl
+
+Numel
+Level: 19
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Ember
+- Magnitude
+- Focus Energy
+- Tackle
 
 Marshtomp
 Level: 20
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Water Gun
+- Mud Shot
+- Tackle
+- Bide
 
 === TRAINER_BRENDAN_ROUTE_119_TORCHIC ===
 Name: BRENDAN
@@ -9785,17 +9926,53 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Lombre
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Kecleon
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Slash
+- Psybeam
+- Feint Attack
+- Bind
 
-Slugma
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Seviper
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Poison Tail
+- Bite
+- Glare
+- Screech
+
+Trapinch
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Dig
+- Rock Slide
+- Bite
+- Sand Attack
+
+Pelipper
+Level: 32
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wing Attack
+- Water Gun
+- Protect
+- Supersonic
+
+Ludicolo
+Level: 32
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Giga Drain
+- Fake Out
+- Nature Power
+- Water Gun
 
 Marshtomp
-Level: 31
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 33
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Mud Shot
+- Water Gun
+- Rock Tomb
+- Bide
 
 === TRAINER_MAY_ROUTE_103_MUDKIP ===
 Name: MAY
@@ -9819,17 +9996,37 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Wingull
+Sableye
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Night Shade
+- Fake Out
+- Astonish
+- Detect
 
-Slugma
-Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Lombre
+Level: 19
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Absorb
+- Nature Power
+- Fake Out
+- Growl
+
+Numel
+Level: 19
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Ember
+- Magnitude
+- Focus Energy
+- Tackle
 
 Grovyle
 Level: 20
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Absorb
+- Quick Attack
+- Pursuit
+- Fury Cutter
 
 === TRAINER_MAY_ROUTE_119_MUDKIP ===
 Name: MAY
@@ -9840,17 +10037,53 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Slugma
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Kecleon
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Slash
+- Psybeam
+- Feint Attack
+- Bind
 
-Lombre
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Seviper
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Poison Tail
+- Bite
+- Glare
+- Screech
+
+Trapinch
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Dig
+- Rock Slide
+- Bite
+- Sand Attack
+
+Pelipper
+Level: 32
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wing Attack
+- Water Gun
+- Protect
+- Supersonic
+
+Ludicolo
+Level: 32
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Giga Drain
+- Fake Out
+- Nature Power
+- Water Gun
 
 Grovyle
-Level: 31
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 33
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Leaf Blade
+- Quick Attack
+- Pursuit
+- Fury Cutter
 
 === TRAINER_MAY_ROUTE_103_TREECKO ===
 Name: MAY
@@ -9874,17 +10107,37 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Wingull
+Sableye
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Night Shade
+- Fake Out
+- Astonish
+- Detect
 
 Lombre
-Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Level: 19
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Absorb
+- Nature Power
+- Fake Out
+- Growl
+
+Numel
+Level: 19
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Ember
+- Magnitude
+- Focus Energy
+- Tackle
 
 Combusken
 Level: 20
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Double Kick
+- Ember
+- Peck
+- Focus Energy
 
 === TRAINER_MAY_ROUTE_119_TREECKO ===
 Name: MAY
@@ -9895,17 +10148,53 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Pelipper
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Kecleon
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Slash
+- Psybeam
+- Feint Attack
+- Bind
 
-Lombre
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Seviper
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Poison Tail
+- Bite
+- Glare
+- Screech
+
+Trapinch
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Dig
+- Rock Slide
+- Bite
+- Sand Attack
+
+Pelipper
+Level: 32
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wing Attack
+- Water Gun
+- Protect
+- Supersonic
+
+Ludicolo
+Level: 32
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Giga Drain
+- Fake Out
+- Nature Power
+- Water Gun
 
 Combusken
-Level: 31
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 33
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Double Kick
+- Ember
+- Bulk Up
+- Peck
 
 === TRAINER_MAY_ROUTE_103_TORCHIC ===
 Name: MAY
@@ -9929,17 +10218,37 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Lombre
+Sableye
 Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Night Shade
+- Fake Out
+- Astonish
+- Detect
 
-Slugma
-Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Lombre
+Level: 19
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Absorb
+- Nature Power
+- Fake Out
+- Growl
+
+Numel
+Level: 19
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Ember
+- Magnitude
+- Focus Energy
+- Tackle
 
 Marshtomp
 Level: 20
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Water Gun
+- Mud Shot
+- Tackle
+- Bide
 
 === TRAINER_MAY_ROUTE_119_TORCHIC ===
 Name: MAY
@@ -9950,17 +10259,53 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Lombre
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Kecleon
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Slash
+- Psybeam
+- Feint Attack
+- Bind
 
-Slugma
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Seviper
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Poison Tail
+- Bite
+- Glare
+- Screech
+
+Trapinch
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Dig
+- Rock Slide
+- Bite
+- Sand Attack
+
+Pelipper
+Level: 32
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wing Attack
+- Water Gun
+- Protect
+- Supersonic
+
+Ludicolo
+Level: 32
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Giga Drain
+- Fake Out
+- Nature Power
+- Water Gun
 
 Marshtomp
-Level: 31
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Level: 33
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Mud Shot
+- Water Gun
+- Rock Tomb
+- Bide
 
 === TRAINER_ISAAC_1 ===
 Name: ISAAC
@@ -12231,9 +12576,29 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Ralts
-Level: 16
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Roselia
+Level: 19
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Magical Leaf
+- Stun Spore
+- Leech Seed
+- Growth
+
+Skitty
+Level: 20
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Sing
+- Attract
+- Double Slap
+- Assist
+
+Kirlia
+Level: 21
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Confusion
+- Double Team
+- Calm Mind
+- Magical Leaf
 
 === TRAINER_WALLY_VR_2 ===
 Name: WALLY
@@ -12444,21 +12809,53 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Tropius
-Level: 31
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Slugma
-Level: 32
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Pelipper
-Level: 32
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Grovyle
+Girafarig
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Psybeam
+- Stomp
+- Crunch
+- Agility
+
+Pinsir
+Level: 34
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Brick Break
+- Rock Tomb
+- Strength
+- Focus Energy
+
+Absol
+Level: 34
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Slash
+- Bite
+- Swords Dance
+- Aerial Ace
+
+Ludicolo
+Level: 35
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Giga Drain
+- Surf
+- Fake Out
+- Leech Seed
+
+Torkoal
+Level: 35
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Flamethrower
+- Body Slam
+- Protect
+- Smokescreen
+
+Sceptile
+Level: 36
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Leaf Blade
+- Pursuit
+- Quick Attack
+- Screech
 
 === TRAINER_BRENDAN_LILYCOVE_TREECKO ===
 Name: BRENDAN
@@ -12469,21 +12866,53 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Tropius
-Level: 31
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Pelipper
-Level: 32
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Ludicolo
-Level: 32
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Combusken
+Girafarig
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Psybeam
+- Stomp
+- Crunch
+- Agility
+
+Pinsir
+Level: 34
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Brick Break
+- Rock Tomb
+- Strength
+- Focus Energy
+
+Absol
+Level: 34
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Slash
+- Bite
+- Swords Dance
+- Aerial Ace
+
+Ludicolo
+Level: 35
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Giga Drain
+- Surf
+- Fake Out
+- Leech Seed
+
+Torkoal
+Level: 35
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Flamethrower
+- Body Slam
+- Protect
+- Smokescreen
+
+Blaziken
+Level: 36
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Blaze Kick
+- Double Kick
+- Bulk Up
+- Quick Attack
 
 === TRAINER_BRENDAN_LILYCOVE_TORCHIC ===
 Name: BRENDAN
@@ -12494,21 +12923,53 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Tropius
-Level: 31
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Ludicolo
-Level: 32
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Slugma
-Level: 32
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Marshtomp
+Girafarig
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Psybeam
+- Stomp
+- Crunch
+- Agility
+
+Pinsir
+Level: 34
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Brick Break
+- Rock Tomb
+- Strength
+- Focus Energy
+
+Absol
+Level: 34
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Slash
+- Bite
+- Swords Dance
+- Aerial Ace
+
+Ludicolo
+Level: 35
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Giga Drain
+- Surf
+- Fake Out
+- Leech Seed
+
+Torkoal
+Level: 35
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Flamethrower
+- Body Slam
+- Protect
+- Smokescreen
+
+Swampert
+Level: 36
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Surf
+- Mud Shot
+- Rock Tomb
+- Protect
 
 === TRAINER_MAY_LILYCOVE_MUDKIP ===
 Name: MAY
@@ -12519,21 +12980,53 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Tropius
-Level: 31
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Slugma
-Level: 32
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Pelipper
-Level: 32
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Grovyle
+Girafarig
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Psybeam
+- Stomp
+- Crunch
+- Agility
+
+Pinsir
+Level: 34
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Brick Break
+- Rock Tomb
+- Strength
+- Focus Energy
+
+Absol
+Level: 34
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Slash
+- Bite
+- Swords Dance
+- Aerial Ace
+
+Ludicolo
+Level: 35
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Giga Drain
+- Surf
+- Fake Out
+- Leech Seed
+
+Torkoal
+Level: 35
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Flamethrower
+- Body Slam
+- Protect
+- Smokescreen
+
+Sceptile
+Level: 36
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Leaf Blade
+- Pursuit
+- Quick Attack
+- Screech
 
 === TRAINER_MAY_LILYCOVE_TREECKO ===
 Name: MAY
@@ -12544,21 +13037,53 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Tropius
-Level: 31
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Pelipper
-Level: 32
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Ludicolo
-Level: 32
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Combusken
+Girafarig
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Psybeam
+- Stomp
+- Crunch
+- Agility
+
+Pinsir
+Level: 34
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Brick Break
+- Rock Tomb
+- Strength
+- Focus Energy
+
+Absol
+Level: 34
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Slash
+- Bite
+- Swords Dance
+- Aerial Ace
+
+Ludicolo
+Level: 35
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Giga Drain
+- Surf
+- Fake Out
+- Leech Seed
+
+Torkoal
+Level: 35
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Flamethrower
+- Body Slam
+- Protect
+- Smokescreen
+
+Blaziken
+Level: 36
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Blaze Kick
+- Double Kick
+- Bulk Up
+- Quick Attack
 
 === TRAINER_MAY_LILYCOVE_TORCHIC ===
 Name: MAY
@@ -12569,21 +13094,53 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Tropius
-Level: 31
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Ludicolo
-Level: 32
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Slugma
-Level: 32
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Marshtomp
+Girafarig
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Psybeam
+- Stomp
+- Crunch
+- Agility
+
+Pinsir
+Level: 34
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Brick Break
+- Rock Tomb
+- Strength
+- Focus Energy
+
+Absol
+Level: 34
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Slash
+- Bite
+- Swords Dance
+- Aerial Ace
+
+Ludicolo
+Level: 35
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Giga Drain
+- Surf
+- Fake Out
+- Leech Seed
+
+Torkoal
+Level: 35
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Flamethrower
+- Body Slam
+- Protect
+- Smokescreen
+
+Swampert
+Level: 36
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Surf
+- Mud Shot
+- Rock Tomb
+- Protect
 
 === TRAINER_JONAH ===
 Name: JONAH
@@ -16091,31 +16648,31 @@ AI: Basic Trainer
 
 Skarmory
 Level: 77
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Toxic
-- Aerial Ace
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Spikes
+- Whirlwind
+- Toxic
 - Steel Wing
 
 Claydol
-Level: 75
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Level: 76
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Reflect
 - Light Screen
-- Ancient Power
 - Earthquake
+- Psychic
 
 Aggron
 Level: 76
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Earthquake
-- Solar Beam
-- Dragon Claw
+- Rock Slide
+- Iron Tail
+- Double Edge
 
 Cradily
 Level: 76
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Giga Drain
 - Ancient Power
 - Ingrain
@@ -16123,18 +16680,18 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Armaldo
 Level: 76
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Ancient Power
-- Aerial Ace
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Rock Slide
 - Slash
+- Earthquake
+- Aerial Ace
 
-Metagross @ Sitrus Berry
+Metagross @ Leftovers
 Level: 78
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Meteor Mash
 - Earthquake
 - Psychic
-- Meteor Mash
 - Shadow Ball
 
 === TRAINER_ANABEL ===

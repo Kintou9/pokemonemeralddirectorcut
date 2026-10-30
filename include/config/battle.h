@@ -2,14 +2,14 @@
 #define GUARD_CONFIG_BATTLE_H
 
 // Calculation settings
-#define B_CRIT_CHANCE               GEN_LATEST // Chances of landing a critical hit. See CalcCritChanceStage. Gen6+ chances guarantee a crit at 3 or more stages. Gen1 chances are based on half of the user's base Speed.
-#define B_CRIT_MULTIPLIER           GEN_LATEST // In Gen6+, critical hits increase damage by 1.5x instead of 2x.
-#define B_PARALYSIS_SPEED           GEN_LATEST // In Gen7+, paralysis decreases Speed by 50% instead of 75%.
-#define B_CONFUSION_SELF_DMG_CHANCE GEN_LATEST // In Gen7+, a Pokémon will hurt itself in confusion 1/3 of the time instead of half.
+#define B_CRIT_CHANCE               GEN_3 // Chances of landing a critical hit. See CalcCritChanceStage. Gen6+ chances guarantee a crit at 3 or more stages. Gen1 chances are based on half of the user's base Speed.
+#define B_CRIT_MULTIPLIER           GEN_3 // In Gen6+, critical hits increase damage by 1.5x instead of 2x.
+#define B_PARALYSIS_SPEED           GEN_3 // In Gen7+, paralysis decreases Speed by 50% instead of 75%.
+#define B_CONFUSION_SELF_DMG_CHANCE GEN_3 // In Gen7+, a Pokémon will hurt itself in confusion 1/3 of the time instead of half.
 #define B_MULTI_HIT_CHANCE          GEN_LATEST // In Gen5+, multistrike moves have different chances for the number of times they hit. See SetRandomMultiHitCounter for values.
 #define B_WHITEOUT_MONEY            GEN_LATEST // In Gen4+, the amount of money dropped after losing a battle is determined by the number of Badges obtained. Previously, half of the player's money would be dropped. (While this change was also in FRLG, for the sake of simplicity, setting this to GEN_3 will result in RSE behavior.)
 #define B_LIGHT_BALL_ATTACK_BOOST   GEN_LATEST // In Gen4+, Light Ball doubles Attack in addition to Sp. Atk.
-#define B_PARALYSIS_CHANCE          GEN_LATEST // In Champions, paralysis has a 12.5% chance of not moving, instead of 25%.
+#define B_PARALYSIS_CHANCE          GEN_3 // In Champions, paralysis has a 12.5% chance of not moving, instead of 25%.
 
 // Experience settings
 #define B_EXP_CATCH                 GEN_6 // In Gen6+, the party gains experience when the player catches another Pokémon.
@@ -20,13 +20,13 @@
 #define B_LEVEL_UP_NOTIFICATION     GEN_3 // In Gen9+, if a Pokémon gains enough experience to level up multiple times, a message is only displayed once.
 
 // Stat settings
-#define B_BADGE_BOOST               GEN_LATEST // In Gen4+, Gym Badges no longer boost a Pokémon's stats. (Setting this to GEN_2 does not include the additional boost to the type matching the Gym the Badge is from.)
+#define B_BADGE_BOOST               GEN_3 // In Gen4+, Gym Badges no longer boost a Pokémon's stats. (Setting this to GEN_2 does not include the additional boost to the type matching the Gym the Badge is from.)
 #define B_FRIENDSHIP_BOOST          FALSE      // In LGPE only, all stats except HP are boosted by up to 10% depending on on friendship. Unlike B_BADGE_BOOST, these boosts are accounted for when calculating base stats.
 #define B_MAX_LEVEL_EV_GAINS        GEN_LATEST // In Gen5+, level 100 Pokémon can obtain Effort Values from battles.
 #define B_RECALCULATE_STATS         GEN_LATEST // In Gen5+, the stats of Pokémon that participate in battle are recalculated at the end of battle, rather than upon level up or being deposited in the PC.
 
 // Damage settings
-#define B_BURN_DAMAGE               GEN_LATEST // In Gen1 and Gen7+, burn damage is 1/16 of max HP instead of 1/8. This also applies to Frostbite.
+#define B_BURN_DAMAGE               GEN_3 // In Gen1 and Gen7+, burn damage is 1/16 of max HP instead of 1/8. This also applies to Frostbite.
 #define B_BURN_FACADE_DMG           GEN_LATEST // In Gen6+, burn's Attack halving effect no longer applies to Facade.
 #define B_BINDING_DAMAGE            GEN_LATEST // In Gen6+, binding damage is 1/8 of max HP instead of 1/16. If the user is holding a Binding Band, it is 1/6 instead of 1/8.
 #define B_PSYWAVE_DMG               GEN_LATEST // Psywave's damage formula. See DoFixedDamageMoveCalc for details.
@@ -45,7 +45,7 @@
 #define B_GHOSTS_ESCAPE             GEN_LATEST // In Gen6+, escape prevention fails on Ghost-types. Additionally, attempting to escape from a wild battle is always sucessful.
 #define B_PARALYZE_ELECTRIC         GEN_LATEST // In Gen6+, Electric-types can no longer be paralyzed.
 #define B_POWDER_GRASS              GEN_LATEST // In Gen6+, Grass-types are immune to powder and spore moves.
-#define B_UPDATED_TYPE_MATCHUPS     GEN_LATEST // Changes type matchups. src/data/types_info.h for details.
+#define B_UPDATED_TYPE_MATCHUPS     GEN_3 // Changes type matchups. src/data/types_info.h for details.
 #define B_PRANKSTER_DARK_TYPES      GEN_LATEST // In Gen7+, Prankster-elevated status moves do not affect Dark-types.
 #define B_SHEER_COLD_IMMUNITY       GEN_LATEST // In Gen7+, Ice-types are immune to Sheer Cold.
 #define B_ROOST_PURE_FLYING         GEN_LATEST // In Gen5+, Roost turns pure Flying-types into Normal-types.
@@ -60,7 +60,7 @@
 #define B_TAILWIND_TURNS            GEN_LATEST // In Gen5+, Tailwind lasts 4 turns instead of 3.
 #define B_SLEEP_TURNS               GEN_LATEST // In Gen5+, sleep prevents movement for 1-3 turns. In Gens3-4, it was 1-4 turns. In Gen2, it was 1-7 turns.
 #define B_TAUNT_TURNS               GEN_LATEST // In Gen5+, Taunt lasts 3 turns if the user acts before the target, or 4 turns if the target acted before the user. In Gen4, it lasted 2-4/3-5 turns. In Gen3, it lasted 2/3 turns.
-#define B_ENCORE_TURNS              GEN_LATEST // In Gen5+, Encore lasts 3 turns if the target hasn't yet moved this turn, or 4 turns if it has. In Gen4, it lasts 3-7 turns. In Gen2-3, 2-6 turns.
+#define B_ENCORE_TURNS              GEN_3 // In Gen5+, Encore lasts 3 turns if the target hasn't yet moved this turn, or 4 turns if it has. In Gen4, it lasts 3-7 turns. In Gen2-3, 2-6 turns.
 #define B_SPORT_TURNS               GEN_LATEST // In Gen6+, Water/Mud Sport last 5 turns, even if the user switches out. In Gen5 and earlier, they lasted until the user switched out.
 #define B_MEGA_EVO_TURN_ORDER       GEN_LATEST // In Gen7, a Pokémon's Speed after Mega Evolution is used to determine turn order, rather than its previous Speed.
 #define B_RECALC_TURN_AFTER_ACTIONS GEN_LATEST // In Gen8+, switching or using a move affects the current turn's order of actions, better known as dynamic Speed.
@@ -70,10 +70,10 @@
                                                // As of Champions, freeze has a 25% chance of being thawed out with a hard cap of 3 turns.
 
 // Move data settings
-#define B_UPDATED_MOVE_DATA         GEN_LATEST // Updates move data in gMovesInfo, including Power, Accuracy, PP, category, range, and additional effects.
-#define B_UPDATED_MOVE_TYPES        GEN_LATEST // Updates move types in gMovesInfo.
-#define B_UPDATED_MOVE_FLAGS        GEN_LATEST // Updates move flags in gMovesInfo.
-#define B_PHYSICAL_SPECIAL_SPLIT    GEN_LATEST // In Gens1-3, a move's type determines if it will do physical or special damage. The category icon in the summary will reflect this.
+#define B_UPDATED_MOVE_DATA         GEN_3 // Updates move data in gMovesInfo, including Power, Accuracy, PP, category, range, and additional effects.
+#define B_UPDATED_MOVE_TYPES        GEN_3 // Updates move types in gMovesInfo.
+#define B_UPDATED_MOVE_FLAGS        GEN_3 // Updates move flags in gMovesInfo.
+#define B_PHYSICAL_SPECIAL_SPLIT    GEN_3 // In Gens1-3, a move's type determines if it will do physical or special damage. The category icon in the summary will reflect this.
 #define B_RECOIL_IF_MISS_DMG        GEN_LATEST // Crash damage's formula. See EFFECT_RECOIL_IF_MISS.
 #define B_KLUTZ_FLING_INTERACTION   GEN_LATEST // In Gen5+, Pokémon with the Klutz Ability can no longer use Fling.
 #define B_UPDATED_CONVERSION        GEN_LATEST // In Gen6+, Conversion changes the user's type to match that of their first move. In Gen5 and earlier, it would choose a move at random.
@@ -198,7 +198,7 @@
 #define B_SYNCHRONIZE_TOXIC             GEN_LATEST // In Gen5+, if a Pokémon with Synchronize is badly poisoned, the opponent will also become badly poisoned. Previously, the opponent would be inflicted with regular poison.
 #define B_UPDATED_INTIMIDATE            GEN_LATEST // In Gen8+, Intimidate no longer works on opponents with the Inner Focus, Scrappy, Own Tempo or Oblivious Abilities. It also activates Rattled.
 #define B_OBLIVIOUS_TAUNT               GEN_LATEST // In Gen6+, Pokémon with Oblivious can no longer be taunted.
-#define B_STURDY                        GEN_LATEST // In Gen5+, Sturdy causes a Pokémon to have 1 HP remaining if another Pokémon's attack or confusion damage would have knocked it out from full HP.
+#define B_STURDY                        GEN_3 // In Gen5+, Sturdy causes a Pokémon to have 1 HP remaining if another Pokémon's attack or confusion damage would have knocked it out from full HP.
 #define B_PLUS_MINUS_INTERACTION        GEN_LATEST // In Gen5+, Plus and Minus can be activated by themselves in addition to the opposite Ability.
 #define B_WEATHER_FORMS                 GEN_LATEST // In Gen5+, Castform and Cherrim revert to their base form upon losing their respective Ability. Cherrim needs Flower Gift to change forms.
 #define B_SYMBIOSIS_GEMS                GEN_LATEST // In Gen7+, Symbiosis passes an item after a Gem-boosted attack. Previously, items were passed before the Gem-boosted attack hit, making the item's effect apply.
@@ -327,7 +327,7 @@
 #define B_ICE_WEATHER_HAIL              1
 #define B_ICE_WEATHER_SNOW              2
 
-#define B_ABILITY_WEATHER               GEN_LATEST // In Gen6+, Ability-induced weather lasts 5 turns. In Gen5 and earlier, it lasted until the battle ended or until it was changed by another weather condition.
+#define B_ABILITY_WEATHER               GEN_3 // In Gen6+, Ability-induced weather lasts 5 turns. In Gen5 and earlier, it lasted until the battle ended or until it was changed by another weather condition.
 #define B_SANDSTORM_SPDEF_BOOST         GEN_LATEST // In Gen4+, sandstorm increases the Sp. Def of Rock-type Pokémon by 1.5x.
 #define B_SANDSTORM_SOLAR_BEAM          GEN_LATEST // In Gen3+, sandstorm decreases the power of Solar Beam.
 #define B_OVERWORLD_FOG                 GEN_LATEST // In Gen8+, overworld fog summons Misty Terrain in battle. In Gen4 only, overworld fog summons the unique fog weather condition in battle.
@@ -386,7 +386,7 @@
 // Other settings
 #define B_MULTI_BATTLE_WHITEOUT         GEN_LATEST // In Gen4+, Multi Battles end when the player as well as their partner don't have any Pokémon left.
 #define B_EVOLUTION_AFTER_WHITEOUT      GEN_LATEST // In Gen6+, Pokémon that qualify for evolution after battle will evolve even if the player loses.
-#define B_AFFECTION_MECHANICS           TRUE       // In Gen6+, there's a stat called affection that can trigger different effects in battle. From LGPE onwards, these effects use friendship instead.
+#define B_AFFECTION_MECHANICS           FALSE       // In Gen6+, there's a stat called affection that can trigger different effects in battle. From LGPE onwards, these effects use friendship instead.
 #define B_TRAINER_CLASS_POKE_BALLS      GEN_LATEST // In Gen7+, Trainers will use certain kinds of Poké Balls depending on their Trainer class.
 #define B_TRAINER_MON_RANDOM_ABILITY    0          // If this is set to 0, trainers mons with no set ability only use the first ability of a mon. If set to 1 it will roll a random non-hidden ability. If set to 2, it will roll any ability (including hidden ability) with equal chance
 #define B_OBEDIENCE_MECHANICS           GEN_LATEST // In PLA onwards (GEN_8 here), obedience restrictions also apply to non-outsider Pokémon, albeit based on their met level rather than their current level.

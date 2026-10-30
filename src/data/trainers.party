@@ -533,13 +533,13 @@ Gender: Male
 Music: Aqua
 Items: Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Mightyena
 Level: 35
 Ability: Intimidate
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Crunch
+- Bite
 - Swagger
 - Scary Face
 - Take Down
@@ -582,7 +582,7 @@ Pic: Aqua Admin F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Mightyena
 Level: 32
@@ -591,7 +591,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Bite
 - Swagger
 - Sand Attack
-- Take Down
+- Protect
 
 Seviper
 Level: 31
@@ -618,13 +618,13 @@ Pic: Aqua Admin F
 Gender: Female
 Music: Aqua
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Mightyena
 Level: 38
 Ability: Intimidate
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Crunch
+- Bite
 - Swagger
 - Scary Face
 - Take Down
@@ -655,7 +655,7 @@ Gender: Male
 Music: Aqua
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Wailord
 Level: 41
@@ -691,7 +691,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Crabhammer
 - Brick Break
 - Taunt
-- Crunch
+- Rock Tomb
 
 Sharpedo @ Sitrus Berry
 Level: 43
@@ -4684,7 +4684,7 @@ Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 Mugshot: Purple
 
 Cacturne
@@ -4736,7 +4736,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 Mugshot: Green
 
 Dusclops
@@ -4787,7 +4787,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 Mugshot: Pink
 
 Glalie
@@ -4838,7 +4838,7 @@ Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 Mugshot: Blue
 
 Shelgon
@@ -4889,34 +4889,34 @@ Gender: Female
 Music: Female
 Items: Potion / Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / HP Aware / Smart Switching
 
-Geodude @ Oran Berry
+Geodude
 Level: 13
 Ability: Rock Head
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Mud Slap
-- Defense Curl
 - Rock Throw
 - Rock Tomb
+- Defense Curl
+- Mud Slap
 
-Lileep @ Oran Berry
+Lileep
 Level: 14
 Ability: Suction Cups
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Bullet Seed
-- Acid
-- Ingrain
+- Astonish
+- Constrict
 - Sandstorm
 
 Nosepass @ Oran Berry
 Level: 15
 Ability: Sturdy
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Block
+- Rock Tomb
 - Thunder Wave
 - Rock Smash
-- Rock Tomb
+- Tackle
 
 === TRAINER_BRAWLY_1 ===
 Name: BRAWLY
@@ -4926,7 +4926,7 @@ Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / HP Aware / Smart Switching / Try To 2HKO
 
 Machop
 Level: 17
@@ -4941,8 +4941,8 @@ Meditite
 Level: 18
 Ability: Pure Power
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Confusion
 - Brick Break
+- Confusion
 - Reflect
 - Light Screen
 
@@ -4963,19 +4963,19 @@ Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / HP Aware / Smart Switching / Try To 2HKO / PP Stall Prevention
 
 Voltorb
 Level: 21
 Ability: Soundproof
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Spark
-- Screech
 - Rollout
+- Light Screen
 - Shock Wave
 
 Minun
-Level: 21
+Level: 22
 Ability: Minus
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Thunder Wave
@@ -4989,17 +4989,17 @@ Ability: Magnet Pull
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Thunder Wave
 - Sonic Boom
-- Supersonic
 - Shock Wave
+- Protect
 
 Manectric @ Sitrus Berry
 Level: 24
 Ability: Static
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Shock Wave
 - Thunder Wave
 - Quick Attack
-- Shock Wave
-- Bite
+- Roar
 
 === TRAINER_FLANNERY_1 ===
 Name: FLANNERY
@@ -5009,15 +5009,24 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / HP Aware / Smart Switching / Try To 2HKO / PP Stall Prevention
+
+Slugma
+Level: 25
+Ability: Flame Body
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Sunny Day
+- Light Screen
+- Ember
+- Smog
 
 Ninetales
 Level: 27
 Ability: Flash Fire
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Flamethrower
 - Will O Wisp
 - Confuse Ray
-- Flamethrower
 - Quick Attack
 
 Camerupt
@@ -5025,7 +5034,7 @@ Level: 28
 Ability: Magma Armor
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Magnitude
-- Rock Slide
+- Rock Tomb
 - Overheat
 - Sunny Day
 
@@ -5035,8 +5044,8 @@ Ability: White Smoke
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Overheat
 - Body Slam
+- Protect
 - Sunny Day
-- Attract
 
 === TRAINER_NORMAN_1 ===
 Name: NORMAN
@@ -5046,25 +5055,25 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / HP Aware / Smart Switching / Try To 2HKO / PP Stall Prevention
 
 Vigoroth
 Level: 29
 Ability: Vital Spirit
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Slash
 - Facade
-- Encore
 - Brick Break
+- Encore
+- Focus Energy
 
 Wigglytuff
 Level: 29
 Ability: Cute Charm
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Body Slam
-- Sing
 - Ice Beam
-- Double Edge
+- Reflect
+- Sing
 
 Swellow
 Level: 30
@@ -5073,15 +5082,15 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Aerial Ace
 - Facade
 - Quick Attack
-- Double Team
+- Endeavor
 
 Slaking @ Sitrus Berry
 Level: 31
 Ability: Truant
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Facade
-- Yawn
 - Shadow Ball
+- Yawn
 - Counter
 
 === TRAINER_WINONA_1 ===
@@ -5092,52 +5101,52 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / HP Aware / Smart Switching / Try To 2HKO / PP Stall Prevention
+
+Swellow
+Level: 31
+Ability: Guts
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Aerial Ace
+- Facade
+- Quick Attack
+- Endeavor
 
 Pelipper
 Level: 31
 Ability: Keen Eye
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Surf
+- Ice Beam
 - Protect
-- Supersonic
 - Aerial Ace
 
 Skarmory
 Level: 32
 Ability: Keen Eye
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Spikes
 - Steel Wing
 - Aerial Ace
-- Sand Attack
+- Taunt
+- Agility
 
 Tropius
 Level: 32
 Ability: Chlorophyll
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Solar Beam
-- Sunny Day
+- Magical Leaf
 - Aerial Ace
-- Synthesis
-
-Ninjask
-Level: 33
-Ability: Speed Boost
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Swords Dance
-- Aerial Ace
-- Double Team
-- Baton Pass
+- Body Slam
+- Whirlwind
 
 Altaria @ Sitrus Berry
-Level: 34
+Level: 35
 Ability: Natural Cure
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Dragon Dance
+- Dragon Claw
 - Earthquake
 - Aerial Ace
-- Dragon Breath
+- Safeguard
 
 === TRAINER_TATE_AND_LIZA_1 ===
 Name: TATE&LIZA
@@ -5147,7 +5156,7 @@ Gender: Male
 Music: Female
 Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
 Double Battle: Yes
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / HP Aware / Smart Switching / Try To 2HKO / PP Stall Prevention / Double Battle
 
 Claydol
 Level: 41
@@ -5156,7 +5165,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Earthquake
 - Psychic
 - Light Screen
-- Ancient Power
+- Protect
 
 Xatu
 Level: 41
@@ -5165,22 +5174,22 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Psychic
 - Sunny Day
 - Reflect
-- Confuse Ray
+- Night Shade
 
 Lunatone @ Sitrus Berry
 Level: 42
 Ability: Levitate
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Psychic
-- Hypnosis
 - Ice Beam
+- Hypnosis
 - Calm Mind
 
 Solrock @ Sitrus Berry
 Level: 42
 Ability: Levitate
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Psychic
+- Rock Slide
 - Solar Beam
 - Flamethrower
 - Sunny Day
@@ -5193,7 +5202,7 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / HP Aware / Smart Switching / Try To 2HKO / PP Stall Prevention
 
 Gorebyss
 Level: 43
@@ -5205,31 +5214,32 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Ice Beam
 
 Lanturn
-Level: 44
+Level: 43
 Ability: Volt Absorb
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Thunder
 - Surf
+- Thunder
 - Thunder Wave
 - Confuse Ray
 
-Masquerain
-Level: 44
-Ability: Intimidate
+Whiscash
+Level: 43
+Ability: Oblivious
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Earthquake
+- Surf
+- Amnesia
 - Rain Dance
-- Giga Drain
-- Ice Beam
-- Stun Spore
 
-Crawdaunt
+Crawdaunt @ Sitrus Berry
 Level: 44
 Ability: Hyper Cutter
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Happiness: 200
 - Crabhammer
 - Brick Break
-- Taunt
-- Crunch
+- Return
+- Swords Dance
 
 Kingdra @ Chesto Berry
 Level: 46
@@ -5237,7 +5247,7 @@ Ability: Swift Swim
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Surf
 - Ice Beam
-- Double Team
+- Rain Dance
 - Rest
 
 === TRAINER_JERRY_1 ===
@@ -6364,7 +6374,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 Mugshot: Yellow
 
 Gorebyss
@@ -6401,6 +6411,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Gyarados
 Level: 56
+Happiness: 255
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Dragon Dance
 - Earthquake
@@ -9485,7 +9496,7 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 Multi Party: Half
 
 Claydol
@@ -9493,7 +9504,7 @@ Level: 39
 Ability: Levitate
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Psychic
-- Earthquake
+- Ice Beam
 - Light Screen
 - Ancient Power
 
@@ -9501,7 +9512,7 @@ Mightyena
 Level: 40
 Ability: Intimidate
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Crunch
+- Bite
 - Taunt
 - Swagger
 - Take Down
@@ -9591,7 +9602,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Zangoose
 Level: 45
@@ -9661,15 +9672,15 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching
 
 Sableye
 Level: 18
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Night Shade
-- Fake Out
+- Shadow Ball
 - Astonish
-- Detect
+- Protect
 
 Lombre
 Level: 19
@@ -9684,7 +9695,7 @@ Level: 19
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Ember
 - Magnitude
-- Focus Energy
+- Protect
 - Tackle
 
 Grovyle
@@ -9702,7 +9713,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Kecleon
 Level: 31
@@ -9759,7 +9770,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Force Setup First Turn
+AI: Basic Trainer
 
 Torchic
 Level: 5
@@ -9772,15 +9783,15 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching
 
 Sableye
 Level: 18
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Night Shade
-- Fake Out
+- Shadow Ball
 - Astonish
-- Detect
+- Protect
 
 Lombre
 Level: 19
@@ -9795,7 +9806,7 @@ Level: 19
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Ember
 - Magnitude
-- Focus Energy
+- Protect
 - Tackle
 
 Combusken
@@ -9813,7 +9824,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Kecleon
 Level: 31
@@ -9883,15 +9894,15 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching
 
 Sableye
 Level: 18
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Night Shade
-- Fake Out
+- Shadow Ball
 - Astonish
-- Detect
+- Protect
 
 Lombre
 Level: 19
@@ -9906,7 +9917,7 @@ Level: 19
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Ember
 - Magnitude
-- Focus Energy
+- Protect
 - Tackle
 
 Marshtomp
@@ -9924,7 +9935,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Kecleon
 Level: 31
@@ -9994,15 +10005,15 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching
 
 Sableye
 Level: 18
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Night Shade
-- Fake Out
+- Shadow Ball
 - Astonish
-- Detect
+- Protect
 
 Lombre
 Level: 19
@@ -10017,7 +10028,7 @@ Level: 19
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Ember
 - Magnitude
-- Focus Energy
+- Protect
 - Tackle
 
 Grovyle
@@ -10035,7 +10046,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Kecleon
 Level: 31
@@ -10105,15 +10116,15 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching
 
 Sableye
 Level: 18
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Night Shade
-- Fake Out
+- Shadow Ball
 - Astonish
-- Detect
+- Protect
 
 Lombre
 Level: 19
@@ -10128,7 +10139,7 @@ Level: 19
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Ember
 - Magnitude
-- Focus Energy
+- Protect
 - Tackle
 
 Combusken
@@ -10146,7 +10157,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Kecleon
 Level: 31
@@ -10216,15 +10227,15 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching
 
 Sableye
 Level: 18
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Night Shade
-- Fake Out
+- Shadow Ball
 - Astonish
-- Detect
+- Protect
 
 Lombre
 Level: 19
@@ -10239,7 +10250,7 @@ Level: 19
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Ember
 - Magnitude
-- Focus Energy
+- Protect
 - Tackle
 
 Marshtomp
@@ -10257,7 +10268,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Kecleon
 Level: 31
@@ -11325,7 +11336,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer / Smart Switching
 
 Lotad
 Level: 13
@@ -11342,7 +11353,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer / Smart Switching
 
 Wingull
 Level: 13
@@ -11406,7 +11417,7 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Numel
 Level: 20
@@ -11415,7 +11426,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Magnitude
 - Ember
 - Rock Slide
-- Focus Energy
+- Protect
 
 Poochyena
 Level: 20
@@ -11424,7 +11435,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Bite
 - Sand Attack
 - Howl
-- Take Down
+- Protect
 
 Numel
 Level: 22
@@ -11433,7 +11444,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Magnitude
 - Ember
 - Rock Tomb
-- Amnesia
+- Protect
 
 Golbat
 Level: 23
@@ -11441,7 +11452,7 @@ Ability: Inner Focus
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Wing Attack
 - Bite
-- Confuse Ray
+- Protect
 - Supersonic
 
 === TRAINER_JONATHAN ===
@@ -11469,7 +11480,7 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching
 
 Slugma
 Level: 13
@@ -11486,7 +11497,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Force Setup First Turn
+AI: Basic Trainer / Smart Switching
 
 Wingull
 Level: 13
@@ -11504,7 +11515,7 @@ Gender: Male
 Music: Magma
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Crobat
 Level: 38
@@ -11550,7 +11561,7 @@ Gender: Male
 Music: Magma
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Mightyena
 Level: 25
@@ -11559,14 +11570,14 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Bite
 - Swagger
 - Sand Attack
-- Take Down
+- Protect
 
 Golbat
 Level: 25
 Ability: Inner Focus
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Wing Attack
-- Confuse Ray
+- Protect
 - Bite
 - Supersonic
 
@@ -11577,7 +11588,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Magnitude
 - Ember
 - Rock Tomb
-- Amnesia
+- Protect
 
 === TRAINER_TIANA ===
 Name: TIANA
@@ -12574,14 +12585,14 @@ Pic: Wally
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching
 
 Roselia
 Level: 19
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Magical Leaf
+- Giga Drain
 - Stun Spore
-- Leech Seed
+- Protect
 - Growth
 
 Skitty
@@ -12598,7 +12609,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Confusion
 - Double Team
 - Calm Mind
-- Magical Leaf
+- Thunderbolt
 
 === TRAINER_WALLY_VR_2 ===
 Name: WALLY
@@ -12608,7 +12619,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Altaria
 Level: 47
@@ -12658,7 +12669,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Altaria
 Level: 50
@@ -12708,7 +12719,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Altaria
 Level: 53
@@ -12758,7 +12769,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Altaria
 Level: 56
@@ -12807,14 +12818,14 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Girafarig
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Psybeam
+- Psychic
 - Stomp
-- Crunch
+- Thunderbolt
 - Agility
 
 Pinsir
@@ -12828,7 +12839,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Absol
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Slash
+- Shadow Ball
 - Bite
 - Swords Dance
 - Aerial Ace
@@ -12864,14 +12875,14 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Girafarig
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Psybeam
+- Psychic
 - Stomp
-- Crunch
+- Thunderbolt
 - Agility
 
 Pinsir
@@ -12885,7 +12896,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Absol
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Slash
+- Shadow Ball
 - Bite
 - Swords Dance
 - Aerial Ace
@@ -12921,14 +12932,14 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Girafarig
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Psybeam
+- Psychic
 - Stomp
-- Crunch
+- Thunderbolt
 - Agility
 
 Pinsir
@@ -12942,7 +12953,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Absol
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Slash
+- Shadow Ball
 - Bite
 - Swords Dance
 - Aerial Ace
@@ -12978,14 +12989,14 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Girafarig
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Psybeam
+- Psychic
 - Stomp
-- Crunch
+- Thunderbolt
 - Agility
 
 Pinsir
@@ -12999,7 +13010,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Absol
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Slash
+- Shadow Ball
 - Bite
 - Swords Dance
 - Aerial Ace
@@ -13035,14 +13046,14 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Girafarig
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Psybeam
+- Psychic
 - Stomp
-- Crunch
+- Thunderbolt
 - Agility
 
 Pinsir
@@ -13056,7 +13067,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Absol
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Slash
+- Shadow Ball
 - Bite
 - Swords Dance
 - Aerial Ace
@@ -13092,14 +13103,14 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Girafarig
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Psybeam
+- Psychic
 - Stomp
-- Crunch
+- Thunderbolt
 - Agility
 
 Pinsir
@@ -13113,7 +13124,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Absol
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Slash
+- Shadow Ball
 - Bite
 - Swords Dance
 - Aerial Ace
@@ -14237,7 +14248,7 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Numel
 Level: 29
@@ -14246,7 +14257,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Magnitude
 - Flamethrower
 - Rock Tomb
-- Amnesia
+- Protect
 
 Mightyena
 Level: 30
@@ -14255,7 +14266,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Bite
 - Swagger
 - Sand Attack
-- Take Down
+- Protect
 
 Golbat
 Level: 31
@@ -14300,7 +14311,7 @@ Pic: Magma Leader Maxie
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 Multi Party: Half
 
 Crobat
@@ -14325,7 +14336,7 @@ Camerupt @ Sitrus Berry
 Level: 45
 Ability: Magma Armor
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Earthquake
+- Dig
 - Overheat
 - Rock Slide
 - Amnesia
@@ -14909,7 +14920,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching
 
 Lotad
 Level: 13
@@ -14926,7 +14937,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching
 
 Torkoal
 Level: 13
@@ -14944,39 +14955,43 @@ Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Golem
+Golem @ Hard Stone
 Level: 32
+Ability: Rock Head
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Protect
-- Rollout
-- Magnitude
-- Explosion
-
-Kabuto @ Sitrus Berry
-Level: 35
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Swords Dance
-- Ice Beam
-- Surf
 - Rock Slide
+- Brick Break
+- Double Edge
+- Protect
+
+Kabuto
+Level: 35
+Ability: Battle Armor
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Ice Beam
+- Rock Slide
+- Protect
 
 Onix
 Level: 35
+Ability: Rock Head
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Iron Tail
-- Explosion
-- Roar
 - Rock Slide
+- Iron Tail
+- Double Edge
+- Protect
 
 Nosepass @ Sitrus Berry
 Level: 37
+Ability: Sturdy
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Double Team
-- Explosion
-- Protect
 - Rock Slide
+- Thunder Wave
+- Thunderbolt
+- Protect
 
 === TRAINER_ROXANNE_3 ===
 Name: ROXANNE
@@ -14986,47 +15001,52 @@ Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Omanyte
+Omanyte @ Mystic Water
 Level: 37
+Ability: Shell Armor
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Protect
-- Ice Beam
-- Rock Slide
 - Surf
+- Ice Beam
+- Protect
+- Rock Slide
 
 Golem
 Level: 37
+Ability: Rock Head
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Brick Break
+- Double Edge
 - Protect
-- Rollout
-- Magnitude
-- Explosion
 
-Kabutops @ Sitrus Berry
+Kabutops
 Level: 40
+Ability: Battle Armor
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Brick Break
 - Swords Dance
-- Ice Beam
-- Surf
-- Rock Slide
+- Protect
 
-Onix
+Onix @ Hard Stone
 Level: 40
+Ability: Rock Head
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Iron Tail
-- Explosion
-- Roar
 - Rock Slide
+- Iron Tail
+- Double Edge
+- Protect
 
 Nosepass @ Sitrus Berry
 Level: 42
+Ability: Sturdy
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Double Team
-- Explosion
-- Protect
 - Rock Slide
+- Thunder Wave
+- Thunderbolt
+- Protect
 
 === TRAINER_ROXANNE_4 ===
 Name: ROXANNE
@@ -15036,47 +15056,52 @@ Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Omastar
+Omastar @ Mystic Water
 Level: 42
+Ability: Shell Armor
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Protect
-- Ice Beam
-- Rock Slide
 - Surf
+- Ice Beam
+- Protect
+- Rock Slide
 
 Golem
 Level: 42
+Ability: Rock Head
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Brick Break
+- Double Edge
 - Protect
-- Rollout
-- Earthquake
-- Explosion
 
 Kabutops @ Sitrus Berry
 Level: 45
+Ability: Battle Armor
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Brick Break
 - Swords Dance
-- Ice Beam
-- Surf
-- Rock Slide
+- Protect
 
-Onix
+Rhydon @ Leftovers
 Level: 45
+Ability: Rock Head
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Iron Tail
-- Explosion
-- Roar
 - Rock Slide
+- Brick Break
+- Double Edge
+- Protect
 
 Nosepass @ Sitrus Berry
 Level: 47
+Ability: Sturdy
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Double Team
-- Explosion
-- Protect
 - Rock Slide
+- Thunder Wave
+- Thunderbolt
+- Protect
 
 === TRAINER_ROXANNE_5 ===
 Name: ROXANNE
@@ -15086,55 +15111,61 @@ Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Aerodactyl
+Aerodactyl @ Hard Stone
 Level: 47
+Ability: Rock Head
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
-- Hyper Beam
-- Supersonic
+- Aerial Ace
+- Double Edge
 - Protect
 
-Golem
+Golem @ Hard Stone
 Level: 47
+Ability: Rock Head
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Focus Punch
-- Rollout
-- Earthquake
-- Explosion
-
-Omastar
-Level: 47
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Protect
-- Ice Beam
 - Rock Slide
+- Brick Break
+- Double Edge
+- Protect
+
+Omastar @ Mystic Water
+Level: 47
+Ability: Shell Armor
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
+- Ice Beam
+- Protect
+- Rock Slide
 
 Kabutops @ Sitrus Berry
 Level: 50
+Ability: Battle Armor
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Brick Break
 - Swords Dance
-- Ice Beam
-- Surf
-- Rock Slide
+- Protect
 
-Steelix
+Rhydon @ Leftovers
 Level: 50
+Ability: Rock Head
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Iron Tail
-- Explosion
-- Roar
 - Rock Slide
+- Brick Break
+- Double Edge
+- Protect
 
 Nosepass @ Sitrus Berry
 Level: 52
+Ability: Sturdy
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Double Team
-- Explosion
-- Protect
 - Rock Slide
+- Thunder Wave
+- Thunderbolt
+- Protect
 
 === TRAINER_BRAWLY_2 ===
 Name: BRAWLY
@@ -15144,39 +15175,43 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Machamp @ Sitrus Berry
+Machamp @ Black Belt
 Level: 33
+Ability: Guts
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Karate Chop
+- Brick Break
 - Rock Slide
-- Focus Punch
 - Bulk Up
+- Protect
 
 Meditite
 Level: 33
+Ability: Pure Power
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brick Break
 - Psychic
-- Light Screen
 - Reflect
-- Focus Punch
+- Light Screen
 
 Hitmontop
 Level: 35
+Ability: Intimidate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Pursuit
+- Triple Kick
 - Counter
 - Protect
-- Triple Kick
+- Rock Slide
 
 Hariyama @ Sitrus Berry
 Level: 37
+Ability: Thick Fat
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fake Out
-- Focus Punch
-- Belly Drum
-- Earthquake
+- Brick Break
+- Rock Slide
+- Bulk Up
 
 === TRAINER_BRAWLY_3 ===
 Name: BRAWLY
@@ -15186,39 +15221,43 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Machamp @ Sitrus Berry
+Machamp @ Black Belt
 Level: 38
+Ability: Guts
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Karate Chop
+- Brick Break
 - Rock Slide
-- Focus Punch
 - Bulk Up
+- Protect
 
 Medicham
 Level: 38
+Ability: Pure Power
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brick Break
 - Psychic
-- Light Screen
 - Reflect
-- Focus Punch
+- Light Screen
 
-Hitmontop
+Hitmontop @ Sitrus Berry
 Level: 40
+Ability: Intimidate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Pursuit
+- Triple Kick
 - Counter
 - Protect
-- Triple Kick
+- Rock Slide
 
 Hariyama @ Sitrus Berry
 Level: 42
+Ability: Thick Fat
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fake Out
-- Focus Punch
-- Belly Drum
-- Earthquake
+- Brick Break
+- Rock Slide
+- Bulk Up
 
 === TRAINER_BRAWLY_4 ===
 Name: BRAWLY
@@ -15228,47 +15267,52 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Hitmonchan
+Hitmonchan @ Black Belt
 Level: 40
+Ability: Keen Eye
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sky Uppercut
-- Protect
-- Fire Punch
-- Ice Punch
-
-Machamp @ Sitrus Berry
-Level: 43
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Karate Chop
 - Rock Slide
-- Focus Punch
-- Bulk Up
-
-Medicham
-Level: 43
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Focus Punch
-- Light Screen
-- Reflect
-- Psychic
-
-Hitmontop
-Level: 45
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Pursuit
 - Counter
 - Protect
+
+Machamp
+Level: 43
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brick Break
+- Rock Slide
+- Bulk Up
+- Protect
+
+Medicham @ Lum Berry
+Level: 43
+Ability: Pure Power
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brick Break
+- Psychic
+- Reflect
+- Light Screen
+
+Hitmontop @ Sitrus Berry
+Level: 45
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Triple Kick
+- Counter
+- Protect
+- Rock Slide
 
 Hariyama @ Sitrus Berry
 Level: 47
+Ability: Thick Fat
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fake Out
-- Focus Punch
-- Belly Drum
-- Earthquake
+- Brick Break
+- Rock Slide
+- Bulk Up
 
 === TRAINER_BRAWLY_5 ===
 Name: BRAWLY
@@ -15278,55 +15322,61 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Hitmonlee
+Hitmonlee @ Lum Berry
 Level: 46
+Ability: Limber
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Mega Kick
-- Focus Punch
-- Earthquake
+- Hi Jump Kick
+- Rock Slide
 - Bulk Up
+- Protect
 
-Hitmonchan
+Hitmonchan @ Black Belt
 Level: 46
+Ability: Keen Eye
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sky Uppercut
-- Protect
-- Fire Punch
-- Ice Punch
-
-Machamp @ Sitrus Berry
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Cross Chop
 - Rock Slide
-- Focus Punch
-- Bulk Up
-
-Medicham
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Focus Punch
-- Light Screen
-- Reflect
-- Psychic
-
-Hitmontop
-Level: 50
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Pursuit
 - Counter
 - Protect
+
+Machamp @ Black Belt
+Level: 48
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brick Break
+- Rock Slide
+- Bulk Up
+- Protect
+
+Medicham @ Lum Berry
+Level: 48
+Ability: Pure Power
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brick Break
+- Psychic
+- Reflect
+- Light Screen
+
+Hitmontop @ Sitrus Berry
+Level: 50
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Triple Kick
+- Counter
+- Protect
+- Rock Slide
 
 Hariyama @ Sitrus Berry
 Level: 52
+Ability: Thick Fat
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fake Out
-- Focus Punch
-- Belly Drum
-- Earthquake
+- Brick Break
+- Rock Slide
+- Bulk Up
 
 === TRAINER_WATTSON_2 ===
 Name: WATTSON
@@ -15336,39 +15386,43 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Mareep
+Flaaffy @ Sitrus Berry
 Level: 36
+Ability: Static
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder
-- Protect
+- Thunderbolt
 - Thunder Wave
 - Light Screen
+- Protect
 
 Electrode
 Level: 36
+Ability: Soundproof
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
 - Thunder
-- Explosion
 - Rain Dance
-
-Magneton @ Sitrus Berry
-Level: 38
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Supersonic
+- Thunder Wave
 - Protect
+
+Magneton
+Level: 38
+Ability: Magnet Pull
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder
+- Thunder Wave
 - Rain Dance
+- Protect
 
 Manectric @ Sitrus Berry
 Level: 40
+Ability: Static
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bite
-- Thunder Wave
 - Thunder
+- Thunder Wave
 - Protect
+- Roar
 
 === TRAINER_WATTSON_3 ===
 Name: WATTSON
@@ -15378,47 +15432,52 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Pikachu
+Pikachu @ Magnet
 Level: 39
+Ability: Static
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder
-- Slam
+- Thunder Wave
 - Rain Dance
-- Shock Wave
+- Quick Attack
 
-Flaaffy
+Ampharos
 Level: 41
+Ability: Static
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder
-- Protect
+- Thunderbolt
 - Thunder Wave
 - Light Screen
+- Protect
 
 Electrode
 Level: 41
+Ability: Soundproof
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
 - Thunder
-- Explosion
 - Rain Dance
+- Thunder Wave
+- Protect
 
 Magneton @ Sitrus Berry
 Level: 43
+Ability: Magnet Pull
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Supersonic
-- Protect
 - Thunder
+- Thunder Wave
 - Rain Dance
+- Protect
 
 Manectric @ Sitrus Berry
 Level: 45
+Ability: Static
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bite
-- Thunder Wave
 - Thunder
+- Thunder Wave
 - Protect
+- Roar
 
 === TRAINER_WATTSON_4 ===
 Name: WATTSON
@@ -15428,47 +15487,52 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Raichu
+Raichu @ Magnet
 Level: 44
+Ability: Static
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder
-- Slam
+- Thunder Wave
 - Rain Dance
-- Protect
+- Quick Attack
 
 Ampharos
 Level: 46
+Ability: Static
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder
-- Protect
+- Thunderbolt
 - Thunder Wave
 - Light Screen
+- Protect
 
-Electrode
+Electrode @ Magnet
 Level: 46
+Ability: Soundproof
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
 - Thunder
-- Explosion
 - Rain Dance
+- Thunder Wave
+- Protect
 
 Magneton @ Sitrus Berry
 Level: 48
+Ability: Magnet Pull
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Supersonic
-- Protect
 - Thunder
+- Thunder Wave
 - Rain Dance
+- Protect
 
 Manectric @ Sitrus Berry
 Level: 50
+Ability: Static
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bite
-- Thunder Wave
 - Thunder
+- Thunder Wave
 - Protect
+- Roar
 
 === TRAINER_WATTSON_5 ===
 Name: WATTSON
@@ -15478,55 +15542,61 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Electabuzz
+Electabuzz @ Lum Berry
 Level: 50
+Ability: Static
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Swift
-- Focus Punch
 - Thunder Punch
+- Brick Break
 - Light Screen
+- Protect
 
-Raichu
+Raichu @ Magnet
 Level: 51
+Ability: Static
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder
-- Slam
+- Thunder Wave
 - Rain Dance
-- Protect
+- Quick Attack
 
-Ampharos
+Ampharos @ Sitrus Berry
 Level: 51
+Ability: Static
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder
-- Protect
+- Thunderbolt
 - Thunder Wave
 - Light Screen
+- Protect
 
-Electrode
+Electrode @ Magnet
 Level: 53
+Ability: Soundproof
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
 - Thunder
-- Explosion
 - Rain Dance
+- Thunder Wave
+- Protect
 
 Magneton @ Sitrus Berry
 Level: 53
+Ability: Magnet Pull
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Supersonic
-- Protect
 - Thunder
+- Thunder Wave
 - Rain Dance
+- Protect
 
 Manectric @ Sitrus Berry
 Level: 55
+Ability: Static
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bite
-- Thunder Wave
 - Thunder
+- Thunder Wave
 - Protect
+- Roar
 
 === TRAINER_FLANNERY_2 ===
 Name: FLANNERY
@@ -15536,39 +15606,43 @@ Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
 Magcargo @ White Herb
 Level: 38
+Ability: Flame Body
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Overheat
-- Attract
 - Light Screen
 - Rock Slide
+- Protect
 
 Ponyta
 Level: 36
+Ability: Flash Fire
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Flamethrower
-- Attract
 - Solar Beam
-- Bounce
+- Sunny Day
+- Protect
 
-Camerupt @ White Herb
+Camerupt
 Level: 38
+Ability: Magma Armor
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Overheat
+- Dig
+- Rock Slide
 - Sunny Day
-- Earthquake
-- Attract
 
 Torkoal @ White Herb
 Level: 40
+Ability: White Smoke
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Overheat
+- Body Slam
+- Protect
 - Sunny Day
-- Explosion
-- Attract
 
 === TRAINER_FLANNERY_3 ===
 Name: FLANNERY
@@ -15578,47 +15652,52 @@ Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Growlithe
+Growlithe @ Lum Berry
 Level: 41
+Ability: Intimidate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Helping Hand
 - Flamethrower
-- Roar
 - Sunny Day
+- Roar
+- Protect
 
-Magcargo @ White Herb
+Magcargo
 Level: 43
+Ability: Flame Body
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Overheat
-- Attract
 - Light Screen
 - Rock Slide
+- Protect
 
-Ponyta
+Rapidash
 Level: 41
+Ability: Flash Fire
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Flamethrower
-- Attract
 - Solar Beam
-- Bounce
+- Sunny Day
+- Protect
 
 Camerupt @ White Herb
 Level: 43
+Ability: Magma Armor
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Overheat
+- Dig
+- Rock Slide
 - Sunny Day
-- Earthquake
-- Attract
 
 Torkoal @ White Herb
 Level: 45
+Ability: White Smoke
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Overheat
+- Body Slam
+- Protect
 - Sunny Day
-- Explosion
-- Attract
 
 === TRAINER_FLANNERY_4 ===
 Name: FLANNERY
@@ -15628,55 +15707,61 @@ Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Houndour
+Houndoom @ Charcoal
 Level: 46
+Ability: Flash Fire
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Roar
+- Flamethrower
 - Solar Beam
 - Taunt
 - Sunny Day
 
-Growlithe
+Arcanine
 Level: 46
+Ability: Intimidate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Helping Hand
 - Flamethrower
 - Sunny Day
 - Roar
+- Protect
 
-Magcargo @ White Herb
+Magcargo
 Level: 48
+Ability: Flame Body
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Overheat
-- Attract
 - Light Screen
 - Rock Slide
+- Protect
 
-Rapidash
+Rapidash @ Charcoal
 Level: 46
+Ability: Flash Fire
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Flamethrower
-- Attract
 - Solar Beam
-- Bounce
+- Sunny Day
+- Protect
 
 Camerupt @ White Herb
 Level: 48
+Ability: Magma Armor
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Overheat
+- Dig
+- Rock Slide
 - Sunny Day
-- Earthquake
-- Attract
 
 Torkoal @ White Herb
 Level: 50
+Ability: White Smoke
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Overheat
+- Body Slam
+- Protect
 - Sunny Day
-- Explosion
-- Attract
 
 === TRAINER_FLANNERY_5 ===
 Name: FLANNERY
@@ -15686,55 +15771,61 @@ Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Arcanine
+Arcanine @ Lum Berry
 Level: 51
+Ability: Intimidate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Helping Hand
 - Flamethrower
 - Sunny Day
 - Roar
+- Protect
 
 Magcargo @ White Herb
 Level: 53
+Ability: Flame Body
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Overheat
-- Attract
 - Light Screen
 - Rock Slide
+- Protect
 
-Houndoom
+Houndoom @ Charcoal
 Level: 51
+Ability: Flash Fire
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Roar
+- Flamethrower
 - Solar Beam
 - Taunt
 - Sunny Day
 
-Rapidash
+Rapidash @ Charcoal
 Level: 51
+Ability: Flash Fire
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Flamethrower
-- Attract
 - Solar Beam
-- Bounce
+- Sunny Day
+- Protect
 
 Camerupt @ White Herb
 Level: 53
+Ability: Magma Armor
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Overheat
+- Dig
+- Rock Slide
 - Sunny Day
-- Earthquake
-- Attract
 
 Torkoal @ White Herb
 Level: 55
+Ability: White Smoke
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Overheat
+- Body Slam
+- Protect
 - Sunny Day
-- Explosion
-- Attract
 
 === TRAINER_NORMAN_2 ===
 Name: NORMAN
@@ -15744,39 +15835,45 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Chansey
+Chansey @ Leftovers
 Level: 42
+Ability: Natural Cure
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Beam
+- Thunder Wave
 - Light Screen
-- Sing
-- Skill Swap
-- Focus Punch
+- Seismic Toss
 
-Slaking @ Sitrus Berry
+Slaking
 Level: 42
+Ability: Truant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Blizzard
+Happiness: 255
+- Return
 - Shadow Ball
-- Double Edge
-- Fire Blast
+- Brick Break
+- Protect
 
 Spinda
 Level: 43
+Ability: Own Tempo
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Teeter Dance
-- Skill Swap
-- Facade
+- Dizzy Punch
 - Hypnosis
+- Brick Break
+- Protect
 
 Slaking @ Sitrus Berry
 Level: 45
+Ability: Truant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hyper Beam
-- Flamethrower
-- Thunderbolt
+Happiness: 255
+- Return
 - Shadow Ball
+- Brick Break
+- Protect
 
 === TRAINER_NORMAN_3 ===
 Name: NORMAN
@@ -15786,47 +15883,55 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
 Slaking @ Sitrus Berry
 Level: 47
+Ability: Truant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Blizzard
+Happiness: 255
+- Return
 - Shadow Ball
-- Double Edge
-- Fire Blast
+- Brick Break
+- Protect
 
 Chansey
 Level: 47
+Ability: Natural Cure
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Beam
+- Thunder Wave
 - Light Screen
-- Sing
-- Skill Swap
-- Focus Punch
+- Seismic Toss
 
 Kangaskhan
 Level: 45
+Ability: Early Bird
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Happiness: 255
 - Fake Out
-- Dizzy Punch
-- Endure
-- Reversal
+- Return
+- Brick Break
+- Protect
 
-Spinda
+Spinda @ Lum Berry
 Level: 48
+Ability: Own Tempo
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Teeter Dance
-- Skill Swap
-- Facade
+- Dizzy Punch
 - Hypnosis
+- Brick Break
+- Protect
 
 Slaking @ Sitrus Berry
 Level: 50
+Ability: Truant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hyper Beam
-- Flamethrower
-- Thunderbolt
+Happiness: 255
+- Return
 - Shadow Ball
+- Brick Break
+- Protect
 
 === TRAINER_NORMAN_4 ===
 Name: NORMAN
@@ -15836,47 +15941,55 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
 Slaking @ Sitrus Berry
 Level: 52
+Ability: Truant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Blizzard
+Happiness: 255
+- Return
 - Shadow Ball
-- Double Edge
-- Fire Blast
+- Brick Break
+- Protect
 
 Blissey
 Level: 52
+Ability: Natural Cure
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Beam
+- Thunder Wave
 - Light Screen
-- Sing
-- Skill Swap
-- Focus Punch
+- Seismic Toss
 
-Kangaskhan
+Kangaskhan @ Sitrus Berry
 Level: 50
+Ability: Early Bird
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Happiness: 255
 - Fake Out
-- Dizzy Punch
-- Endure
-- Reversal
+- Return
+- Brick Break
+- Protect
 
-Spinda
+Spinda @ Lum Berry
 Level: 53
+Ability: Own Tempo
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Teeter Dance
-- Skill Swap
-- Facade
+- Dizzy Punch
 - Hypnosis
+- Brick Break
+- Protect
 
 Slaking @ Sitrus Berry
 Level: 55
+Ability: Truant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hyper Beam
-- Flamethrower
-- Thunderbolt
+Happiness: 255
+- Return
 - Shadow Ball
+- Brick Break
+- Protect
 
 === TRAINER_NORMAN_5 ===
 Name: NORMAN
@@ -15886,55 +15999,65 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
 Slaking @ Sitrus Berry
 Level: 57
+Ability: Truant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Blizzard
+Happiness: 255
+- Return
 - Shadow Ball
-- Double Edge
-- Fire Blast
-
-Blissey
-Level: 57
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brick Break
 - Protect
-- Sing
-- Skill Swap
-- Focus Punch
 
-Kangaskhan
+Blissey @ Leftovers
+Level: 57
+Ability: Natural Cure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Beam
+- Thunder Wave
+- Light Screen
+- Seismic Toss
+
+Kangaskhan @ Sitrus Berry
 Level: 55
+Ability: Early Bird
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Happiness: 255
 - Fake Out
-- Dizzy Punch
-- Endure
-- Reversal
-
-Tauros
-Level: 57
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Take Down
+- Return
+- Brick Break
 - Protect
-- Fire Blast
-- Earthquake
 
-Spinda
-Level: 58
+Tauros @ Sitrus Berry
+Level: 57
+Ability: Intimidate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Teeter Dance
-- Skill Swap
-- Facade
+Happiness: 255
+- Return
+- Iron Tail
+- Fire Blast
+- Protect
+
+Spinda @ Lum Berry
+Level: 58
+Ability: Own Tempo
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dizzy Punch
 - Hypnosis
+- Brick Break
+- Protect
 
 Slaking @ Sitrus Berry
 Level: 60
+Ability: Truant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hyper Beam
-- Flamethrower
-- Thunderbolt
+Happiness: 255
+- Return
 - Shadow Ball
+- Brick Break
+- Protect
 
 === TRAINER_WINONA_2 ===
 Name: WINONA
@@ -15944,47 +16067,52 @@ Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer / Risky
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Dratini @ Sitrus Berry
+Swellow @ Sharp Beak
 Level: 40
+Ability: Guts
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder Wave
-- Thunderbolt
-- Protect
-- Ice Beam
+- Aerial Ace
+- Facade
+- Endeavor
+- Quick Attack
 
 Tropius
 Level: 38
+Ability: Chlorophyll
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sunny Day
+- Magical Leaf
 - Aerial Ace
-- Solar Beam
-- Earthquake
+- Body Slam
+- Protect
 
 Pelipper
 Level: 41
+Ability: Keen Eye
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
-- Supersonic
+- Ice Beam
 - Protect
 - Aerial Ace
 
 Skarmory
 Level: 43
+Ability: Keen Eye
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Whirlwind
 - Spikes
 - Steel Wing
 - Aerial Ace
+- Protect
 
 Altaria @ Chesto Berry
 Level: 45
+Ability: Natural Cure
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Aerial Ace
-- Rest
 - Dragon Dance
 - Earthquake
+- Aerial Ace
+- Rest
 
 === TRAINER_WINONA_3 ===
 Name: WINONA
@@ -15994,55 +16122,61 @@ Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer / Risky
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Hoothoot
+Noctowl @ Lum Berry
 Level: 43
+Ability: Insomnia
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
 - Psychic
 - Reflect
-- Dream Eater
+- Protect
 
 Tropius
 Level: 43
+Ability: Chlorophyll
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sunny Day
+- Magical Leaf
 - Aerial Ace
-- Solar Beam
-- Earthquake
-
-Dragonair @ Sitrus Berry
-Level: 45
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder Wave
-- Thunderbolt
+- Body Slam
 - Protect
-- Ice Beam
+
+Swellow
+Level: 45
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aerial Ace
+- Facade
+- Endeavor
+- Quick Attack
 
 Pelipper
 Level: 46
+Ability: Keen Eye
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
-- Supersonic
+- Ice Beam
 - Protect
 - Aerial Ace
 
-Skarmory
+Skarmory @ Leftovers
 Level: 48
+Ability: Keen Eye
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Whirlwind
 - Spikes
 - Steel Wing
 - Aerial Ace
+- Protect
 
 Altaria @ Chesto Berry
 Level: 50
+Ability: Natural Cure
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Aerial Ace
-- Rest
 - Dragon Dance
 - Earthquake
+- Aerial Ace
+- Rest
 
 === TRAINER_WINONA_4 ===
 Name: WINONA
@@ -16052,55 +16186,61 @@ Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer / Risky
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Noctowl
+Noctowl @ Lum Berry
 Level: 48
+Ability: Insomnia
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
 - Psychic
 - Reflect
-- Dream Eater
+- Protect
 
 Tropius
 Level: 49
+Ability: Chlorophyll
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sunny Day
+- Magical Leaf
 - Aerial Ace
-- Solar Beam
-- Earthquake
-
-Dragonair @ Sitrus Berry
-Level: 50
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder Wave
-- Thunderbolt
+- Body Slam
 - Protect
-- Ice Beam
 
-Pelipper
+Swellow
+Level: 50
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aerial Ace
+- Facade
+- Endeavor
+- Quick Attack
+
+Pelipper @ Mystic Water
 Level: 51
+Ability: Keen Eye
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
-- Supersonic
+- Ice Beam
 - Protect
 - Aerial Ace
 
-Skarmory
+Skarmory @ Leftovers
 Level: 53
+Ability: Keen Eye
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Whirlwind
 - Spikes
 - Steel Wing
 - Aerial Ace
+- Protect
 
 Altaria @ Chesto Berry
 Level: 55
+Ability: Natural Cure
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Aerial Ace
-- Rest
 - Dragon Dance
 - Earthquake
+- Aerial Ace
+- Rest
 
 === TRAINER_WINONA_5 ===
 Name: WINONA
@@ -16110,55 +16250,61 @@ Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer / Risky
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Noctowl
+Noctowl @ Lum Berry
 Level: 53
+Ability: Insomnia
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
 - Psychic
 - Reflect
-- Dream Eater
+- Protect
 
-Tropius
+Tropius @ Sitrus Berry
 Level: 54
+Ability: Chlorophyll
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sunny Day
+- Magical Leaf
 - Aerial Ace
-- Solar Beam
-- Earthquake
+- Body Slam
+- Protect
 
-Pelipper
+Pelipper @ Mystic Water
 Level: 55
+Ability: Keen Eye
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
-- Supersonic
+- Ice Beam
 - Protect
 - Aerial Ace
 
 Dragonite @ Sitrus Berry
 Level: 55
+Ability: Inner Focus
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hyper Beam
-- Thunderbolt
+- Aerial Ace
 - Earthquake
-- Ice Beam
+- Dragon Claw
+- Protect
 
-Skarmory
+Skarmory @ Leftovers
 Level: 58
+Ability: Keen Eye
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Whirlwind
 - Spikes
 - Steel Wing
 - Aerial Ace
+- Protect
 
 Altaria @ Chesto Berry
 Level: 60
+Ability: Natural Cure
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sky Attack
-- Rest
 - Dragon Dance
 - Earthquake
+- Aerial Ace
+- Rest
 
 === TRAINER_TATE_AND_LIZA_2 ===
 Name: TATE&LIZA
@@ -16168,47 +16314,52 @@ Gender: Male
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Slowpoke
+Slowpoke @ Sitrus Berry
 Level: 48
+Ability: Own Tempo
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Yawn
 - Psychic
+- Yawn
 - Calm Mind
 - Protect
 
 Claydol
 Level: 49
+Ability: Levitate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Ancient Power
+- Ice Beam
 - Psychic
 - Light Screen
+- Protect
 
-Xatu @ Chesto Berry
+Xatu
 Level: 49
+Ability: Synchronize
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psychic
-- Rest
-- Confuse Ray
-- Calm Mind
+- Reflect
+- Sunny Day
+- Protect
 
-Lunatone @ Chesto Berry
+Lunatone
 Level: 50
+Ability: Levitate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
 - Psychic
-- Rest
+- Ice Beam
 - Calm Mind
+- Protect
 
 Solrock @ Sitrus Berry
 Level: 50
+Ability: Levitate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sunny Day
+- Rock Slide
 - Solar Beam
-- Psychic
 - Flamethrower
+- Sunny Day
 
 === TRAINER_TATE_AND_LIZA_3 ===
 Name: TATE&LIZA
@@ -16218,55 +16369,61 @@ Gender: Male
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Drowzee
+Drowzee @ Lum Berry
 Level: 53
+Ability: Insomnia
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
-- Dream Eater
-- Headbutt
+- Psychic
+- Light Screen
 - Protect
 
 Slowpoke
 Level: 53
+Ability: Own Tempo
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Yawn
 - Psychic
+- Yawn
 - Calm Mind
 - Protect
 
 Claydol
 Level: 54
+Ability: Levitate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Explosion
+- Ice Beam
 - Psychic
 - Light Screen
+- Protect
 
-Xatu @ Chesto Berry
+Xatu
 Level: 54
+Ability: Synchronize
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psychic
-- Rest
-- Confuse Ray
-- Calm Mind
+- Reflect
+- Sunny Day
+- Protect
 
-Lunatone @ Chesto Berry
+Lunatone @ Sitrus Berry
 Level: 55
+Ability: Levitate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
 - Psychic
-- Rest
+- Ice Beam
 - Calm Mind
+- Protect
 
 Solrock @ Sitrus Berry
 Level: 55
+Ability: Levitate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sunny Day
+- Rock Slide
 - Solar Beam
-- Psychic
 - Flamethrower
+- Sunny Day
 
 === TRAINER_TATE_AND_LIZA_4 ===
 Name: TATE&LIZA
@@ -16276,55 +16433,61 @@ Gender: Male
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Hypno
+Hypno @ Lum Berry
 Level: 58
+Ability: Insomnia
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
-- Dream Eater
-- Headbutt
+- Psychic
+- Light Screen
 - Protect
 
 Claydol
 Level: 59
+Ability: Levitate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Explosion
+- Ice Beam
 - Psychic
 - Light Screen
+- Protect
 
-Slowpoke
+Slowking
 Level: 58
+Ability: Own Tempo
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Yawn
 - Psychic
+- Yawn
 - Calm Mind
 - Protect
 
-Xatu @ Chesto Berry
+Xatu @ Lum Berry
 Level: 59
+Ability: Synchronize
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psychic
-- Rest
-- Confuse Ray
-- Calm Mind
+- Reflect
+- Sunny Day
+- Protect
 
-Lunatone @ Chesto Berry
+Lunatone @ Sitrus Berry
 Level: 60
+Ability: Levitate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
 - Psychic
-- Rest
+- Ice Beam
 - Calm Mind
+- Protect
 
 Solrock @ Sitrus Berry
 Level: 60
+Ability: Levitate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sunny Day
+- Rock Slide
 - Solar Beam
-- Psychic
 - Flamethrower
+- Sunny Day
 
 === TRAINER_TATE_AND_LIZA_5 ===
 Name: TATE&LIZA
@@ -16334,55 +16497,61 @@ Gender: Male
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Hypno
+Hypno @ Lum Berry
 Level: 63
+Ability: Insomnia
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
-- Dream Eater
-- Headbutt
-- Protect
-
-Claydol
-Level: 64
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Explosion
 - Psychic
 - Light Screen
+- Protect
 
-Slowking
-Level: 63
+Claydol @ Sitrus Berry
+Level: 64
+Ability: Levitate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Yawn
+- Ice Beam
 - Psychic
+- Light Screen
+- Protect
+
+Slowking @ Sitrus Berry
+Level: 63
+Ability: Own Tempo
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Yawn
 - Calm Mind
 - Protect
 
-Xatu @ Chesto Berry
+Xatu @ Lum Berry
 Level: 64
+Ability: Synchronize
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psychic
-- Rest
-- Confuse Ray
-- Calm Mind
+- Reflect
+- Sunny Day
+- Protect
 
-Lunatone @ Chesto Berry
+Lunatone @ Sitrus Berry
 Level: 65
+Ability: Levitate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
 - Psychic
-- Rest
+- Ice Beam
 - Calm Mind
+- Protect
 
 Solrock @ Sitrus Berry
 Level: 65
+Ability: Levitate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sunny Day
+- Rock Slide
 - Solar Beam
-- Psychic
 - Flamethrower
+- Sunny Day
 
 === TRAINER_JUAN_2 ===
 Name: JUAN
@@ -16392,46 +16561,52 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Poliwag
+Poliwhirl @ Lum Berry
 Level: 46
+Ability: Water Absorb
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
 - Rain Dance
 - Protect
 - Hydro Pump
 
-Whiscash
+Lanturn
 Level: 46
+Ability: Volt Absorb
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rain Dance
-- Water Pulse
-- Double Team
-- Fissure
+- Surf
+- Thunder
+- Thunder Wave
+- Confuse Ray
 
 Walrein
 Level: 48
+Ability: Thick Fat
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Body Slam
-- Protect
+- Surf
 - Ice Beam
+- Protect
+- Body Slam
 
-Crawdaunt @ Chesto Berry
+Crawdaunt
 Level: 48
+Ability: Hyper Cutter
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rest
+Happiness: 255
 - Crabhammer
-- Taunt
-- Double Team
+- Brick Break
+- Return
+- Swords Dance
 
 Kingdra @ Chesto Berry
 Level: 51
+Ability: Swift Swim
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Double Team
+- Surf
 - Ice Beam
+- Rain Dance
 - Rest
 
 === TRAINER_JUAN_3 ===
@@ -16442,46 +16617,52 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Poliwhirl
+Poliwhirl @ Lum Berry
 Level: 50
+Ability: Water Absorb
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
 - Rain Dance
 - Protect
 - Hydro Pump
 
-Whiscash
+Lanturn
 Level: 51
+Ability: Volt Absorb
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rain Dance
-- Water Pulse
-- Double Team
-- Fissure
+- Surf
+- Thunder
+- Thunder Wave
+- Confuse Ray
 
 Walrein
 Level: 53
+Ability: Thick Fat
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Body Slam
-- Protect
+- Surf
 - Ice Beam
+- Protect
+- Body Slam
 
-Crawdaunt @ Chesto Berry
+Crawdaunt @ Sitrus Berry
 Level: 53
+Ability: Hyper Cutter
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rest
-- Guillotine
-- Taunt
-- Double Team
+Happiness: 255
+- Crabhammer
+- Brick Break
+- Return
+- Swords Dance
 
 Kingdra @ Chesto Berry
 Level: 56
+Ability: Swift Swim
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Double Team
+- Surf
 - Ice Beam
+- Rain Dance
 - Rest
 
 === TRAINER_JUAN_4 ===
@@ -16492,54 +16673,61 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Lapras
+Lapras @ Leftovers
 Level: 56
+Ability: Water Absorb
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hydro Pump
-- Perish Song
+- Thunderbolt
 - Ice Beam
+- Protect
+
+Lanturn
+Level: 58
+Ability: Volt Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Thunder
+- Thunder Wave
 - Confuse Ray
 
-Whiscash
-Level: 58
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rain Dance
-- Water Pulse
-- Double Team
-- Fissure
-
-Poliwhirl
+Politoed
 Level: 56
+Ability: Water Absorb
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
 - Rain Dance
 - Protect
 - Hydro Pump
 
-Walrein
+Walrein @ Sitrus Berry
 Level: 58
+Ability: Thick Fat
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Body Slam
-- Protect
+- Surf
 - Ice Beam
+- Protect
+- Body Slam
 
-Crawdaunt @ Chesto Berry
+Crawdaunt @ Sitrus Berry
 Level: 58
+Ability: Hyper Cutter
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rest
-- Guillotine
-- Taunt
-- Double Team
+Happiness: 255
+- Crabhammer
+- Brick Break
+- Return
+- Swords Dance
 
 Kingdra @ Chesto Berry
 Level: 61
+Ability: Swift Swim
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Double Team
+- Surf
 - Ice Beam
+- Rain Dance
 - Rest
 
 === TRAINER_JUAN_5 ===
@@ -16550,54 +16738,61 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Smart Switching / Try To 2HKO / Double Battle
 
-Lapras
+Lapras @ Leftovers
 Level: 61
+Ability: Water Absorb
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hydro Pump
-- Perish Song
+- Thunderbolt
 - Ice Beam
+- Protect
+
+Lanturn @ Sitrus Berry
+Level: 63
+Ability: Volt Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Thunder
+- Thunder Wave
 - Confuse Ray
 
-Whiscash
-Level: 63
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rain Dance
-- Water Pulse
-- Double Team
-- Fissure
-
-Politoed
+Politoed @ Lum Berry
 Level: 61
+Ability: Water Absorb
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
 - Rain Dance
-- Hydro Pump
-- Perish Song
-
-Walrein
-Level: 63
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Body Slam
 - Protect
-- Sheer Cold
+- Hydro Pump
 
-Crawdaunt @ Chesto Berry
+Walrein @ Sitrus Berry
 Level: 63
+Ability: Thick Fat
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rest
-- Guillotine
-- Taunt
-- Double Team
+- Surf
+- Ice Beam
+- Protect
+- Body Slam
+
+Crawdaunt @ Sitrus Berry
+Level: 63
+Ability: Hyper Cutter
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Happiness: 255
+- Crabhammer
+- Brick Break
+- Return
+- Swords Dance
 
 Kingdra @ Chesto Berry
 Level: 66
+Ability: Swift Swim
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Water Pulse
-- Double Team
+- Surf
 - Ice Beam
+- Rain Dance
 - Rest
 
 === TRAINER_ANGELO ===
@@ -16644,7 +16839,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Smart Switching / Smart Mon Choices
+AI: Basic Trainer / Smart Switching / Try To 2HKO
 
 Skarmory
 Level: 77

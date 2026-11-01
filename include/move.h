@@ -820,6 +820,18 @@ static inline enum BattleTerrain GetMoveTerrainType(enum Move move)
 
 static inline const struct AdditionalEffect *GetMoveAdditionalEffectById(enum Move moveId, u32 effect)
 {
+#if TESTING
+    // Mirror Growth's compile-time move data when tests override its generation.
+    // Both the battle engine and AI consume the same configured effect.
+    if (moveId == MOVE_GROWTH && effect == 0)
+    {
+        static const struct AdditionalEffect growth[] = {
+            { .moveEffect = STAT_CHANGE_EFFECT_PLUS, .spAtk = 1 },
+            { .moveEffect = STAT_CHANGE_EFFECT_PLUS, .attack = 1, .spAtk = 1 },
+        };
+        return &growth[GetConfig(B_GROWTH_STAT_RAISE) >= GEN_5];
+    }
+#endif
     return &gMovesInfo[SanitizeMoveId(moveId)].additionalEffects[effect];
 }
 

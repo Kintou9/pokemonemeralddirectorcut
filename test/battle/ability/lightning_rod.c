@@ -48,6 +48,9 @@ DOUBLE_BATTLE_TEST("Lightning Rod forces single-target Electric-type moves to ta
     PARAMETRIZE { config = GEN_5; }
     GIVEN {
         WITH_CONFIG(B_REDIRECT_ABILITY_IMMUNITY, config);
+        // Isolate redirection: Gen 3 permits Thunderbolt to paralyze Raichu,
+        // and the harness's full-paralysis roll would prevent Celebrate.
+        WITH_CONFIG(B_PARALYZE_ELECTRIC, GEN_6);
         ASSUME(GetMoveType(MOVE_THUNDERBOLT) == TYPE_ELECTRIC);
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);

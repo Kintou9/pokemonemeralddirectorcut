@@ -2015,7 +2015,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .snatchAffected = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = STAT_CHANGE_EFFECT_PLUS,
-            .attack = B_UPDATED_MOVE_DATA >= GEN_5 ? 1 : 0,
+            .attack = B_GROWTH_STAT_RAISE >= GEN_5 ? 1 : 0,
             .spAtk = 1,
         }),
         .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,

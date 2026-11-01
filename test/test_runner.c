@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include "global.h"
+#include "battle_ai_trace.h"
 #include "fake_rtc.h"
 #include "gpu_regs.h"
 #include "load_save.h"
@@ -1080,37 +1081,53 @@ u32 SourceLineOffset(u32 sourceLine)
 u32 RandomUniform(enum RandomTag tag, u32 lo, u32 hi)
 {
     void *caller = __builtin_extract_return_addr(__builtin_return_address(0));
+    rng_value_t before = gRngValue;
+    u32 result;
     if (gTestRunnerState.test->runner->randomUniform)
-        return gTestRunnerState.test->runner->randomUniform(tag, lo, hi, NULL, caller);
+        result = gTestRunnerState.test->runner->randomUniform(tag, lo, hi, NULL, caller);
     else
-        return RandomUniformDefault(tag, lo, hi);
+        result = RandomUniformDefault(tag, lo, hi);
+    AITraceRng(AI_TRACE_TAGGED_RNG, caller, tag, lo, hi, result, &before);
+    return result;
 }
 
 u32 RandomUniformExcept(enum RandomTag tag, u32 lo, u32 hi, bool32 (*reject)(u32))
 {
     void *caller = __builtin_extract_return_addr(__builtin_return_address(0));
+    rng_value_t before = gRngValue;
+    u32 result;
     if (gTestRunnerState.test->runner->randomUniform)
-        return gTestRunnerState.test->runner->randomUniform(tag, lo, hi, reject, caller);
+        result = gTestRunnerState.test->runner->randomUniform(tag, lo, hi, reject, caller);
     else
-        return RandomUniformExceptDefault(tag, lo, hi, reject);
+        result = RandomUniformExceptDefault(tag, lo, hi, reject);
+    AITraceRng(AI_TRACE_TAGGED_RNG, caller, tag, lo, hi, result, &before);
+    return result;
 }
 
 u32 RandomWeightedArray(enum RandomTag tag, u32 sum, u32 n, const u16 *weights)
 {
     void *caller = __builtin_extract_return_addr(__builtin_return_address(0));
+    rng_value_t before = gRngValue;
+    u32 result;
     if (gTestRunnerState.test->runner->randomWeightedArray)
-        return gTestRunnerState.test->runner->randomWeightedArray(tag, sum, n, weights, caller);
+        result = gTestRunnerState.test->runner->randomWeightedArray(tag, sum, n, weights, caller);
     else
-        return RandomWeightedArrayDefault(tag, sum, n, weights);
+        result = RandomWeightedArrayDefault(tag, sum, n, weights);
+    AITraceRng(AI_TRACE_TAGGED_RNG, caller, tag, n, sum, result, &before);
+    return result;
 }
 
 const void *RandomElementArray(enum RandomTag tag, const void *array, size_t size, size_t count)
 {
     void *caller = __builtin_extract_return_addr(__builtin_return_address(0));
+    rng_value_t before = gRngValue;
+    const void *result;
     if (gTestRunnerState.test->runner->randomElementArray)
-        return gTestRunnerState.test->runner->randomElementArray(tag, array, size, count, caller);
+        result = gTestRunnerState.test->runner->randomElementArray(tag, array, size, count, caller);
     else
-        return RandomElementArrayDefault(tag, array, size, count);
+        result = RandomElementArrayDefault(tag, array, size, count);
+    AITraceRng(AI_TRACE_TAGGED_RNG, caller, tag, size, count, (u32)result, &before);
+    return result;
 }
 
 u32 RandomUniformDefaultValue(enum RandomTag tag, u32 lo, u32 hi, bool32 (*reject)(u32), void *caller)

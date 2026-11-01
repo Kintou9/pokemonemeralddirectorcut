@@ -1,5 +1,6 @@
 #include "global.h"
 #include "random.h"
+#include "battle_ai_trace.h"
 #if MODERN
 #include <alloca.h>
 #endif
@@ -42,6 +43,9 @@ static void SFC32_Seed(struct Sfc32State *state, u32 seed, u8 stream)
 /*This ASM implementation uses some shortcuts and is generally faster on the GBA.
 * It's not necessarily faster if inlined, or on other platforms.
 * In addition, it's extremely non-portable. */
+#if TESTING
+#define Random32 TestRandom32Core
+#endif
 u32 NAKED Random32(void)
 {
     asm(".thumb\n\
@@ -70,9 +74,27 @@ u32 NAKED Random32(void)
     );
 }
 
+#if TESTING
+#undef Random32
+u32 Random32(void)
+{
+    rng_value_t before = gRngValue;
+    u32 result = TestRandom32Core();
+    AITraceRng(AI_TRACE_RAW_RNG, __builtin_return_address(0), 0xFFFFFFFF, 0, 0xFFFFFFFF, result, &before);
+    return result;
+}
+#endif
+
 u32 Random2_32(void)
 {
+#if TESTING
+    rng_value_t before = gRng2Value;
+    u32 result = _SFC32_Next_Stream(&gRng2Value, STREAM2);
+    AITraceRng(AI_TRACE_RAW_RNG, __builtin_return_address(0), 0xFFFFFFFE, 0, 0xFFFFFFFF, result, &before);
+    return result;
+#else
     return _SFC32_Next_Stream(&gRng2Value, STREAM2);
+#endif
 }
 
 void SeedRng(u32 seed)
@@ -109,7 +131,18 @@ void AdvanceRandom(void)
 
 #define LOOP_RANDOM_END sRngLoopUnlocked = TRUE;
 
+#if TESTING
+static u16 TestLoopRandom(struct Sfc32State *state, void *caller)
+{
+    rng_value_t before = *state;
+    u16 result = _SFC32_Next(state) >> 16;
+    AITraceRng(AI_TRACE_RAW_RNG, caller, 0xFFFFFFFD, 0, 0xFFFF, result, &before);
+    return result;
+}
+#define LOOP_RANDOM TestLoopRandom(state, __builtin_return_address(0))
+#else
 #define LOOP_RANDOM ((u16)(_SFC32_Next(state) >> 16))
+#endif
 
 #define SHUFFLE_IMPL \
     u32 tmp; \

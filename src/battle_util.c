@@ -34,6 +34,8 @@
 #include "battle_message.h"
 #include "battle_ai_record.h"
 #include "battle_ai_util.h"
+#include "battle_ai_calc_context.h"
+#include "battle_main.h"
 #include "event_data.h"
 #include "link.h"
 #include "malloc.h"
@@ -6182,6 +6184,20 @@ static inline u32 IsFieldWaterSportAffected(enum Type moveType)
     return FALSE;
 }
 
+static inline u32 GetDamageCalcRawSpeed(struct DamageContext *ctx, enum BattlerId battler)
+{
+    if (ctx->aiCalc && ctx->aiCalcContext != NULL)
+        return AI_GetContextRawSpeed(ctx->aiCalcContext, battler);
+    return gBattleMons[battler].speed;
+}
+
+static inline u32 GetDamageCalcEffectiveSpeed(struct DamageContext *ctx, enum BattlerId battler)
+{
+    if (ctx->aiCalc && ctx->aiCalcContext != NULL)
+        return GetBattlerTotalSpeedStatWithBase(battler, ctx->abilities[battler], ctx->holdEffects[battler], GetDamageCalcRawSpeed(ctx, battler));
+    return GetBattlerTotalSpeedStat(battler, ctx->abilities[battler], ctx->holdEffects[battler]);
+}
+
 static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
 {
     enum BattlerId battlerAtk = ctx->battlerAtk;
@@ -6320,21 +6336,21 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         basePower += (CountBattlerStatIncreases(battlerAtk, TRUE) * 20);
         break;
     case EFFECT_ELECTRO_BALL:
-        speed = GetBattlerTotalSpeedStat(battlerAtk, ctx->abilities[battlerAtk], ctx->holdEffects[battlerAtk]) / GetBattlerTotalSpeedStat(battlerDef, ctx->abilities[battlerDef], ctx->holdEffects[battlerDef]);
+        speed = GetDamageCalcEffectiveSpeed(ctx, battlerAtk) / GetDamageCalcEffectiveSpeed(ctx, battlerDef);
         if (speed >= ARRAY_COUNT(sSpeedDiffPowerTable))
             speed = ARRAY_COUNT(sSpeedDiffPowerTable) - 1;
         basePower = sSpeedDiffPowerTable[speed];
         break;
     case EFFECT_GYRO_BALL:
         {
-            u32 attackerSpeed = GetBattlerTotalSpeedStat(battlerAtk, ctx->abilities[battlerAtk], ctx->holdEffects[battlerAtk]);
+            u32 attackerSpeed = GetDamageCalcEffectiveSpeed(ctx, battlerAtk);
             if (attackerSpeed == 0)
             {
                 basePower = 1;
             }
             else
             {
-                basePower = ((25 * GetBattlerTotalSpeedStat(battlerDef, ctx->abilities[ctx->battlerDef], ctx->holdEffects[ctx->battlerDef])) / attackerSpeed) + 1;
+                basePower = ((25 * GetDamageCalcEffectiveSpeed(ctx, battlerDef)) / attackerSpeed) + 1;
                 if (basePower > 150)
                     basePower = 150;
             }
@@ -7644,8 +7660,8 @@ static inline uq4_12_t GetDefenderItemsModifier(struct DamageContext *ctx)
 static inline uq4_12_t GetOtherModifiers(struct DamageContext *ctx)
 {
     uq4_12_t finalModifier = UQ_4_12(1.0);
-    u32 unmodifiedAttackerSpeed = gBattleMons[ctx->battlerAtk].speed;
-    u32 unmodifiedDefenderSpeed = gBattleMons[ctx->battlerDef].speed;
+    u32 unmodifiedAttackerSpeed = GetDamageCalcRawSpeed(ctx, ctx->battlerAtk);
+    u32 unmodifiedDefenderSpeed = GetDamageCalcRawSpeed(ctx, ctx->battlerDef);
 
     //TODO: Behemoth Blade, Behemoth Bash, Dynamax Cannon (Dynamax)
     DAMAGE_MULTIPLY_MODIFIER(GetMinimizeModifier(ctx->move, ctx->battlerDef));

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "battle_ai_trace.h"
 #include "battle_z_move.h"
 #include "malloc.h"
 #include "battle.h"
@@ -6,6 +7,7 @@
 #include "battle_ai_field_statuses.h"
 #include "battle_ai_util.h"
 #include "battle_ai_main.h"
+#include "battle_ai_calc_context.h"
 #include "battle_stat_change.h"
 #include "battle_controllers.h"
 #include "battle_factory.h"
@@ -96,15 +98,15 @@ u32 AI_GetDefaultDamageRollForContext(enum BattlerId battlerAtk, enum BattlerId 
     switch (aiRoll)
     {
     case AI_ROLL_MIN:
-        return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].minimum;
+        return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).minimum;
     case AI_ROLL_MEDIAN:
-        return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].median;
+        return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).median;
     case AI_ROLL_MAX:
-        return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].maximum;
+        return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).maximum;
     case AI_ROLL_RANDOM:
-        return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].random;
+        return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).random;
     default:
-        return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].median; // Default assumes it deals median damage
+        return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).median; // Default assumes it deals median damage
     }
 }
 
@@ -113,54 +115,54 @@ u32 AI_GetDamage(enum BattlerId battlerAtk, enum BattlerId battlerDef, u32 moveI
     if (calcContext == AI_ATTACKING && BattlerHasAi(battlerAtk))
     {
         if ((gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_RISKY) && !(gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_CONSERVATIVE)) // Risky assumes it deals max damage
-            return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].maximum;
+            return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).maximum;
         if ((gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_CONSERVATIVE) && !(gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_RISKY)) // Conservative assumes it deals min damage
-            return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].minimum;
+            return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).minimum;
         return AI_GetDefaultDamageRollForContext(battlerAtk, battlerDef, moveIndex, aiData, GetConfig(AI_ROLL_ATTACKING));
     }
     else if (calcContext == AI_DEFENDING && BattlerHasAi(battlerDef))
     {
         if ((gAiThinkingStruct->aiFlags[battlerDef] & AI_FLAG_RISKY) && !(gAiThinkingStruct->aiFlags[battlerDef] & AI_FLAG_CONSERVATIVE)) // Risky assumes it takes min damage
-            return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].minimum;
+            return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).minimum;
         if ((gAiThinkingStruct->aiFlags[battlerDef] & AI_FLAG_CONSERVATIVE) && !(gAiThinkingStruct->aiFlags[battlerDef] & AI_FLAG_RISKY)) // Conservative assumes it takes max damage
-            return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].maximum;
+            return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).maximum;
         return AI_GetDefaultDamageRollForContext(battlerAtk, battlerDef, moveIndex, aiData, AI_ROLL_DEFENDING);
     }
     else if (calcContext == AI_SWITCHIN_ATTACKING && BattlerHasAi(battlerAtk))
     {
         if ((gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_RISKY) && !(gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_CONSERVATIVE)) // Risky assumes it deals max damage
-            return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].maximum;
+            return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).maximum;
         if ((gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_CONSERVATIVE) && !(gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_RISKY)) // Conservative assumes it deals min damage
-            return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].minimum;
+            return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).minimum;
         return AI_GetDefaultDamageRollForContext(battlerAtk, battlerDef, moveIndex, aiData, AI_ROLL_SWITCHIN_ATTACKING);
     }
     else if (calcContext == AI_SWITCHIN_DEFENDING && BattlerHasAi(battlerDef))
     {
         if ((gAiThinkingStruct->aiFlags[battlerDef] & AI_FLAG_RISKY) && !(gAiThinkingStruct->aiFlags[battlerDef] & AI_FLAG_CONSERVATIVE)) // Risky assumes it takes min damage
-            return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].minimum;
+            return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).minimum;
         if ((gAiThinkingStruct->aiFlags[battlerDef] & AI_FLAG_CONSERVATIVE) && !(gAiThinkingStruct->aiFlags[battlerDef] & AI_FLAG_RISKY)) // Conservative assumes it takes max damage
-            return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].maximum;
+            return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).maximum;
         return AI_GetDefaultDamageRollForContext(battlerAtk, battlerDef, moveIndex, aiData, AI_ROLL_SWITCHIN_DEFENDING);
     }
     else if (calcContext == AI_SHOULD_SETUP_DEFENDING && BattlerHasAi(battlerDef))
     {
         if ((gAiThinkingStruct->aiFlags[battlerDef] & AI_FLAG_RISKY) && !(gAiThinkingStruct->aiFlags[battlerDef] & AI_FLAG_CONSERVATIVE)) // Risky assumes it takes min damage
-            return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].minimum;
+            return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).minimum;
         if ((gAiThinkingStruct->aiFlags[battlerDef] & AI_FLAG_CONSERVATIVE) && !(gAiThinkingStruct->aiFlags[battlerDef] & AI_FLAG_RISKY)) // Conservative assumes it takes max damage
-            return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].maximum;
+            return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).maximum;
         return AI_GetDefaultDamageRollForContext(battlerAtk, battlerDef, moveIndex, aiData, AI_ROLL_SHOULD_SETUP_DEFENDING);
     }
     else if (calcContext == AI_ATTACKING_PARTNER && BattlerHasAi(battlerAtk))
     {
         if ((gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_RISKY) && !(gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_CONSERVATIVE)) // Risky assumes it deals max damage
-            return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].maximum;
+            return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).maximum;
         if ((gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_CONSERVATIVE) && !(gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_RISKY)) // Conservative assumes it deals min damage
-            return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].minimum;
+            return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).minimum;
         return AI_GetDefaultDamageRollForContext(battlerAtk, battlerDef, moveIndex, aiData, AI_ROLL_ATTACKING_PARTNER);
     }
     else
     {
-        return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].median;
+        return AI_TRACE_READ_VALUE(aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex], AI_TRACE_DAMAGE, battlerAtk, battlerDef, moveIndex).median;
     }
 }
 
@@ -240,7 +242,7 @@ bool32 IsBattlerPredictedToSwitch(enum BattlerId battler)
 enum Move GetIncomingMove(enum BattlerId battler, enum BattlerId opposingBattler, struct AiLogicData *aiData)
 {
     if (aiData->predictingMove)
-        return aiData->predictedMove[opposingBattler];
+        return AI_TRACE_READ_VALUE(aiData->predictedMove[opposingBattler], AI_TRACE_PREDICTION, opposingBattler, 0, 0);
     return aiData->lastUsedMove[opposingBattler];
 }
 
@@ -248,7 +250,7 @@ enum Move GetIncomingMove(enum BattlerId battler, enum BattlerId opposingBattler
 enum Move GetPredictedMove(enum BattlerId battler, enum BattlerId opposingBattler, struct AiLogicData *aiData)
 {
     if (aiData->predictingMove)
-        return aiData->predictedMove[opposingBattler];
+        return AI_TRACE_READ_VALUE(aiData->predictedMove[opposingBattler], AI_TRACE_PREDICTION, opposingBattler, 0, 0);
     return MOVE_NONE;
 }
 
@@ -838,7 +840,7 @@ static s32 HandleKOThroughBerryReduction(struct DamageContext *ctx, s32 dmg)
     {
         // Only indicate move is ignoring berry resist if it doesn't already OHKO even if resisted
         if (dmg < gBattleMons[ctx->battlerDef].hp)
-            gAiLogicData->resistBerryAffected[ctx->battlerAtk][ctx->battlerDef][GetMoveIndex(ctx->battlerAtk, ctx->move)] = TRUE;
+            AI_TRACE_WRITE(gAiLogicData->resistBerryAffected[ctx->battlerAtk][ctx->battlerDef][GetMoveIndex(ctx->battlerAtk, ctx->move)], TRUE, AI_TRACE_BERRY, ctx->battlerAtk, ctx->battlerDef, GetMoveIndex(ctx->battlerAtk, ctx->move));
 
         // Ignore resist berry if appropriate
         u32 berryModifier = gAiLogicData->abilities[ctx->battlerDef] == ABILITY_RIPEN ? 4 : 2;
@@ -875,11 +877,13 @@ struct SimulatedDamage AI_CalcDamage(struct AiCalcValues *aiCalc, enum BattlerId
     struct AiLogicData *aiData = gAiLogicData;
     gAiLogicData->aiCalcInProgress = TRUE;
     enum Move baseMove = move;
+    AI_TRACE_POINT(AI_TRACE_ENTER, battlerAtk, battlerDef, move);
 
     if (moveEffect == EFFECT_HIT_ENEMY_HEAL_ALLY
      && battlerDef == GetPartnerBattler(battlerAtk))
     {
         gAiLogicData->aiCalcInProgress = FALSE;
+        AI_TRACE_POINT(AI_TRACE_LEAVE, battlerAtk, battlerDef, move);
         return simDamage;
     }
 
@@ -908,6 +912,7 @@ struct SimulatedDamage AI_CalcDamage(struct AiCalcValues *aiCalc, enum BattlerId
 
     struct DamageContext ctx = {0};
     ctx.aiCalc = TRUE;
+    ctx.aiCalcContext = AI_GetActiveCalcContext();
     ctx.aiCheckBerryModifier = FALSE;
     ctx.battlerAtk = battlerAtk;
     ctx.battlerDef = battlerDef;
@@ -1012,6 +1017,7 @@ struct SimulatedDamage AI_CalcDamage(struct AiCalcValues *aiCalc, enum BattlerId
     gSpecialStatuses[battlerAtk].gemBoost = FALSE;
 
     gAiLogicData->aiCalcInProgress = FALSE;
+    AI_TRACE_POINT(AI_TRACE_LEAVE, battlerAtk, battlerDef, move);
     return simDamage;
 }
 
@@ -1403,8 +1409,8 @@ s32 AI_WhoStrikesFirst(enum BattlerId battlerAI, enum BattlerId battler, enum Mo
             return AI_IS_SLOWER;
     }
 
-    speedBattlerAI = gAiLogicData->speedStats[battlerAI];
-    speedBattler   = gAiLogicData->speedStats[battler];
+    speedBattlerAI = AI_GetEffectiveSpeed(battlerAI);
+    speedBattler   = AI_GetEffectiveSpeed(battler);
 
     if (holdEffectAI == HOLD_EFFECT_LAGGING_TAIL && holdEffectPlayer != HOLD_EFFECT_LAGGING_TAIL)
         return AI_IS_SLOWER;
@@ -2120,7 +2126,7 @@ bool32 IsMoveRedirectionPrevented(enum BattlerId battlerAtk, enum Move move, enu
 bool32 ShouldTryOHKO(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Ability atkAbility, enum Ability defAbility, enum Move move)
 {
     enum HoldEffect holdEffect = gAiLogicData->holdEffects[battlerDef];
-    u32 accuracy = gAiLogicData->moveAccuracy[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex];
+    u32 accuracy = AI_TRACE_READ_VALUE(gAiLogicData->moveAccuracy[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex], AI_TRACE_ACCURACY, battlerAtk, battlerDef, gAiThinkingStruct->movesetIndex);
 
     gPotentialItemEffectBattler = battlerDef;
     if (holdEffect == HOLD_EFFECT_FOCUS_BAND && (Random() % 100) < GetBattlerHoldEffectParam(battlerDef))
@@ -2277,7 +2283,7 @@ static bool32 ShouldAvoidProtectingAgainstPartnerMove(enum BattlerId battler, en
         }
 
         if (gAiLogicData->holdEffects[battler] == HOLD_EFFECT_WEAKNESS_POLICY
-         && gAiLogicData->effectiveness[partner][battler][gAiBattleData->chosenMoveIndex[partner]] >= UQ_4_12(2.0))
+         && AI_TRACE_READ_VALUE(gAiLogicData->effectiveness[partner][battler][gAiBattleData->chosenMoveIndex[partner]], AI_TRACE_EFFECTIVENESS, partner, battler, gAiBattleData->chosenMoveIndex[partner]) >= UQ_4_12(2.0))
         {
             return TRUE;
         }
@@ -2594,9 +2600,9 @@ static bool32 CanMoveIndexHitAnyOpponent(enum BattlerId battler, u32 moveIndex, 
     enum BattlerId leftFoe = GetBattlerLeftFoe(battler);
     enum BattlerId rightFoe = GetBattlerRightFoe(battler);
 
-    if (IsBattlerAlive(leftFoe) && aiData->effectiveness[battler][leftFoe][moveIndex] > UQ_4_12(0.0))
+    if (IsBattlerAlive(leftFoe) && AI_TRACE_READ_VALUE(aiData->effectiveness[battler][leftFoe][moveIndex], AI_TRACE_EFFECTIVENESS, battler, leftFoe, moveIndex) > UQ_4_12(0.0))
         return TRUE;
-    if (IsBattlerAlive(rightFoe) && aiData->effectiveness[battler][rightFoe][moveIndex] > UQ_4_12(0.0))
+    if (IsBattlerAlive(rightFoe) && AI_TRACE_READ_VALUE(aiData->effectiveness[battler][rightFoe][moveIndex], AI_TRACE_EFFECTIVENESS, battler, rightFoe, moveIndex) > UQ_4_12(0.0))
         return TRUE;
 
     return FALSE;
@@ -2989,7 +2995,7 @@ bool32 HasMoveWithLowAccuracy(enum BattlerId battlerAtk, enum BattlerId battlerD
         if (target == TARGET_USER || target == TARGET_OPPONENTS_FIELD)
             continue;
 
-        if (gAiLogicData->moveAccuracy[battlerAtk][battlerDef][moveIndex] <= accCheck)
+        if (AI_TRACE_READ_VALUE(gAiLogicData->moveAccuracy[battlerAtk][battlerDef][moveIndex], AI_TRACE_ACCURACY, battlerAtk, battlerDef, moveIndex) <= accCheck)
             return TRUE;
     }
 
@@ -3007,7 +3013,7 @@ bool32 HasSleepMoveWithLowAccuracy(enum BattlerId battlerAtk, enum BattlerId bat
             continue;
 
         if (GetMoveNonVolatileStatus(moves[moveIndex]) == MOVE_EFFECT_SLEEP
-        && gAiLogicData->moveAccuracy[battlerAtk][battlerDef][moveIndex] < 85)
+        && AI_TRACE_READ_VALUE(gAiLogicData->moveAccuracy[battlerAtk][battlerDef][moveIndex], AI_TRACE_ACCURACY, battlerAtk, battlerDef, moveIndex) < 85)
             return TRUE;
     }
     return FALSE;
@@ -3500,7 +3506,7 @@ enum AIPivot ShouldPivot(enum BattlerId battlerAtk, enum BattlerId battlerDef, e
 {
     enum Move predictedMove = GetPredictedMove(battlerAtk, battlerDef, gAiLogicData);
     bool32 aiIsFaster = AI_IsFaster(battlerAtk, battlerDef, move, predictedMove, CONSIDER_PRIORITY);
-    bool32 hasGoodSwitchin = gAiLogicData->mostSuitableMonId[battlerAtk] >= PARTY_SIZE ? FALSE : TRUE;
+    bool32 hasGoodSwitchin = AI_TRACE_READ_VALUE(gAiLogicData->mostSuitableMonId[battlerAtk], AI_TRACE_CANDIDATE, battlerAtk, 0, 0) >= PARTY_SIZE ? FALSE : TRUE;
     // If AI should switch, it should pivot
     if (aiIsFaster)
     {
@@ -3677,7 +3683,7 @@ bool32 ShouldParalyze(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum
 bool32 AI_CanPoison(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Ability defAbility, enum Move move, enum Move partnerMove)
 {
     if (!CanBePoisoned(battlerAtk, battlerDef, gAiLogicData->abilities[battlerAtk], defAbility)
-      || gAiLogicData->effectiveness[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex] == UQ_4_12(0.0)
+      || AI_TRACE_READ_VALUE(gAiLogicData->effectiveness[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex], AI_TRACE_EFFECTIVENESS, battlerAtk, battlerDef, gAiThinkingStruct->movesetIndex) == UQ_4_12(0.0)
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
       || PartnerMoveEffectIsStatusSameTarget(GetPartnerBattler(battlerAtk), battlerDef, partnerMove))
         return FALSE;
@@ -3688,7 +3694,7 @@ bool32 AI_CanPoison(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum A
 bool32 AI_CanParalyze(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Ability defAbility, enum Move move, enum Move partnerMove)
 {
     if (!CanBeParalyzed(battlerAtk, battlerDef, defAbility)
-      || gAiLogicData->effectiveness[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex] == UQ_4_12(0.0)
+      || AI_TRACE_READ_VALUE(gAiLogicData->effectiveness[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex], AI_TRACE_EFFECTIVENESS, battlerAtk, battlerDef, gAiThinkingStruct->movesetIndex) == UQ_4_12(0.0)
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
       || PartnerMoveEffectIsStatusSameTarget(GetPartnerBattler(battlerAtk), battlerDef, partnerMove))
         return FALSE;
@@ -3723,7 +3729,7 @@ bool32 AI_CanConfuse(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum 
 bool32 AI_CanBurn(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Ability defAbility, enum BattlerId battlerAtkPartner, enum Move move, enum Move partnerMove)
 {
     if (!CanBeBurned(battlerAtk, battlerDef, defAbility)
-      || gAiLogicData->effectiveness[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex] == UQ_4_12(0.0)
+      || AI_TRACE_READ_VALUE(gAiLogicData->effectiveness[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex], AI_TRACE_EFFECTIVENESS, battlerAtk, battlerDef, gAiThinkingStruct->movesetIndex) == UQ_4_12(0.0)
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
       || PartnerMoveEffectIsStatusSameTarget(battlerAtkPartner, battlerDef, partnerMove))
     {
@@ -3735,7 +3741,7 @@ bool32 AI_CanBurn(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Abi
 bool32 AI_CanGiveFrostbite(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Ability defAbility, enum BattlerId battlerAtkPartner, enum Move move, enum Move partnerMove)
 {
     if (!CanBeFrozen(battlerAtk, battlerDef, defAbility)
-      || gAiLogicData->effectiveness[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex] == UQ_4_12(0.0)
+      || AI_TRACE_READ_VALUE(gAiLogicData->effectiveness[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex], AI_TRACE_EFFECTIVENESS, battlerAtk, battlerDef, gAiThinkingStruct->movesetIndex) == UQ_4_12(0.0)
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
       || PartnerMoveEffectIsStatusSameTarget(battlerAtkPartner, battlerDef, partnerMove))
     {
@@ -3747,7 +3753,7 @@ bool32 AI_CanGiveFrostbite(enum BattlerId battlerAtk, enum BattlerId battlerDef,
 bool32 AI_CanBeInfatuated(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Ability defAbility)
 {
     if (gBattleMons[battlerDef].volatiles.infatuation
-      || gAiLogicData->effectiveness[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex] == UQ_4_12(0.0)
+      || AI_TRACE_READ_VALUE(gAiLogicData->effectiveness[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex], AI_TRACE_EFFECTIVENESS, battlerAtk, battlerDef, gAiThinkingStruct->movesetIndex) == UQ_4_12(0.0)
       || defAbility == ABILITY_OBLIVIOUS
       || !AreBattlersOfOppositeGender(battlerAtk, battlerDef)
       || AI_IsAbilityOnSide(battlerDef, ABILITY_AROMA_VEIL))
@@ -4490,12 +4496,15 @@ struct BattlePokemon *AllocSaveBattleMons(void)
 {
     struct BattlePokemon *savedBattleMons = Alloc(SIZE_G_BATTLE_MONS);
     memcpy(savedBattleMons, gBattleMons, SIZE_G_BATTLE_MONS);
+    AI_TRACE_POINT(AI_TRACE_SAVE, 0, 1, 0);
     return savedBattleMons;
 }
 
 void FreeRestoreBattleMons(struct BattlePokemon *savedBattleMons)
 {
+    AI_TRACE_POINT(AI_TRACE_RESTORE, 0, 1, 0);
     memcpy(gBattleMons, savedBattleMons, SIZE_G_BATTLE_MONS);
+    AI_TRACE_POINT(AI_TRACE_RESTORE, 1, 1, 0);
     Free(savedBattleMons);
 }
 
@@ -4505,12 +4514,16 @@ struct AiLogicData *AllocSaveAiLogicData(void)
 {
     struct AiLogicData *savedAiLogicData = Alloc(SIZE_G_AI_LOGIC_DATA);
     memcpy(savedAiLogicData, gAiLogicData, SIZE_G_AI_LOGIC_DATA);
+    AI_TRACE_POINT(AI_TRACE_SAVE, 0, 0, 0);
     return savedAiLogicData;
 }
 
 void FreeRestoreAiLogicData(struct AiLogicData *savedAiLogicData)
 {
+    AI_TRACE_POINT(AI_TRACE_RESTORE, 0, 0, 0);
+    AI_TRACE_RESTORE_DATA(savedAiLogicData);
     memcpy(gAiLogicData, savedAiLogicData, SIZE_G_AI_LOGIC_DATA);
+    AI_TRACE_POINT(AI_TRACE_RESTORE, 1, 0, 0);
     Free(savedAiLogicData);
 }
 
@@ -4727,10 +4740,10 @@ static enum AIScore IncreaseStatUpScoreInternal(enum BattlerId battlerAtk, enum 
         // If expected switchin outspeeds and has Encore, don't increase
         for (u32 monIndex = 0; monIndex < MAX_MON_MOVES; monIndex++)
         {
-            if (GetMoveEffect(GetMonData(&playerParty[gAiLogicData->mostSuitableMonId[battlerDef]], MON_DATA_MOVE1 + monIndex)) == EFFECT_ENCORE
-                && GetMonData(&playerParty[gAiLogicData->mostSuitableMonId[battlerDef]], MON_DATA_PP1 + monIndex) > 0)
+            if (GetMoveEffect(GetMonData(&playerParty[AI_TRACE_READ_VALUE(gAiLogicData->mostSuitableMonId[battlerDef], AI_TRACE_CANDIDATE, battlerDef, 0, 0)], MON_DATA_MOVE1 + monIndex)) == EFFECT_ENCORE
+                && GetMonData(&playerParty[AI_TRACE_READ_VALUE(gAiLogicData->mostSuitableMonId[battlerDef], AI_TRACE_CANDIDATE, battlerDef, 0, 0)], MON_DATA_PP1 + monIndex) > 0)
             {
-                if (GetMonData(&playerParty[gAiLogicData->mostSuitableMonId[battlerDef]], MON_DATA_SPEED) > gBattleMons[battlerAtk].speed)
+                if (AI_GetPartyMonRawSpeed(playerParty, AI_TRACE_READ_VALUE(gAiLogicData->mostSuitableMonId[battlerDef], AI_TRACE_CANDIDATE, battlerDef, 0, 0)) > AI_GetRawSpeed(battlerAtk))
                     return NO_INCREASE;
             }
         }
@@ -4926,8 +4939,8 @@ void IncreaseParalyzeScore(enum BattlerId battlerAtk, enum BattlerId battlerDef,
 
     if (AI_CanParalyze(battlerAtk, battlerDef, gAiLogicData->abilities[battlerDef], move, gAiLogicData->partnerMove))
     {
-        u32 atkSpeed = gAiLogicData->speedStats[battlerAtk];
-        u32 defSpeed = gAiLogicData->speedStats[battlerDef];
+        u32 atkSpeed = AI_GetEffectiveSpeed(battlerAtk);
+        u32 defSpeed = AI_GetEffectiveSpeed(battlerDef);
 
         if ((defSpeed >= atkSpeed && defSpeed / 2 < atkSpeed) // You'll go first after paralyzing foe
           || IsPowerBasedOnStatus(battlerAtk, EFFECT_DOUBLE_POWER_ON_ARG_STATUS, STATUS1_PARALYSIS)
@@ -5252,7 +5265,7 @@ bool32 ShouldUseZMove(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum
             if (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_RISKY)
                 return FALSE;
 
-            u32 acc = gAiLogicData->moveAccuracy[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex];
+            u32 acc = AI_TRACE_READ_VALUE(gAiLogicData->moveAccuracy[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex], AI_TRACE_ACCURACY, battlerAtk, battlerDef, gAiThinkingStruct->movesetIndex);
 
             if (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_CONSERVATIVE)
                 return (acc < 100);
@@ -5355,15 +5368,15 @@ void DecideTerastal(enum BattlerId battler)
         // Damage calcs for damage received assumed we wouldn't tera. Adjust that so that further AI decisions are more accurate.
         for (u32 moveIndex = 0; moveIndex < MAX_MON_MOVES; moveIndex++)
         {
-            gAiLogicData->simulatedDmg[opposingBattler][battler][moveIndex] = altCalcs.takenWithTera[moveIndex];
-            gAiLogicData->effectiveness[opposingBattler][battler][moveIndex] = effectivenessTakenWithTera[moveIndex];
+            AI_TRACE_WRITE(gAiLogicData->simulatedDmg[opposingBattler][battler][moveIndex], altCalcs.takenWithTera[moveIndex], AI_TRACE_DAMAGE, opposingBattler, battler, moveIndex);
+            AI_TRACE_WRITE(gAiLogicData->effectiveness[opposingBattler][battler][moveIndex], effectivenessTakenWithTera[moveIndex], AI_TRACE_EFFECTIVENESS, opposingBattler, battler, moveIndex);
         }
     }
     else
     {
         // Damage calcs for damage dealt assumed we would tera. Adjust that so that further AI decisions are more accurate.
         for (u32 moveIndex = 0; moveIndex < MAX_MON_MOVES; moveIndex++)
-            gAiLogicData->simulatedDmg[battler][opposingBattler][moveIndex] = altCalcs.dealtWithoutTera[moveIndex];
+            AI_TRACE_WRITE(gAiLogicData->simulatedDmg[battler][opposingBattler][moveIndex], altCalcs.dealtWithoutTera[moveIndex], AI_TRACE_DAMAGE, battler, opposingBattler, moveIndex);
     }
 
     SetAIUsingGimmick(battler, res);
@@ -6272,7 +6285,7 @@ bool32 IsPartyMonOnFieldOrChosenToSwitch(enum BattlerId battler, u32 partyIndex,
 bool32 IsPartyMonPlannedToBeSwitchedInByPartner(u32 partyIndex, enum BattlerId battler)
 {
     enum BattlerId battlerPartner = GetPartnerBattler(battler);
-    if (partyIndex == gAiLogicData->mostSuitableMonId[battlerPartner] && (gAiLogicData->shouldSwitch & (1u << battlerPartner)) && BattlersShareParty(battler, battlerPartner))
+    if (partyIndex == AI_TRACE_READ_VALUE(gAiLogicData->mostSuitableMonId[battlerPartner], AI_TRACE_CANDIDATE, battlerPartner, 0, 0) && (gAiLogicData->shouldSwitch & (1u << battlerPartner)) && BattlersShareParty(battler, battlerPartner))
         return TRUE;
     return FALSE;
 }

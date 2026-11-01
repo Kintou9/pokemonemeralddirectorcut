@@ -1,4 +1,5 @@
 #include "global.h"
+#include "battle_ai_trace.h"
 #include "battle.h"
 #include "battle_ai_main.h"
 #include "battle_ai_util.h"
@@ -1255,6 +1256,10 @@ static void UNUSED BtlController_EmitCmd32(enum BattlerId battler, u32 bufferId,
 
 void BtlController_EmitTwoReturnValues(enum BattlerId battler, u32 bufferId, u8 ret8, u32 ret32)
 {
+    AI_TRACE_POINT(AI_TRACE_FINAL, battler, ret8, ret32 & 0xFF);
+#if TESTING
+    AITraceValue(AI_TRACE_FINAL, __LINE__, battler, bufferId, ret8, NULL, &ret32, sizeof(ret32));
+#endif
     gBattleResources->transferBuffer[0] = CONTROLLER_TWORETURNVALUES;
     gBattleResources->transferBuffer[1] = ret8;
     gBattleResources->transferBuffer[2] = ret32;
@@ -1266,6 +1271,7 @@ void BtlController_EmitTwoReturnValues(enum BattlerId battler, u32 bufferId, u8 
 
 void BtlController_EmitChosenMonReturnValue(enum BattlerId battler, u32 bufferId, u8 partyId, u8 *battlePartyOrder)
 {
+    AI_TRACE_POINT(AI_TRACE_FINAL, battler, B_ACTION_SWITCH, partyId);
     s32 i;
 
     gBattleResources->transferBuffer[0] = CONTROLLER_CHOSENMONRETURNVALUE;

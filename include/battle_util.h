@@ -7,8 +7,11 @@
 #include "constants/hold_effects.h"
 #include "constants/battle_stat_change.h"
 
+struct AiCalcContext;
+
 struct DamageContext
 {
+    const struct AiCalcContext *aiCalcContext; // NULL in real battle resolution.
     enum BattlerId battlerAtk:3;
     enum BattlerId battlerDef:3;
     u32 fixedBasePower:8;

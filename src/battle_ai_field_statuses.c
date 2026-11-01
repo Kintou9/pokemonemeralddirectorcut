@@ -6,6 +6,7 @@
 #include "battle_ai_field_statuses.h"
 #include "battle_ai_util.h"
 #include "battle_ai_main.h"
+#include "battle_ai_calc_context.h"
 #include "battle_factory.h"
 #include "battle_setup.h"
 #include "event_data.h"
@@ -496,10 +497,10 @@ static enum FieldEffectOutcome BenefitsFromTrickRoom(enum BattlerId battler)
     // If we're in singles, we literally only care about speed.
     if (IsBattle1v1())
     {
-        if (gAiLogicData->speedStats[battler] < gAiLogicData->speedStats[GetBattlerLeftFoe(battler)])
+        if (AI_GetEffectiveSpeed(battler) < AI_GetEffectiveSpeed(GetBattlerLeftFoe(battler)))
             return FIELD_EFFECT_POSITIVE;
         // If we tie, we shouldn't change trick room state.
-        else if (gAiLogicData->speedStats[battler] == gAiLogicData->speedStats[GetBattlerLeftFoe(battler)])
+        else if (AI_GetEffectiveSpeed(battler) == AI_GetEffectiveSpeed(GetBattlerLeftFoe(battler)))
             return FIELD_EFFECT_NEUTRAL;
         else
             return FIELD_EFFECT_NEGATIVE;
@@ -520,7 +521,7 @@ static enum FieldEffectOutcome BenefitsFromTrickRoom(enum BattlerId battler)
     }
 
     // If we are faster or tie, we don't want trick room.
-    if ((gAiLogicData->speedStats[battler] >= gAiLogicData->speedStats[GetBattlerLeftFoe(battler)]) || (gAiLogicData->speedStats[battler] >= gAiLogicData->speedStats[GetBattlerRightFoe(battler)]))
+    if ((AI_GetEffectiveSpeed(battler) >= AI_GetEffectiveSpeed(GetBattlerLeftFoe(battler))) || (AI_GetEffectiveSpeed(battler) >= AI_GetEffectiveSpeed(GetBattlerRightFoe(battler))))
         return FIELD_EFFECT_NEGATIVE;
 
     return FIELD_EFFECT_POSITIVE;

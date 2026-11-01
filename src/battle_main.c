@@ -4370,9 +4370,9 @@ void SwapTurnOrder(u8 id1, u8 id2)
 }
 
 // For AI, so it doesn't 'cheat' by knowing player's ability
-u32 GetBattlerTotalSpeedStat(enum BattlerId battler, enum Ability ability, enum HoldEffect holdEffect)
+u32 GetBattlerTotalSpeedStatWithBase(enum BattlerId battler, enum Ability ability, enum HoldEffect holdEffect, u32 baseSpeed)
 {
-    u32 speed = gBattleMons[battler].speed;
+    u32 speed = baseSpeed;
 
     // stat stages
     speed *= gStatStageRatios[gBattleMons[battler].statStages[STAT_SPEED]][0];
@@ -4433,6 +4433,11 @@ u32 GetBattlerTotalSpeedStat(enum BattlerId battler, enum Ability ability, enum 
         speed /= 4;
 
     return speed;
+}
+
+u32 GetBattlerTotalSpeedStat(enum BattlerId battler, enum Ability ability, enum HoldEffect holdEffect)
+{
+    return GetBattlerTotalSpeedStatWithBase(battler, ability, holdEffect, gBattleMons[battler].speed);
 }
 
 s32 GetChosenMovePriority(enum BattlerId battler, enum Ability ability)

@@ -123,6 +123,7 @@ DOUBLE_BATTLE_TEST("A spread move will do correct damage to the second mon if th
 {
     s16 damage[6];
     GIVEN {
+        WITH_CONFIG(B_MULTIPLE_TARGETS_DMG, GEN_4); // Preserve this modern 0.75-damage control.
         PLAYER(SPECIES_REGIROCK);
         PLAYER(SPECIES_REGIROCK);
         OPPONENT(SPECIES_WOBBUFFET) { HP(200); }
@@ -157,6 +158,7 @@ MULTI_BATTLE_TEST("A spread move will do correct damage to the second mon if the
 {
     s16 damage[6];
     GIVEN {
+        WITH_CONFIG(B_MULTIPLE_TARGETS_DMG, GEN_4); // Preserve this modern 0.75-damage control.
         PLAYER(SPECIES_REGIROCK);
         PARTNER(SPECIES_REGIROCK);
         OPPONENT_A(SPECIES_WOBBUFFET) { HP(200); }
@@ -191,6 +193,7 @@ TWO_VS_ONE_BATTLE_TEST("A spread move will do correct damage to the second mon i
 {
     s16 damage[6];
     GIVEN {
+        WITH_CONFIG(B_MULTIPLE_TARGETS_DMG, GEN_4); // Preserve this modern 0.75-damage control.
         PLAYER(SPECIES_REGIROCK);
         PARTNER(SPECIES_REGIROCK);
         OPPONENT_A(SPECIES_WOBBUFFET) { HP(200); }
@@ -225,6 +228,7 @@ ONE_VS_TWO_BATTLE_TEST("A spread move will do correct damage to the second mon i
 {
     s16 damage[6];
     GIVEN {
+        WITH_CONFIG(B_MULTIPLE_TARGETS_DMG, GEN_4); // Preserve this modern 0.75-damage control.
         PLAYER(SPECIES_REGIROCK);
         PLAYER(SPECIES_REGIROCK);
         OPPONENT_A(SPECIES_WOBBUFFET) { HP(200); }

@@ -55,4 +55,8 @@ void ShowSelectMovePokemonSummaryScreen(struct Pokemon *mons, u8 monIndex, void 
 u8 GetMoveSlotToReplace(void);
 void SummaryScreen_SetAnimDelayTaskId(u8 taskId);
 
+#if TESTING
+u8 Test_SummaryScreenFormatStats(struct Pokemon *mon, u8 mode, u8 *left, u8 *right);
+#endif
+
 #endif // GUARD_POKEMON_SUMMARY_SCREEN_H

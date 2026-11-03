@@ -7329,11 +7329,25 @@ static inline uq4_12_t GetTargetDamageModifier(struct DamageContext *ctx)
 {
     if (IsDoubleBattle())
     {
+        if (GetConfig(B_MULTIPLE_TARGETS_DMG) == GEN_3)
+        {
+            // Emerald reduces only both-opponents moves. Count occupied
+            // positions, not successful hits or remaining HP: a target that
+            // faints during this attack still counts until marked absent.
+            // All-field moves never need recipient counting in this branch.
+            enum BattlerId foe = GetBattlerLeftFoe(ctx->battlerAtk);
+            u32 opposingPositions = (1u << foe) | (1u << GetPartnerBattler(foe));
+            if (GetBattlerMoveTargetType(ctx->battlerAtk, ctx->move) == TARGET_BOTH
+             && !(gAbsentBattlerFlags & opposingPositions))
+                return UQ_4_12(0.5);
+            return UQ_4_12(1.0);
+        }
+
         u32 targetCount = GetMoveTargetCount(ctx);
         if (targetCount == 2)
-            return B_MULTIPLE_TARGETS_DMG >= GEN_4 ? UQ_4_12(0.75) : UQ_4_12(0.5);
+            return GetConfig(B_MULTIPLE_TARGETS_DMG) >= GEN_4 ? UQ_4_12(0.75) : UQ_4_12(0.5);
         else if (targetCount >= 3)
-            return B_MULTIPLE_TARGETS_DMG >= GEN_4 ? UQ_4_12(0.75) : UQ_4_12(1.0);
+            return GetConfig(B_MULTIPLE_TARGETS_DMG) >= GEN_4 ? UQ_4_12(0.75) : UQ_4_12(1.0);
     }
     return UQ_4_12(1.0);
 }
@@ -7714,7 +7728,20 @@ static inline s32 DoMoveDamageCalcVars(struct DamageContext *ctx)
     targetFinalDefense = CalcDefenseStat(ctx);
 
     dmg = CalculateBaseDamage(gBattleMovePower, userFinalAttack, gBattleMons[ctx->battlerAtk].level, targetFinalDefense);
-    DAMAGE_APPLY_MODIFIER(GetTargetDamageModifier(ctx));
+    uq4_12_t targetModifier = GetTargetDamageModifier(ctx);
+    if (GetConfig(B_MULTIPLE_TARGETS_DMG) == GEN_3 && targetModifier == UQ_4_12(0.5))
+    {
+        // Emerald halves the integer base term before the final +2, with
+        // a minimum pre-addition term of 1 for physical attacks.
+        dmg = (dmg - 2) / 2;
+        if (dmg == 0 && IsBattleMovePhysical(ctx->move))
+            dmg = 1;
+        dmg += 2;
+    }
+    else
+    {
+        DAMAGE_APPLY_MODIFIER(targetModifier);
+    }
     DAMAGE_APPLY_MODIFIER(GetParentalBondModifier(ctx->battlerAtk));
     DAMAGE_APPLY_MODIFIER(GetWeatherDamageModifier(ctx));
     DAMAGE_APPLY_MODIFIER(GetCriticalModifier(ctx->isCrit));

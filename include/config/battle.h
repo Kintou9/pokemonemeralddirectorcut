@@ -37,7 +37,7 @@
 #define B_SPORT_DMG_REDUCTION       GEN_LATEST // In Gen5+, Water/Mud Sport reduce Fire-/Electric-type damage by 67% instead of 50%.
 #define B_EXPLOSION_DEFENSE         GEN_3 // In Gen5+, Self-Destruct and Explosion no longer halve the targets' Defense.
 #define B_PARENTAL_BOND_DMG         GEN_LATEST // In Gen7+, Parental Bond's second hit does 25% of the initial hit's damage instead of 50%.
-#define B_MULTIPLE_TARGETS_DMG      GEN_LATEST // In Gen4+, damage dealt by moves that hit multiple targets at once is reduced to 75%. Previously, it was 50%, unless the move hit the entire field, in which case there was no reduction.
+#define B_MULTIPLE_TARGETS_DMG      GEN_3 // In Gen4+, damage dealt by moves that hit multiple targets at once is reduced to 75%. Previously, it was 50%, unless the move hit the entire field, in which case there was no reduction.
 #define B_STRUGGLE_RECOIL           GEN_LATEST // In Gen4+, Struggle's recoil is 1/4 of the user's max HP. In Gen2-3, it's 1/4 of the damage dealt, and in Gen1, 1/2 of it.
 #define B_RETURN_FRUSTRATION_DMG    GEN_LATEST // In Gen3+, Return and Frustration deal at least 1 damage. In Gen2, they deal none at the friendship value that gives them 0 power.
 

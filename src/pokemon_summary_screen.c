@@ -3950,6 +3950,33 @@ static void PrintRightColumnStats(void)
     PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar4, x, 1, 0, 0);
 }
 
+#if TESTING
+// Exercise the real extraction, formatting, and cycling code without opening
+// the graphical screen. No test state or entry point exists in release builds.
+u8 Test_SummaryScreenFormatStats(struct Pokemon *mon, u8 mode, u8 *left, u8 *right)
+{
+    struct PokemonSummaryScreenData *saved = sMonSummaryScreen;
+    sMonSummaryScreen = AllocZeroed(sizeof(*sMonSummaryScreen));
+    sMonSummaryScreen->skillsPageMode = mode;
+    ExtractMonSkillStatsData(mon, &sMonSummaryScreen->summary);
+    if (mode == SUMMARY_SKILLS_MODE_IVS)
+        ExtractMonSkillIvData(mon, &sMonSummaryScreen->summary);
+    else if (mode == SUMMARY_SKILLS_MODE_EVS)
+        ExtractMonSkillEvData(mon, &sMonSummaryScreen->summary);
+    if (mode == SUMMARY_SKILLS_MODE_STATS)
+        BufferLeftColumnStats();
+    else
+        BufferLeftColumnIvEvStats();
+    StringCopy(left, gStringVar4);
+    BufferRightColumnStats();
+    StringCopy(right, gStringVar4);
+    u8 nextMode = IncrementSkillsStatsMode(mode);
+    Free(sMonSummaryScreen);
+    sMonSummaryScreen = saved;
+    return nextMode;
+}
+#endif
+
 static void PrintExpPointsNextLevel(void)
 {
     struct PokeSummary *sum = &sMonSummaryScreen->summary;

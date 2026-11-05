@@ -2,6 +2,8 @@
 
 Base: `f06dac6c2e`. Implementation and verification performed November 3–4, 2026, before the approved Git checkpoint.
 
+**Classic Edition update:** Mega Evolution is now disabled in playable builds. Mega-related checks below concern shared-engine test compatibility only. See [the no-Mega audit](classic_no_mega_audit.md) for the current configuration and ROM memory usage.
+
 ## Turn ordering
 
 Characterization tests were written and run before production edits: six passed and three failed. Failures isolated the default dynamic-Speed setting, the pre-move sort after a weather switch-in, and the same unintended sort on a later turn after Mega Evolution. After correction all nine initial tests passed (24 parameter variants). A later paired Gen 3/Gen 8 multiple-switch test brings the final result to 10/10 (26 variants).

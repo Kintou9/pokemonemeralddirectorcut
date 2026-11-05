@@ -770,6 +770,7 @@ enum TargetTieResolution
 // be reset between trials.
 struct BattleTrialData
 {
+    u8 yesNoCount;
     u8 lastActionTurn;
     u8 queuedEvent;
     u8 aiActionsPlayed[MAX_BATTLERS_COUNT];
@@ -780,6 +781,7 @@ struct BattleTrialData
 struct BattleTestData
 {
     u8 stack[BATTLE_TEST_STACK_SIZE];
+    u16 yesNoInput; // Optional A_BUTTON/B_BUTTON input for battle-script Yes/No prompts.
     u8 partySizes[MAX_BATTLE_TRAINERS];
     u8 explicitMoves[MAX_BATTLE_TRAINERS];
     bool8 hasExplicitSpeeds;

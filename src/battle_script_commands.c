@@ -4305,6 +4305,9 @@ static void Cmd_yesnobox(void)
         BattleCreateYesNoCursorAt(0);
         break;
     case 1:
+        #if TESTING
+        gMain.newKeys = TestRunner_Battle_GetYesNoInput();
+        #endif
         if (JOY_NEW(DPAD_UP) && gBattleCommunication[CURSOR_POSITION] != 0)
         {
             PlaySE(SE_SELECT);

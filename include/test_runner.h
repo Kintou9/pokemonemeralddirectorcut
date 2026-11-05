@@ -23,6 +23,7 @@ void TestRunner_Battle_RecordMessage(const u8 *message);
 void TestRunner_Battle_RecordStatus1(enum BattlerId battlerId, u32 status1);
 void TestRunner_Battle_RecordCatchChance(u32 catchChance);
 void TestRunner_Battle_AfterLastTurn(void);
+u16 TestRunner_Battle_GetYesNoInput(void);
 void TestRunner_Battle_CheckChosenMove(enum BattlerId battlerId, enum Move moveId, u32 target, enum Gimmick gimmick);
 void TestRunner_Battle_CheckSwitch(enum BattlerId battlerId, u32 partyIndex);
 void TestRunner_Battle_CheckAiMoveScores(enum BattlerId battlerId);

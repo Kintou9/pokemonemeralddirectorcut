@@ -422,6 +422,9 @@ static void BattleTest_Run(void *data)
     const struct BattleTest *test = data;
 
     memset(&DATA, 0, sizeof(DATA));
+    // Existing tests use Set; opt-in tests can exercise the real saved option.
+    gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET;
+    DATA.yesNoInput = B_BUTTON;
     InitTestBattlers(test);
     TestInitConfigData();
 
@@ -716,6 +719,12 @@ const void *RandomElementArrayTrials(enum RandomTag tag, const void *array, size
     }
     STATE->trialRatio = Q_4_12(1) / count;
     return (const u8 *)array + size * STATE->runTrial;
+}
+
+u16 TestRunner_Battle_GetYesNoInput(void)
+{
+    DATA.trial.yesNoCount++;
+    return DATA.yesNoInput;
 }
 
 static u32 BattleTest_RandomUniform(enum RandomTag tag, u32 lo, u32 hi, bool32 (*reject)(u32), void *caller)

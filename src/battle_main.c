@@ -2745,9 +2745,6 @@ static void ClearSetBScriptingStruct(void)
 
     gBattleScripting.windowsType = temp;
     gBattleScripting.battleStyle = gSaveBlock2Ptr->optionsBattleStyle;
-    #if TESTING
-    gBattleScripting.battleStyle = OPTIONS_BATTLE_STYLE_SET;
-    #endif
     gBattleScripting.expOnCatch = (GetConfig(B_EXP_CATCH) >= GEN_6);
     gBattleScripting.specialTrainerBattleType = specialBattleType;
 }
@@ -4826,6 +4823,7 @@ static bool32 TryActivateGimmick(enum BattlerId battler)
         gBattleStruct->gimmick.toActivate &= ~(1u << battler);
         if (gGimmicksInfo[gBattleStruct->gimmick.usableGimmick[battler]].ActivateGimmick != NULL)
         {
+            gBattleStruct->gimmick.recalcTurnOrder = TRUE;
             gGimmicksInfo[gBattleStruct->gimmick.usableGimmick[battler]].ActivateGimmick(battler);
             return TRUE;
         }
@@ -4849,8 +4847,13 @@ static bool32 TryDoGimmicksBeforeMoves(void)
         }
     }
 
-    if (GetConfig(B_MEGA_EVO_TURN_ORDER) >= GEN_7)
-        TryChangeTurnOrder(); // This will just do nothing if no mon has mega evolved.
+    // The Gen 3 queue is fixed before switches. Only a newly activated gimmick
+    // may request the Gen 7 Mega sort (also used for Z/Max move priority).
+    // A weather switch-in alone must not reorder ordinary battles.
+    if (GetConfig(B_MEGA_EVO_TURN_ORDER) >= GEN_7
+     && (GetConfig(B_RECALC_TURN_AFTER_ACTIONS) >= GEN_8 || gBattleStruct->gimmick.recalcTurnOrder))
+        TryChangeTurnOrder();
+    gBattleStruct->gimmick.recalcTurnOrder = FALSE;
     return FALSE;
 }
 
@@ -5014,6 +5017,7 @@ static void CheckChangingTurnOrderEffects(void)
     gCurrentActionFuncId = gActionsByTurnOrder[0];
     gBattleStruct->dynamicMoveType = 0;
     gBattleStruct->effectsBeforeUsingMoveDone = FALSE;
+    gBattleStruct->gimmick.recalcTurnOrder = FALSE;
     for (i = 0; i < gBattlersCount; i++)
     {
         gBattleStruct->battlerState[i].focusPunchBattlers = FALSE;

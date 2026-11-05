@@ -63,7 +63,7 @@
 #define B_ENCORE_TURNS              GEN_3 // In Gen5+, Encore lasts 3 turns if the target hasn't yet moved this turn, or 4 turns if it has. In Gen4, it lasts 3-7 turns. In Gen2-3, 2-6 turns.
 #define B_SPORT_TURNS               GEN_LATEST // In Gen6+, Water/Mud Sport last 5 turns, even if the user switches out. In Gen5 and earlier, they lasted until the user switched out.
 #define B_MEGA_EVO_TURN_ORDER       GEN_LATEST // In Gen7, a Pokémon's Speed after Mega Evolution is used to determine turn order, rather than its previous Speed.
-#define B_RECALC_TURN_AFTER_ACTIONS GEN_LATEST // In Gen8+, switching or using a move affects the current turn's order of actions, better known as dynamic Speed.
+#define B_RECALC_TURN_AFTER_ACTIONS GEN_3 // In Gen8+, switching or using a move affects the current turn's order of actions, better known as dynamic Speed.
 #define B_FAINT_SWITCH_IN           GEN_LATEST // In Gen4+, sending out a new Pokémon after the previous one fainted happens at the end of the turn. Previously, it would happen after each action.
 #define B_MEGA_EVO_SPEED_SWAP       GEN_LATEST // In Champions, Mega Evolution does not overwrite the speed stat swapped via Speed Swap.
 #define B_FREEZE_TURNS              GEN_LATEST // Prior to Champions, freeze has a 20% chance of being thawed out.

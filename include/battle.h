@@ -475,6 +475,7 @@ struct BattleGimmickData
     u8 triggerSpriteId;
     u8 indicatorSpriteId[MAX_BATTLERS_COUNT];
     u8 toActivate;                                       // stores whether a battler should transform at start of turn as bitfield
+    bool8 recalcTurnOrder;                               // a newly activated gimmick needs its pre-move sort
     u8 activeGimmick[MAX_BATTLE_TRAINERS][PARTY_SIZE];   // stores the active gimmick for each party member
     bool8 activated[MAX_BATTLERS_COUNT][GIMMICKS_COUNT]; // stores whether a trainer has used gimmick
 };

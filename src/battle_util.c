@@ -1860,7 +1860,7 @@ bool32 HandleFaintedMonActions(void)
             else
                 gBattleStruct->eventState.faintedAction = FAINTED_ACTIONS_GIVE_EXP;
             // Don't switch mons until all Pokémon performed their actions or the battle's over.
-            if (B_FAINT_SWITCH_IN >= GEN_4
+            if (GetConfig(B_FAINT_SWITCH_IN) >= GEN_4
                 && gBattleOutcome == 0
                 && !NoAliveMonsForEitherParty()
                 && gCurrentTurnActionNumber != gBattlersCount)
@@ -1872,7 +1872,7 @@ bool32 HandleFaintedMonActions(void)
             break;
         case FAINTED_ACTIONS_WAIT_STATE:
             // Don't switch mons until all Pokémon performed their actions or the battle's over.
-            if (B_FAINT_SWITCH_IN >= GEN_4
+            if (GetConfig(B_FAINT_SWITCH_IN) >= GEN_4
                 && gBattleOutcome == 0
                 && !NoAliveMonsForEitherParty()
                 && gCurrentTurnActionNumber != gBattlersCount)

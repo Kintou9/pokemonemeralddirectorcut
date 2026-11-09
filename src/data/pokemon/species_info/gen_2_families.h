@@ -7202,7 +7202,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .baseSpDefense = 70,
         .types = MON_TYPES(TYPE_STEEL, TYPE_FLYING),
         .catchRate = 25,
-        .expYield = 163,
+        .expYield = (P_UPDATED_EXP_YIELDS == GEN_3) ? 168 : 163, // Original Emerald yield.
         .evYield_Defense = 2,
         .itemRare = ITEM_METAL_COAT,
         .genderRatio = PERCENT_FEMALE(50),

@@ -216,10 +216,19 @@ AI_TWO_VS_ONE_BATTLE_TEST("Partner Pokemon do not gain experience")
 
 AI_ONE_VS_TWO_BATTLE_TEST("Both opponent's Pokemon give experience in battle against two opponents")
 {
-    u32 expectedXp = 1; // level 1 xp
-    expectedXp += gSpeciesInfo[SPECIES_WYNAUT].expYield * 100 / 7; // level (100) * scaling multipler (1 / 7)
-    expectedXp += gSpeciesInfo[SPECIES_WOBBUFFET].expYield * 100 / 7;
+    u32 trainerExpGen;
+    PARAMETRIZE { trainerExpGen = GEN_3; }
+    PARAMETRIZE { trainerExpGen = GEN_8; }
+    // Emerald: floor(yield * level / 7), then floor(3 * EXP / 2)
+    // for EACH defeated trainer Pokemon. Modern control omits the bonus.
+    u32 wynautExp = gSpeciesInfo[SPECIES_WYNAUT].expYield * 100 / 7;
+    u32 wobbuffetExp = gSpeciesInfo[SPECIES_WOBBUFFET].expYield * 100 / 7;
+    u32 expectedXp = 1 + (trainerExpGen == GEN_3
+        ? wynautExp * 3 / 2 + wobbuffetExp * 3 / 2
+        : wynautExp + wobbuffetExp);
     GIVEN {
+        WITH_CONFIG(B_TRAINER_EXP_MULTIPLIER, trainerExpGen);
+        WITH_CONFIG(B_SPLIT_EXP, GEN_6); // Preserve full EXP per participant.
         WITH_CONFIG(B_SCALED_EXP, GEN_3);
         WITH_CONFIG(B_UNEVOLVED_EXP_MULTIPLIER, GEN_3);
         PLAYER(SPECIES_METAPOD) { Level(1); Speed(3); }

@@ -6,9 +6,9 @@
 #define P_UPDATED_STATS             GEN_3  // Some Pokémon have received base stat updates after their introduction.
 #define P_UPDATED_ABILITIES         GEN_3  // Since Gen 4, certain Pokémon have had their abilities changed.
 #define P_UPDATED_EGG_GROUPS        GEN_LATEST  // Since Gen 8, certain Pokémon have gained new egg groups.
-#define P_UPDATED_FRIENDSHIP        GEN_LATEST  // Since Gen 8, the base friendship of certain Pokémon was changed.
-#define P_UPDATED_EVS               GEN_LATEST  // Since Gen 4, some Pokémon have received EV updates.
-#define P_UPDATED_EXP_YIELDS        GEN_LATEST  // Since Gen 5, some Pokémon have received base Experience changes.
+#define P_UPDATED_FRIENDSHIP        GEN_3  // Since Gen 8, the base friendship of certain Pokémon was changed.
+#define P_UPDATED_EVS               GEN_3  // Since Gen 4, some Pokémon have received EV updates.
+#define P_UPDATED_EXP_YIELDS        GEN_3  // Since Gen 5, some Pokémon have received base Experience changes.
 
 // Learnsets
 #define P_LVL_UP_LEARNSETS          GEN_3       // Choose which set of Level Up Learnsets to use.
@@ -20,7 +20,7 @@
 #define P_EVOLUTION_LEVEL_1_LEARN   GEN_LATEST  // Since Gen 8, Pokémon evolving while at level 1 do not get the chance to learn their level 1 moves, while before they did.
 
 // Evolution settings
-#define P_FRIENDSHIP_EVO_THRESHOLD   GEN_LATEST  // Since Gen 8, Pokémon that evolve by friendship evolve at or above 160 friendship instead of 220.
+#define P_FRIENDSHIP_EVO_THRESHOLD   GEN_3  // Since Gen 8, Pokémon that evolve by friendship evolve at or above 160 friendship instead of 220.
 
 // Breeding settings
 #define P_NIDORAN_M_DITTO_BREED        GEN_LATEST                // Since Gen 5, when Nidoran♂ breeds with Ditto it can produce Nidoran♀ offspring. Before, it would only yield male offspring. This change also applies to Volbeat.

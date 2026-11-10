@@ -26,13 +26,22 @@ LilycoveCity_DepartmentStore_3F_EventScript_ClerkRight::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters
+	call LilycoveCity_DepartmentStore_3F_EventScript_SelectStock
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
+LilycoveCity_DepartmentStore_3F_EventScript_SelectStock::
+	goto_if_set FLAG_BADGE06_GET, LilycoveCity_DepartmentStore_3F_EventScript_ExpandedStock
+	pokemart LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters
+	return
+
+LilycoveCity_DepartmentStore_3F_EventScript_ExpandedStock:
+	pokemart LilycoveCity_DepartmentStore_3F_Pokemart_EvolutionItems
+	return
+
 	.align 2
-LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters:
+LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters::
 	.2byte ITEM_X_SPEED
 	.2byte ITEM_X_SP_ATK
 	.2byte ITEM_X_ATTACK
@@ -40,6 +49,29 @@ LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters:
 	.2byte ITEM_DIRE_HIT
 	.2byte ITEM_GUARD_SPEC
 	.2byte ITEM_X_ACCURACY
+	pokemartlistend
+
+	.align 2
+LilycoveCity_DepartmentStore_3F_Pokemart_EvolutionItems::
+	.2byte ITEM_X_SPEED
+	.2byte ITEM_X_SP_ATK
+	.2byte ITEM_X_ATTACK
+	.2byte ITEM_X_DEFENSE
+	.2byte ITEM_DIRE_HIT
+	.2byte ITEM_GUARD_SPEC
+	.2byte ITEM_X_ACCURACY
+	.2byte ITEM_METAL_COAT
+	.2byte ITEM_KINGS_ROCK
+	.2byte ITEM_DRAGON_SCALE
+	.2byte ITEM_UPGRADE
+	.2byte ITEM_DEEP_SEA_TOOTH
+	.2byte ITEM_DEEP_SEA_SCALE
+	.2byte ITEM_FIRE_STONE
+	.2byte ITEM_WATER_STONE
+	.2byte ITEM_THUNDER_STONE
+	.2byte ITEM_LEAF_STONE
+	.2byte ITEM_MOON_STONE
+	.2byte ITEM_SUN_STONE
 	pokemartlistend
 
 LilycoveCity_DepartmentStore_3F_EventScript_TriathleteM::

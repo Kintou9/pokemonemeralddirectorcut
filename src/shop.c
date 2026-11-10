@@ -92,6 +92,7 @@ struct MartInfo
     u16 itemCount;
     u8 windowId;
     u8 martType;
+    bool8 lilycoveEvolutionPrices;
 };
 
 struct ShopData
@@ -381,10 +382,14 @@ static void SetShopMenuCallback(void (*callback)(void))
     sMartInfo.callback = callback;
 }
 
+extern const u16 LilycoveCity_DepartmentStore_3F_Pokemart_EvolutionItems[];
+
 static void SetShopItemsForSale(const u16 *items)
 {
     u16 i = 0;
 
+    // Capture the counter before dynamic stock filtering replaces itemList.
+    sMartInfo.lilycoveEvolutionPrices = items == LilycoveCity_DepartmentStore_3F_Pokemart_EvolutionItems;
     sMartInfo.itemList = items;
     sMartInfo.itemCount = 0;
 
@@ -400,6 +405,29 @@ static void SetShopItemsForSale(const u16 *items)
         sMartInfo.itemCount++;
         i++;
     }
+}
+
+// Purchase prices only: global prices, selling, and other counters are unchanged.
+static u32 GetMartBuyPrice(enum Item item)
+{
+    if (sMartInfo.lilycoveEvolutionPrices)
+    {
+        switch (item)
+        {
+        case ITEM_METAL_COAT:
+        case ITEM_KINGS_ROCK:
+            return 8000;
+        case ITEM_DRAGON_SCALE:
+        case ITEM_UPGRADE:
+            return 10000;
+        case ITEM_DEEP_SEA_TOOTH:
+        case ITEM_DEEP_SEA_SCALE:
+            return 7500;
+        default:
+            break;
+        }
+    }
+    return GetItemPrice(item) >> IsPokeNewsActive(POKENEWS_SLATEPORT);
 }
 
 static void Task_ShopMenu(u8 taskId)
@@ -451,6 +479,7 @@ void CB2_ExitSellMenu(void)
 
 static void Task_HandleShopMenuQuit(u8 taskId)
 {
+    sMartInfo.lilycoveEvolutionPrices = FALSE;
     ClearStdWindowAndFrameToTransparent(sMartInfo.windowId, 2); // Incorrect use, making it not copy it to vram.
     RemoveWindow(sMartInfo.windowId);
     TryPutSmartShopperOnAir();
@@ -644,7 +673,7 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
         {
             ConvertIntToDecimalStringN(
                 gStringVar1,
-                GetItemPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT),
+                GetMartBuyPrice(itemId),
                 STR_CONV_MODE_LEFT_ALIGN,
                 6);
         }
@@ -1017,7 +1046,7 @@ static void Task_BuyMenu(u8 taskId)
             BuyMenuPrintCursor(tListTaskId, COLORID_GRAY_CURSOR);
 
             if (sMartInfo.martType == MART_TYPE_NORMAL)
-                sShopData->totalCost = (GetItemPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT));
+                sShopData->totalCost = GetMartBuyPrice(itemId);
             else
                 sShopData->totalCost = gDecorations[itemId].price;
 
@@ -1037,7 +1066,7 @@ static void Task_BuyMenu(u8 taskId)
                         ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
                         StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2);
                         tItemCount = 1;
-                        sShopData->totalCost = (GetItemPrice(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
+                        sShopData->totalCost = GetMartBuyPrice(tItemId) * tItemCount;
                         BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
                     }
                     else if (GetItemPocket(itemId) == POCKET_TM_HM)
@@ -1104,7 +1133,7 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
 
     if (AdjustQuantityAccordingToDPadInput(&tItemCount, sShopData->maxQuantity) == TRUE)
     {
-        sShopData->totalCost = (GetItemPrice(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
+        sShopData->totalCost = GetMartBuyPrice(tItemId) * tItemCount;
         BuyMenuPrintItemQuantityAndPrice(taskId);
     }
     else
@@ -1332,3 +1361,63 @@ void CreateDecorationShop2Menu(const u16 *itemsForSale)
     SetShopItemsForSale(itemsForSale);
     SetShopMenuCallback(ScriptContext_Enable);
 }
+
+#if TESTING
+#include "test/shop.h"
+
+// Headless tests use the real list, quantity, confirmation, and payment tasks.
+// Only map rendering and overworld transitions are omitted.
+static u8 sTestShopTask;
+void TestShop_Open(const u16 *stock, u16 selected)
+{
+    ResetTasks();
+    ResetSpriteData();
+    FreeAllSpritePalettes();
+    sMartInfo.martType = MART_TYPE_NORMAL;
+    SetShopItemsForSale(stock);
+    ClearItemPurchases();
+    sShopData = AllocZeroed(sizeof(*sShopData));
+    sShopData->scrollIndicatorsTaskId = TASK_NONE;
+    sShopData->itemSpriteIds[0] = SPRITE_NONE;
+    sShopData->itemSpriteIds[1] = SPRITE_NONE;
+    BuyMenuInitBgs();
+    InitWindows(sShopBuyMenuWindowTemplates);
+    TryBuildDynamicShopItemList(&sMartInfo.itemList, &sMartInfo.itemCount);
+    BuyMenuBuildListMenuTemplate();
+    sTestShopTask = CreateTask(Task_BuyMenu, 8);
+    u16 scroll = min(selected, gMultiuseListMenuTemplate.totalItems - gMultiuseListMenuTemplate.maxShowed);
+    gTasks[sTestShopTask].data[7] = ListMenuInit(&gMultiuseListMenuTemplate, scroll, selected - scroll);
+    gPaletteFade.active = FALSE;
+}
+
+void TestShop_Close(void)
+{
+    BuyMenuRemoveScrollIndicatorArrows();
+    DestroyListMenuTask(gTasks[sTestShopTask].data[7], NULL, NULL);
+    BuyMenuFreeMemory();
+    ResetTasks();
+    FreeAllSpritePalettes();
+    // Leave price context intact here so opening another counter tests the
+    // production setter's reset, rather than a reset supplied by this driver.
+}
+
+void TestShop_Input(u16 keys)
+{
+    gMain.newKeys = keys;
+    gMain.newAndRepeatedKeys = keys;
+    gMain.heldKeys = A_BUTTON;
+    gTasks[sTestShopTask].func(sTestShopTask);
+}
+
+u32 TestShop_Price(enum Item item) { return GetMartBuyPrice(item); }
+u32 TestShop_Total(void) { return sShopData->totalCost; }
+u32 TestShop_Count(void) { return sMartInfo.itemCount; }
+u32 TestShop_Stage(void)
+{
+    TaskFunc func = gTasks[sTestShopTask].func;
+    if (func == Task_BuyMenu) return TEST_SHOP_LIST;
+    if (func == Task_BuyHowManyDialogueHandleInput) return TEST_SHOP_QUANTITY;
+    if (func == Task_ReturnToItemListAfterItemPurchase) return TEST_SHOP_RECEIPT;
+    return TEST_SHOP_MESSAGE;
+}
+#endif

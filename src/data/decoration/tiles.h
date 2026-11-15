@@ -641,3 +641,9 @@ const u16 DecorGfx_REGICE_DOLL[] = {
 const u16 DecorGfx_REGISTEEL_DOLL[] = {
     OBJ_EVENT_GFX_BIG_REGISTEEL_DOLL
 };
+
+const u16 DecorGfx_HEALING_BED[] = {
+    DECOR_TILE(HealingBed_Top), DECOR_TILE(HealingBed_TopRight),
+    DECOR_TILE(HealingBed_Bottom), DECOR_TILE(HealingBed_BottomRight)
+};
+const u16 DecorGfx_STORAGE_PC[] = { DECOR_TILE(StorageUtilityPC), DECOR_TILE(StorageUtilityPC_Bottom) };

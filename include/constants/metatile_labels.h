@@ -750,6 +750,12 @@
 #define METATILE_SecretBase_NoteMat_E                   0x27A
 #define METATILE_SecretBase_NoteMat_F                   0x27B
 #define METATILE_SecretBase_NoteMat_G                   0x27C
+#define METATILE_SecretBase_HealingBed_Top               0x344
+#define METATILE_SecretBase_HealingBed_TopRight          0x346
+#define METATILE_SecretBase_HealingBed_Bottom            0x348
+#define METATILE_SecretBase_HealingBed_BottomRight       0x34A
+#define METATILE_SecretBase_StorageUtilityPC             0x34C
+#define METATILE_SecretBase_StorageUtilityPC_Bottom      0x34E
 #define METATILE_SecretBase_PC                          0x220
 #define METATILE_SecretBase_PC_On                       0x224
 #define METATILE_SecretBase_PikaPoster_Left             0x31C

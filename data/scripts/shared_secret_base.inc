@@ -213,3 +213,35 @@ SecretBase_Text_DiscoveredSmallCavern::
 
 SecretBase_Text_WantToMakeYourSecretBaseHere:
 	.string "Want to make your SECRET BASE here?$"
+
+SecretBase_EventScript_HealingBed::
+    lockall
+    msgbox SecretBase_Text_RestInBed, MSGBOX_DEFAULT
+    closemessage
+    fadescreenswapbuffers FADE_TO_BLACK
+    playfanfare MUS_HEAL
+    waitfanfare
+    callnative HealSecretBaseParty
+    callnative UpdateFollowingPokemon
+    fadescreenswapbuffers FADE_FROM_BLACK
+    msgbox SecretBase_Text_PartyRested, MSGBOX_DEFAULT
+    releaseall
+    end
+
+SecretBase_EventScript_StorageUtility::
+    lockall
+    playse SE_PC_ON
+    msgbox gText_StorageSystemOpened, MSGBOX_DEFAULT
+    special ShowPokemonStorageSystemPC
+SecretBase_EventScript_StorageUtilityReturn::
+    playse SE_PC_OFF
+    releaseall
+    end
+
+SecretBase_Text_PartyRested:
+    .string "You and your POKéMON\n"
+    .string "are fully rested!$"
+
+SecretBase_Text_RestInBed:
+    .string "There's a bed…\n"
+    .string "Let's take a rest.$"

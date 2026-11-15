@@ -314,6 +314,10 @@ static const u8 *GetInteractionScript(struct MapPosition *position, u8 metatileB
     if (script != NULL)
         return script;
 
+    script = GetSecretBaseUtilityScript(position->x, position->y, position->elevation);
+    if (script != NULL)
+        return script;
+
     script = GetInteractedMetatileScript(position, metatileBehavior, direction);
     if (script != NULL)
         return script;
@@ -1428,3 +1432,12 @@ void HandleBoulderActivateVictoryRoadSwitch(u16 x, u16 y)
         }
     }
 }
+
+#if TESTING
+#include "test/secret_base.h"
+const u8 *TestUtility_Interaction(s16 x, s16 y, u8 elevation, u8 direction)
+{
+    struct MapPosition pos = {x, y, elevation};
+    return GetInteractionScript(&pos, MapGridGetMetatileBehaviorAt(x, y), direction);
+}
+#endif

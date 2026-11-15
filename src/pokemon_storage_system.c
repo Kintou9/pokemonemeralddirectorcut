@@ -10090,3 +10090,69 @@ void RemoveSelectedPcMon(struct Pokemon *mon)
     BoxMonToMon(boxmon, mon);
     ZeroBoxMonData(boxmon);
 }
+
+#if TESTING
+#include "test/secret_base.h"
+// Exercise the actual menu and data-transfer primitives without rendering the
+// full storage animation. State values returned here are menu task states.
+static u8 sTestStorageMenuTask;
+u8 TestStorage_MenuOption(u8 mode)
+{
+    const u8 options[] = {OPTION_WITHDRAW, OPTION_DEPOSIT, OPTION_MOVE_MONS};
+    return options[mode];
+}
+void TestStorage_OpenMenu(void)
+{
+    ResetTasks();
+    static const struct BgTemplate bg = {.bg = 0, .charBaseIndex = 2, .mapBaseIndex = 31};
+    ResetBgsAndClearDma3BusyFlags(0);
+    InitBgsFromTemplates(0, &bg, 1);
+    InitStandardTextBoxWindows();
+    ShowPokemonStorageSystemPC();
+    sTestStorageMenuTask = FindTaskIdByFunc(Task_PCMainMenu);
+    Task_PCMainMenu(sTestStorageMenuTask);
+    gTasks[sTestStorageMenuTask].data[0] = STATE_HANDLE_INPUT;
+}
+u32 TestStorage_Input(u16 keys)
+{
+    gMain.newKeys = keys;
+    gMain.newAndRepeatedKeys = keys;
+    Task_PCMainMenu(sTestStorageMenuTask);
+    return gTasks[sTestStorageMenuTask].isActive ? gTasks[sTestStorageMenuTask].data[0] : 255;
+}
+bool32 TestStorage_Launch(u8 option)
+{
+    EnterPokeStorage(option);
+    return sStorage != NULL && sStorage->boxOption == option && gMain.callback2 == CB2_PokeStorage;
+}
+bool32 TestStorage_Return(void)
+{
+    CB2_ExitPokeStorage();
+    bool32 ok = gMain.callback2 == CB2_ReturnToField && gFieldCallback == FieldTask_ReturnToPcMenu;
+    Free(sStorage);
+    sStorage = NULL;
+    ResetTasks();
+    return ok;
+}
+bool32 TestStorage_RejectFullBox(u8 box)
+{
+    // The real full-box path returns before touching graphical storage state.
+    return !TryStorePartyMonInBox(box);
+}
+bool32 TestStorage_IsLastPartyMon(u8 slot)
+{
+    sCursorArea = CURSOR_AREA_IN_PARTY;
+    sCursorPosition = slot;
+    sIsMonBeingMoved = FALSE;
+    return IsRemovingLastPartyMon();
+}
+void TestStorage_Transfer(u8 fromBox, u8 fromSlot, u8 toBox, u8 toSlot)
+{
+    sStorage = AllocZeroed(sizeof(*sStorage));
+    sCursorPosition = fromSlot;
+    SetMovingMonData(fromBox, fromSlot);
+    SetPlacedMonData(toBox, toSlot);
+    Free(sStorage);
+    sStorage = NULL;
+}
+#endif

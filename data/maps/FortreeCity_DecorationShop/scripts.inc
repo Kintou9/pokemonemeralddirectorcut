@@ -20,7 +20,7 @@ FortreeCity_DecorationShop_EventScript_ClerkDesks::
 	end
 
 	.align 2
-FortreeCity_DecorationShop_PokemartDecor_Desks:
+FortreeCity_DecorationShop_PokemartDecor_Desks::
 	.2byte DECOR_SMALL_DESK
 	.2byte DECOR_POKEMON_DESK
 	.2byte DECOR_HEAVY_DESK

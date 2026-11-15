@@ -137,6 +137,9 @@ void BlendRegionMap(u16 color, u32 coeff);
 void SetRegionMapDataForZoom(void);
 enum RegionMapType GetRegionMapType(u32 mapSecId);
 
+bool32 GetSecretBaseFlyMapPosition(u16 *x, u16 *y);
+bool32 IsSecretBaseFlySelection(const struct RegionMap *regionMap);
+
 //Pokenav Fly funcs
 u32 FilterFlyDestination(struct RegionMap* regionMap);
 void SetFlyDestination(struct RegionMap* regionMap);

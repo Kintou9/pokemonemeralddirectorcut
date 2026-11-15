@@ -1,6 +1,10 @@
 #ifndef GUARD_SECRET_BASE_H
 #define GUARD_SECRET_BASE_H
 
+const u8 *GetSecretBaseUtilityScript(s16 x, s16 y, u8 elevation);
+bool32 GetSecretBaseFlyDestination(struct WarpData *warp, u16 *mapSec);
+void HealSecretBaseParty(void);
+void EnsureSecretBaseUtilities(void);
 void HideSecretBaseDecorationSprites(void);
 void CopyCurSecretBaseOwnerName_StrVar1(void);
 void ClearJapaneseSecretBases(struct SecretBase *bases);

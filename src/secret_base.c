@@ -3,6 +3,7 @@
 #include "battle.h"
 #include "battle_setup.h"
 #include "decoration.h"
+#include "decoration_inventory.h"
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "event_scripts.h"
@@ -28,6 +29,7 @@
 #include "palette.h"
 #include "script.h"
 #include "secret_base.h"
+#include "pokemon.h"
 #include "sound.h"
 #include "string_util.h"
 #include "strings.h"
@@ -45,6 +47,50 @@
 #include "constants/secret_bases.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
+
+// Resolve the owner's current entrance, never a mixed-record friend's base.
+// Landing outside preserves the normal entrance's dynamic exit-warp setup.
+bool32 GetSecretBaseFlyDestination(struct WarpData *warp, u16 *mapSec)
+{
+    static const u8 routes[][2] = {
+        {MAP_GROUP(MAP_ROUTE110), MAP_NUM(MAP_ROUTE110)},
+        {MAP_GROUP(MAP_ROUTE111), MAP_NUM(MAP_ROUTE111)},
+        {MAP_GROUP(MAP_ROUTE113), MAP_NUM(MAP_ROUTE113)},
+        {MAP_GROUP(MAP_ROUTE114), MAP_NUM(MAP_ROUTE114)},
+        {MAP_GROUP(MAP_ROUTE115), MAP_NUM(MAP_ROUTE115)},
+        {MAP_GROUP(MAP_ROUTE116), MAP_NUM(MAP_ROUTE116)},
+        {MAP_GROUP(MAP_ROUTE118), MAP_NUM(MAP_ROUTE118)},
+        {MAP_GROUP(MAP_ROUTE119), MAP_NUM(MAP_ROUTE119)},
+        {MAP_GROUP(MAP_ROUTE120), MAP_NUM(MAP_ROUTE120)},
+        {MAP_GROUP(MAP_ROUTE121), MAP_NUM(MAP_ROUTE121)},
+        {MAP_GROUP(MAP_ROUTE123), MAP_NUM(MAP_ROUTE123)},
+        {MAP_GROUP(MAP_ROUTE125), MAP_NUM(MAP_ROUTE125)},
+        {MAP_GROUP(MAP_ROUTE127), MAP_NUM(MAP_ROUTE127)},
+    };
+    u32 i, j;
+    u16 id = gSaveBlock1Ptr->secretBases[0].secretBaseId;
+
+    if (id == 0)
+        return FALSE;
+    for (i = 0; i < ARRAY_COUNT(routes); i++)
+    {
+        const struct MapHeader *header = Overworld_GetMapHeaderByGroupAndId(routes[i][0], routes[i][1]);
+        for (j = 0; j < header->events->bgEventCount; j++)
+        {
+            const struct BgEvent *event = &header->events->bgEvents[j];
+            s32 x = event->x, y = event->y + 1;
+            if (event->kind != BG_EVENT_SECRET_BASE || event->bgUnion.secretBaseId != id)
+                continue;
+            if (x < 0 || y < 0 || x >= header->mapLayout->width || y >= header->mapLayout->height
+             || x > 127 || y > 127 || (header->mapLayout->map[y * header->mapLayout->width + x] & MAPGRID_COLLISION_MASK))
+                return FALSE;
+            *warp = (struct WarpData){routes[i][0], routes[i][1], WARP_ID_NONE, x, y};
+            *mapSec = header->regionMapSectionId;
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
 
 #define TAG_SCROLL_ARROW 5112
 
@@ -515,6 +561,74 @@ bool8 CurMapIsSecretBase(void)
         return FALSE;
 }
 
+// IDs and coordinates belong to the ordinary decoration save slots. No cache
+// survives moving/removing furniture or returning from the storage screen.
+extern const u8 SecretBase_EventScript_HealingBed[];
+extern const u8 SecretBase_EventScript_StorageUtility[];
+
+const u8 *GetSecretBaseUtilityScript(s16 x, s16 y, u8 elevation)
+{
+    u32 i;
+    s16 mapX = x - MAP_OFFSET, mapY = y - MAP_OFFSET;
+
+    if (!CurMapIsSecretBase() || VarGet(VAR_CURRENT_SECRET_BASE) != 0
+     || gSaveBlock1Ptr->secretBases[0].secretBaseId == 0
+     || elevation != MapGridGetElevationAt(x, y))
+        return NULL;
+
+    for (i = 0; i < DECOR_MAX_SECRET_BASE; i++)
+    {
+        u8 decor = gSaveBlock1Ptr->secretBases[0].decorations[i];
+        u8 pos = gSaveBlock1Ptr->secretBases[0].decorationPositions[i];
+        s16 left = pos >> 4, bottom = pos & 15;
+        u8 height = 2;
+        u8 width = decor == DECOR_HEALING_BED ? 2 : 1;
+        u16 tile;
+
+        if (decor != DECOR_HEALING_BED && decor != DECOR_STORAGE_PC)
+            continue;
+        if (bottom < height - 1 || left + width > gMapHeader.mapLayout->width
+         || bottom >= gMapHeader.mapLayout->height)
+            continue;
+        if (mapX < left || mapX >= left + width || mapY > bottom || mapY <= bottom - height)
+            continue;
+        tile = NUM_TILES_IN_PRIMARY + gDecorations[decor].tiles[(mapY - bottom + height - 1) * width + mapX - left];
+        // Accept the paired wall-background variant, but not stale/covered tiles.
+        if ((MapGridGetMetatileIdAt(x, y) & ~1) != tile)
+            continue;
+        return decor == DECOR_HEALING_BED ? SecretBase_EventScript_HealingBed : SecretBase_EventScript_StorageUtility;
+    }
+    return NULL;
+}
+
+void EnsureSecretBaseUtilities(void)
+{
+    if (!CurMapIsSecretBase() || VarGet(VAR_CURRENT_SECRET_BASE) != 0
+     || gSaveBlock1Ptr->secretBases[0].secretBaseId == 0)
+        return;
+
+    // Existing saves receive the same free utilities. Never duplicate an owned
+    // copy or overwrite a full inventory; retry missing entries on next opening.
+    if (!CheckHasDecoration(DECOR_HEALING_BED))
+        DecorationAdd(DECOR_HEALING_BED);
+    if (!CheckHasDecoration(DECOR_STORAGE_PC))
+        DecorationAdd(DECOR_STORAGE_PC);
+}
+
+void HealSecretBaseParty(void)
+{
+    u32 i;
+    if (!CurMapIsSecretBase() || VarGet(VAR_CURRENT_SECRET_BASE) != 0
+     || gSaveBlock1Ptr->secretBases[0].secretBaseId == 0)
+        return;
+    for (i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
+    {
+        struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][i];
+        if (!GetMonData(mon, MON_DATA_IS_EGG))
+            HealPokemon(mon);
+    }
+}
+
 void InitSecretBaseAppearance(bool8 hidePC)
 {
     u16 secretBaseIdx;
@@ -525,6 +639,8 @@ void InitSecretBaseAppearance(bool8 hidePC)
     if (CurMapIsSecretBase())
     {
         secretBaseIdx = VarGet(VAR_CURRENT_SECRET_BASE);
+        if (secretBaseIdx >= SECRET_BASES_COUNT)
+            return;
         decorations = gSaveBlock1Ptr->secretBases[secretBaseIdx].decorations;
         decorPos = gSaveBlock1Ptr->secretBases[secretBaseIdx].decorationPositions;
         for (x = 0; x < DECOR_MAX_SECRET_BASE; x++)
@@ -569,6 +685,8 @@ void InitSecretBaseDecorationSprites(void)
     else
     {
         u16 secretBaseIdx = VarGet(VAR_CURRENT_SECRET_BASE);
+        if (secretBaseIdx >= SECRET_BASES_COUNT)
+            return;
         decorations = gSaveBlock1Ptr->secretBases[secretBaseIdx].decorations;
         decorationPositions = gSaveBlock1Ptr->secretBases[secretBaseIdx].decorationPositions;
         numDecorations = DECOR_MAX_SECRET_BASE;
@@ -576,7 +694,7 @@ void InitSecretBaseDecorationSprites(void)
 
     for (i = 0; i < numDecorations; i++)
     {
-        if (decorations[i] == DECOR_NONE)
+        if (decorations[i] == DECOR_NONE || decorations[i] > NUM_DECORATIONS)
             continue;
 
         permission = gDecorations[decorations[i]].permission;

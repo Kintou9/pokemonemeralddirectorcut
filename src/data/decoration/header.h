@@ -1907,5 +1907,29 @@ const struct Decoration gDecorations[] =
             "or a desk."),
         .tiles = DecorGfx_REGISTEEL_DOLL,
         .icon = {gDecorIcon_RegisteelDoll, gDecorIconPalette_RegisteelDoll},
-    }
+    },
+    [DECOR_HEALING_BED] =
+    {
+        .id = DECOR_HEALING_BED,
+        .name = _("HEALING BED"),
+        .permission = DECORPERM_SOLID_FLOOR,
+        .shape = DECORSHAPE_2x2,
+        .category = DECORCAT_ORNAMENT,
+        .price = 0,
+        .description = COMPOUND_STRING("Rest your party in\n" "your own SECRET BASE."),
+        .tiles = DecorGfx_HEALING_BED,
+        .icon = {NULL, NULL},
+    },
+    [DECOR_STORAGE_PC] =
+    {
+        .id = DECOR_STORAGE_PC,
+        .name = _("STORAGE PC"),
+        .permission = DECORPERM_SOLID_FLOOR,
+        .shape = DECORSHAPE_1x2,
+        .category = DECORCAT_ORNAMENT,
+        .price = 0,
+        .description = COMPOUND_STRING("Access POKéMON boxes\n" "in your SECRET BASE."),
+        .tiles = DecorGfx_STORAGE_PC,
+        .icon = {NULL, NULL},
+    },
 };

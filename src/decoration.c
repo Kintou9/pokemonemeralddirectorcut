@@ -592,6 +592,18 @@ static const struct YesNoFuncTable sTossDecorationYesNoFunctions =
 
 void InitDecorationContextItems(void)
 {
+    for (u32 i = 0; i < DECOR_MAX_SECRET_BASE; i++)
+        if (gSaveBlock1Ptr->secretBases[0].decorations[i] > NUM_DECORATIONS)
+        {
+            gSaveBlock1Ptr->secretBases[0].decorations[i] = DECOR_NONE;
+            gSaveBlock1Ptr->secretBases[0].decorationPositions[i] = 0;
+        }
+    for (u32 i = 0; i < DECOR_MAX_PLAYERS_HOUSE; i++)
+        if (gSaveBlock1Ptr->playerRoomDecorations[i] > NUM_DECORATIONS)
+        {
+            gSaveBlock1Ptr->playerRoomDecorations[i] = DECOR_NONE;
+            gSaveBlock1Ptr->playerRoomDecorationPositions[i] = 0;
+        }
     if (sCurDecorationCategory < DECORCAT_COUNT)
         gCurDecorationItems = gDecorationInventories[sCurDecorationCategory].items;
 
@@ -658,6 +670,7 @@ static void InitDecorationActionsWindow(void)
 
 void DoSecretBaseDecorationMenu(u8 taskId)
 {
+    EnsureSecretBaseUtilities();
     InitDecorationActionsWindow();
     sDecorationContext.items = gSaveBlock1Ptr->secretBases[0].decorations;
     sDecorationContext.pos = gSaveBlock1Ptr->secretBases[0].decorationPositions;
@@ -1324,6 +1337,28 @@ static void ShowDecorationOnMap_(u16 mapX, u16 mapY, u8 decWidth, u8 decHeight, 
 
 void ShowDecorationOnMap(u16 mapX, u16 mapY, u16 decoration)
 {
+    if (decoration == DECOR_NONE || decoration > NUM_DECORATIONS)
+        return;
+    if (decoration == DECOR_HEALING_BED || decoration == DECOR_STORAGE_PC)
+    {
+        u32 width = decoration == DECOR_HEALING_BED ? 2 : 1;
+        u16 firstTile = decoration == DECOR_HEALING_BED ? METATILE_SecretBase_HealingBed_Top : METATILE_SecretBase_StorageUtilityPC;
+        u16 lastTile = decoration == DECOR_HEALING_BED ? METATILE_SecretBase_HealingBed_BottomRight + 1 : METATILE_SecretBase_StorageUtilityPC_Bottom + 1;
+        // Earlier playtest saves used smaller utility graphics. Keep an incompatible
+        // placement put-awayable without covering the management PC or walls.
+        if (mapX < MAP_OFFSET || mapY < MAP_OFFSET + 1
+         || mapX + width > gMapHeader.mapLayout->width + MAP_OFFSET
+         || mapY >= gMapHeader.mapLayout->height + MAP_OFFSET)
+            return;
+        for (u32 dy = 0; dy < 2; dy++)
+            for (u32 dx = 0; dx < width; dx++)
+            {
+                u16 tile = MapGridGetMetatileIdAt(mapX + dx, mapY - dy);
+                if (!MetatileBehavior_IsNormal(MapGridGetMetatileBehaviorAt(mapX + dx, mapY - dy))
+                 && (tile < firstTile || tile > lastTile))
+                    return;
+            }
+    }
     ShowDecorationOnMap_(mapX, mapY, sDecorShapes[gDecorations[decoration].shape].width, sDecorShapes[gDecorations[decoration].shape].height , decoration);
 }
 
@@ -1547,6 +1582,13 @@ static bool8 CanPlaceDecoration(u8 taskId, const struct Decoration *decoration)
     s16 curX;
     mapY = gTasks[taskId].tDecorHeight;
     mapX = gTasks[taskId].tDecorWidth;
+
+    if ((decoration->id == DECOR_HEALING_BED || decoration->id == DECOR_STORAGE_PC)
+     && (gTasks[taskId].tCursorX < MAP_OFFSET
+      || gTasks[taskId].tCursorY - mapY + 1 < MAP_OFFSET
+      || gTasks[taskId].tCursorX + mapX > gMapHeader.mapLayout->width + MAP_OFFSET
+      || gTasks[taskId].tCursorY >= gMapHeader.mapLayout->height + MAP_OFFSET))
+        return FALSE;
 
     switch (decoration->permission)
     {
@@ -1966,7 +2008,10 @@ static void CopyTile(u8 *dest, u16 tile)
     if (tile != 0)
         tile &= 0x03FF;
 
-    CpuFastCopy(&gTilesetPointer_SecretBase->tiles[tile * TILE_SIZE_4BPP / sizeof(u32)], buffer, TILE_SIZE_4BPP);
+    if (tile >= NUM_TILES_IN_PRIMARY)
+        CpuFastCopy(&gTilesetPointer_SecretBaseRedCave->tiles[(tile - NUM_TILES_IN_PRIMARY) * TILE_SIZE_4BPP / sizeof(u32)], buffer, TILE_SIZE_4BPP);
+    else
+        CpuFastCopy(&gTilesetPointer_SecretBase->tiles[tile * TILE_SIZE_4BPP / sizeof(u32)], buffer, TILE_SIZE_4BPP);
     switch (mode)
     {
     case 0:
@@ -2728,3 +2773,35 @@ static void TossDecoration(u8 taskId)
     StringExpandPlaceholders(gStringVar4, gText_DecorationThrownAway);
     DisplayItemMessageOnField(taskId, gStringVar4, ReturnToDecorationItemsAfterInvalidSelection);
 }
+
+#if TESTING
+#include "test/secret_base.h"
+bool32 TestDecor_Place(u8 decor, s16 x, s16 y)
+{
+    if (decor == DECOR_NONE || decor > NUM_DECORATIONS)
+        return FALSE;
+    sDecorationContext.isPlayerRoom = FALSE;
+    sDecorationContext.size = DECOR_MAX_SECRET_BASE;
+    InitDecorationContextItems();
+    gCurDecorationItems = gDecorationInventories[gDecorations[decor].category].items;
+    for (gCurDecorationIndex = 0; gCurDecorationIndex < gDecorationInventories[gDecorations[decor].category].size; gCurDecorationIndex++)
+        if (gCurDecorationItems[gCurDecorationIndex] == decor)
+            break;
+    if (gCurDecorationIndex == gDecorationInventories[gDecorations[decor].category].size || !HasDecorationSpace())
+        return FALSE;
+    ResetTasks();
+    gTasks[0].tCursorX = x + MAP_OFFSET;
+    gTasks[0].tCursorY = y + MAP_OFFSET;
+    gTasks[0].tInitialX = -1;
+    gTasks[0].tInitialY = -1;
+    gTasks[0].tDecorWidth = sDecorShapes[gDecorations[decor].shape].width;
+    gTasks[0].tDecorHeight = sDecorShapes[gDecorations[decor].shape].height;
+    if (!CanPlaceDecoration(0, &gDecorations[decor]))
+        return FALSE;
+    PlaceDecoration_(0);
+    ShowDecorationOnMap(x + MAP_OFFSET, y + MAP_OFFSET, decor);
+    return TRUE;
+}
+void TestDecor_Remove(u8 slot) { ClearDecorationContextIndex(slot); }
+void TestDecor_CopyTile(u16 tile, u8 *dest) { CopyTile(dest, tile); }
+#endif

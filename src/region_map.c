@@ -10,6 +10,7 @@
 #include "overworld.h"
 #include "event_data.h"
 #include "secret_base.h"
+#include "field_move.h"
 #include "string_util.h"
 #include "international_string_util.h"
 #include "strings.h"
@@ -2055,11 +2056,76 @@ static void SetFlyMapCallback(void callback(void))
     sFlyMap->state = 0;
 }
 
+bool32 GetSecretBaseFlyMapPosition(u16 *x, u16 *y)
+{
+    struct WarpData warp;
+    u16 mapSec, cx, cy, targetX, targetY;
+    u32 bestDistance = UINT32_MAX;
+    const struct MapHeader *header;
+    const struct RegionMapLocation *entry;
+
+    if (GetCurrentRegion() != REGION_HOENN || !IsFieldMoveUnlocked(FIELD_MOVE_FLY)
+     || !GetSecretBaseFlyDestination(&warp, &mapSec))
+        return FALSE;
+    header = Overworld_GetMapHeaderByGroupAndId(warp.mapGroup, warp.mapNum);
+    entry = &gRegionMapEntries[mapSec];
+    targetX = entry->x + MAPCURSOR_X_MIN + warp.x * entry->width / header->mapLayout->width;
+    targetY = entry->y + MAPCURSOR_Y_MIN + warp.y * entry->height / header->mapLayout->height;
+    // Irregular routes may overlap other map sections in their bounding rectangle.
+    for (cy = MAPCURSOR_Y_MIN; cy <= MAPCURSOR_Y_MAX; cy++)
+    {
+        for (cx = MAPCURSOR_X_MIN; cx <= MAPCURSOR_X_MAX; cx++)
+        {
+            u32 distance = abs(cx - targetX) + abs(cy - targetY);
+            if (GetRegionMapSecIdAt(cx, cy) == mapSec && distance < bestDistance)
+            {
+                bestDistance = distance;
+                *x = cx;
+                *y = cy;
+            }
+        }
+    }
+    return bestDistance != UINT32_MAX;
+}
+
+bool32 IsSecretBaseFlySelection(const struct RegionMap *regionMap)
+{
+    u16 x, y;
+    return GetSecretBaseFlyMapPosition(&x, &y)
+        && regionMap->cursorPosX == x && regionMap->cursorPosY == y
+        && regionMap->mapSecId == GetRegionMapSecIdAt(x, y);
+}
+
+static void SpriteCB_SecretBaseFlyIcon(struct Sprite *sprite)
+{
+    if (IsSecretBaseFlySelection(&sFlyMap->regionMap))
+    {
+        sprite->data[0] = (sprite->data[0] + 1) & 31;
+        sprite->invisible = (sprite->data[0] & 16) != 0;
+    }
+    else
+    {
+        sprite->data[0] = 0;
+        sprite->invisible = FALSE;
+    }
+}
+
 static void DrawFlyDestTextWindow(void)
 {
     u16 i;
     bool32 namePrinted;
     const u8 *name;
+
+    if (IsSecretBaseFlySelection(&sFlyMap->regionMap))
+    {
+        ClearStdWindowAndFrameToTransparent(WIN_MAPSEC_NAME, FALSE);
+        DrawStdFrameWithCustomTileAndPalette(WIN_MAPSEC_NAME_TALL, FALSE, 101, 13);
+        AddTextPrinterParameterized(WIN_MAPSEC_NAME_TALL, FONT_NORMAL, sFlyMap->regionMap.mapSecName, 0, 1, 0, NULL);
+        AddTextPrinterParameterized(WIN_MAPSEC_NAME_TALL, FONT_NORMAL, COMPOUND_STRING("SECRET BASE"), 0, 17, 0, NULL);
+        ScheduleBgCopyTilemapToVram(0);
+        sDrawFlyDestTextWindow = TRUE;
+        return;
+    }
 
     if (sFlyMap->regionMap.mapSecType > MAPSECTYPE_NONE && sFlyMap->regionMap.mapSecType < NUM_MAPSEC_TYPES)
     {
@@ -2119,6 +2185,7 @@ static void DrawFlyDestTextWindow(void)
 static void LoadFlyDestIcons(void)
 {
     struct SpriteSheet sheet;
+    u16 x, y;
 
     DecompressDataWithHeaderWram(sFlyTargetIcons_Gfx, sFlyMap->tileBuffer);
     sheet.data = sFlyMap->tileBuffer;
@@ -2128,6 +2195,15 @@ static void LoadFlyDestIcons(void)
     LoadSpritePalette(&sFlyTargetIconsSpritePalette);
     CreateFlyDestIcons();
     TryCreateRedOutlineFlyDestIcons();
+    if (GetSecretBaseFlyMapPosition(&x, &y))
+    {
+        u8 spriteId = CreateSprite(&sFlyDestIconSpriteTemplate, x * 8 + 4, y * 8 + 4, 10);
+        if (spriteId != MAX_SPRITES)
+        {
+            StartSpriteAnim(&gSprites[spriteId], SPRITE_SHAPE(8x8));
+            gSprites[spriteId].callback = SpriteCB_SecretBaseFlyIcon;
+        }
+    }
 }
 
 struct FlyLocation
@@ -2453,7 +2529,7 @@ static void CB_HandleFlyMapInput(void)
             DrawFlyDestTextWindow();
             break;
         case MAP_INPUT_A_BUTTON:
-            if (sFlyMap->regionMap.mapSecType == MAPSECTYPE_CITY_CANFLY || sFlyMap->regionMap.mapSecType == MAPSECTYPE_BATTLE_FRONTIER)
+            if (sFlyMap->regionMap.mapSecType == MAPSECTYPE_CITY_CANFLY || sFlyMap->regionMap.mapSecType == MAPSECTYPE_BATTLE_FRONTIER || IsSecretBaseFlySelection(&sFlyMap->regionMap))
             {
                 m4aSongNumStart(SE_SELECT);
                 sFlyMap->choseFlyLocation = TRUE;
@@ -2521,7 +2597,16 @@ u32 FilterFlyDestination(struct RegionMap* regionMap)
 
 void SetFlyDestination(struct RegionMap* regionMap)
 {
-    u32 flyDestination = FilterFlyDestination(regionMap);
+    struct WarpData warp;
+    u16 mapSec;
+    u32 flyDestination;
+
+    if (IsSecretBaseFlySelection(regionMap) && GetSecretBaseFlyDestination(&warp, &mapSec))
+    {
+        SetWarpDestination(warp.mapGroup, warp.mapNum, warp.warpId, warp.x, warp.y);
+        return;
+    }
+    flyDestination = FilterFlyDestination(regionMap);
 
     if (flyDestination != WARP_ID_NONE)
         SetWarpDestinationToHealLocation(flyDestination);

@@ -20,6 +20,11 @@ void SetDecorationInventoriesPointers(void)
     SET_DECOR_INV(DECORCAT_POSTER, gSaveBlock1Ptr->decorationPosters);
     SET_DECOR_INV(DECORCAT_DOLL, gSaveBlock1Ptr->decorationDolls);
     SET_DECOR_INV(DECORCAT_CUSHION, gSaveBlock1Ptr->decorationCushions);
+    // Unknown IDs from incompatible records must never index gDecorations.
+    for (u32 category = 0; category < DECORCAT_COUNT; category++)
+        for (u32 i = 0; i < gDecorationInventories[category].size; i++)
+            if (gDecorationInventories[category].items[i] > NUM_DECORATIONS)
+                gDecorationInventories[category].items[i] = DECOR_NONE;
     InitDecorationContextItems();
 }
 
@@ -54,6 +59,8 @@ bool8 CheckHasDecoration(u8 decor)
     u8 i;
     u8 category;
 
+    if (decor == DECOR_NONE || decor > NUM_DECORATIONS)
+        return FALSE;
     category = gDecorations[decor].category;
     for (i = 0; i < gDecorationInventories[category].size; i ++)
     {
@@ -69,7 +76,7 @@ bool8 DecorationAdd(u8 decor)
     u8 category;
     s8 idx;
 
-    if (decor == DECOR_NONE)
+    if (decor == DECOR_NONE || decor > NUM_DECORATIONS)
         return FALSE;
     category = gDecorations[decor].category;
     idx = GetFirstEmptyDecorSlot(category);
@@ -81,7 +88,7 @@ bool8 DecorationAdd(u8 decor)
 
 bool8 DecorationCheckSpace(u8 decor)
 {
-    if (decor == DECOR_NONE)
+    if (decor == DECOR_NONE || decor > NUM_DECORATIONS)
         return FALSE;
     if (GetFirstEmptyDecorSlot(gDecorations[decor].category) == -1)
         return FALSE;
@@ -94,7 +101,7 @@ s8 DecorationRemove(u8 decor)
     u8 category;
 
     i = 0;
-    if (decor == DECOR_NONE)
+    if (decor == DECOR_NONE || decor > NUM_DECORATIONS)
         return 0;
 
     for (i = 0; i < gDecorationInventories[gDecorations[decor].category].size; i ++)

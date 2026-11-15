@@ -18,7 +18,7 @@ const struct Tileset gTileset_SecretBaseRedCave =
 {
     .isCompressed = FALSE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_SecretBaseRedCave,
+    .tiles = (const u32 *)&gTilesetTiles_SecretBaseRedCave,
     .palettes = gTilesetPalettes_SecretBaseRedCave,
     .metatiles = gMetatiles_SecretBaseSecondary,
     .metatileAttributes = gMetatileAttributes_SecretBaseSecondary,
@@ -386,7 +386,7 @@ const struct Tileset gTileset_SecretBaseBrownCave =
 {
     .isCompressed = FALSE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_SecretBaseBrownCave,
+    .tiles = (const u32 *)&gTilesetTiles_SecretBaseBrownCave,
     .palettes = gTilesetPalettes_SecretBaseBrownCave,
     .metatiles = gMetatiles_SecretBaseSecondary,
     .metatileAttributes = gMetatileAttributes_SecretBaseSecondary,
@@ -397,7 +397,7 @@ const struct Tileset gTileset_SecretBaseTree =
 {
     .isCompressed = FALSE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_SecretBaseTree,
+    .tiles = (const u32 *)&gTilesetTiles_SecretBaseTree,
     .palettes = gTilesetPalettes_SecretBaseTree,
     .metatiles = gMetatiles_SecretBaseSecondary,
     .metatileAttributes = gMetatileAttributes_SecretBaseSecondary,
@@ -408,7 +408,7 @@ const struct Tileset gTileset_SecretBaseShrub =
 {
     .isCompressed = FALSE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_SecretBaseShrub,
+    .tiles = (const u32 *)&gTilesetTiles_SecretBaseShrub,
     .palettes = gTilesetPalettes_SecretBaseShrub,
     .metatiles = gMetatiles_SecretBaseSecondary,
     .metatileAttributes = gMetatileAttributes_SecretBaseSecondary,
@@ -419,7 +419,7 @@ const struct Tileset gTileset_SecretBaseBlueCave =
 {
     .isCompressed = FALSE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_SecretBaseBlueCave,
+    .tiles = (const u32 *)&gTilesetTiles_SecretBaseBlueCave,
     .palettes = gTilesetPalettes_SecretBaseBlueCave,
     .metatiles = gMetatiles_SecretBaseSecondary,
     .metatileAttributes = gMetatileAttributes_SecretBaseSecondary,
@@ -430,7 +430,7 @@ const struct Tileset gTileset_SecretBaseYellowCave =
 {
     .isCompressed = FALSE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_SecretBaseYellowCave,
+    .tiles = (const u32 *)&gTilesetTiles_SecretBaseYellowCave,
     .palettes = gTilesetPalettes_SecretBaseYellowCave,
     .metatiles = gMetatiles_SecretBaseSecondary,
     .metatileAttributes = gMetatileAttributes_SecretBaseSecondary,
